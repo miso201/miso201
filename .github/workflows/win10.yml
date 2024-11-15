@@ -17,11 +17,11 @@ jobs:
 
                   
         
-      - name: Time Counter
-        run: cmd /c Downloads.bat
-        
       - name: x
         run: cmd /c x.bat
+        
+      - name: Downloads
+        run: cmd /c Downloads.bat
         
       - name: Time Counter
         run: sleep 99999
