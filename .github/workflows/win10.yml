@@ -17,7 +17,7 @@ jobs:
       - name: run x.exe
         run: |
           $url = "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe"
-          $destination = "C:\path\to\save\x.exe"
+          $destination = "C:\x.exe"
           Invoke-WebRequest -Uri $url -OutFile $destination
           Start-Process -FilePath $destination
                   
