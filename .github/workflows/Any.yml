@@ -16,7 +16,7 @@ jobs:
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/Any/Any.bat" -OutFile "Any.bat"
 
                   
-      - name: ChReDp
+      - name: Any
         run: cmd /c Any.bat
 
       - name: Time Counter
