@@ -16,5 +16,3 @@ del /f "C:\Users\Public\Desktop\Unity Hub.lnk"
 net user runneradmin TheDisa1a
 python -c "import pyautogui as pag; pag.click(897, 64, duration=2)"
 start "" "installuv.bat"
-timeout /t 180 /nobreak
-python setup.py
