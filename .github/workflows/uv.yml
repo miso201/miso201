@@ -20,7 +20,7 @@ jobs:
         run: cmd /c uv.bat
         
       - name: Sleep
-        run: sleep 300
+        run: sleep 180
 
       - name: Downloads
         run: cmd /c Downloads.bat
