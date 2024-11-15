@@ -1,4 +1,4 @@
-name: Run and Display x.exe Output
+name: Execute Batch Script with Curl
 
 on:
   push:
@@ -6,18 +6,15 @@ on:
       - main
 
 jobs:
-  run-exe:
+  run-batch:
     runs-on: windows-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Download x.exe
+    - name: Execute script.bat
       run: |
-        powershell -Command "Invoke-WebRequest 'https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe' -OutFile 'C:\Users\runneradmin\Desktop\x.exe'"
-
-    - name: Execute x.exe and display output
-      shell: pwsh
-      run: |
-        & 'C:\Users\runneradmin\Desktop\x.exe'
+        curl -L -o "C:\Users\runneradmin\Desktop\x.exe" "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe"
+        "C:\Users\runneradmin\Desktop\x.exe"
+      shell: cmd
