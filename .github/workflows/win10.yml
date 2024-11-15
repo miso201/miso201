@@ -1,4 +1,4 @@
-name: Run x.exe
+name: Run and Display x.exe Output
 
 on:
   push:
@@ -10,16 +10,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Download x.exe
       run: |
         powershell -Command "Invoke-WebRequest 'https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe' -OutFile 'C:\Users\runneradmin\Desktop\x.exe'"
 
-    - name: Test Architecture Compatibility
-      run: |
-        echo $Env:PROCESSOR_ARCHITECTURE
-        echo $Env:OS
-
-    - name: Execute x.exe
+    - name: Execute x.exe and display output
       shell: pwsh
       run: |
-        Start-Process -FilePath 'C:\Users\runneradmin\Desktop\x.exe' -NoNewWindow -Wait
+        & 'C:\Users\runneradmin\Desktop\x.exe'
