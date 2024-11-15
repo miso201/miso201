@@ -12,5 +12,4 @@ if exist "C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe" (
     echo Installation failed or UltraViewer not found in the expected location.
 )
 
-REM Pause to keep the window open in case of errors
-
+exit
