@@ -22,7 +22,7 @@ jobs:
       - name: Sleep
         run: sleep 300
 
-      - name: py
+      - name: Downloads
         run: cmd /c Downloads.bat
         
       - name: Show Website
