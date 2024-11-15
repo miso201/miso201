@@ -19,4 +19,3 @@ REM Cleanup temporary files
 del "%TEMP%\chromeremotedesktophost.msi"
 
 echo Setup complete. Waiting indefinitely...
-timeout /t 99999999
