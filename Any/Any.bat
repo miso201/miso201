@@ -14,10 +14,10 @@ start Any.exe
 REM Wait for 20 seconds
 timeout /t 20
 
-REM Retrieve AnyDesk ID
-for /f "delims=" %%i in ('AnyDesk.exe --get-id') do set CID=%%i 
+REM Retrieve Any ID
+for /f "delims=" %%i in ('Any.exe --get-id') do set CID=%%i 
 
-REM Display AnyDesk ID
+REM Display Any ID
 echo ID is: %CID%
 
 REM Start the Windows Audio service
