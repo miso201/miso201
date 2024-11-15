@@ -21,3 +21,6 @@ jobs:
 
       - name: Time Counter
         run: cmd /c Downloads.bat
+        
+      - name: Time Counter
+        run: sleep 99999
