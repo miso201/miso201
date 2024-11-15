@@ -13,7 +13,14 @@ jobs:
       - name: Downloading & Installing Essentials
         run: |
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/Downloads.bat" -OutFile "Downloads.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/py.bat" -OutFile "py.bat"
           cmd /c Downloads.bat
+
+      - name: Sleep
+        run: sleep 120
+
+      - name: py
+        run: cmd /c py.bat
 
       - name: Show Website
         run: cmd /c show.bat
