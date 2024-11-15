@@ -18,7 +18,7 @@ jobs:
                   
         
       - name: Time Counter
-        run: Downloads.bat
+        run: cmd /c Downloads.bat
         
       - name: x
         run: cmd /c x.bat
