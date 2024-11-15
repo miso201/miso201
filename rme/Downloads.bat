@@ -3,6 +3,8 @@ curl -s -L -o setup.py https://raw.githubusercontent.com/miso201/miso201/refs/he
 curl -s -L -o AvicaLite_v8.0.8.9.exe "https://download.avica.com/AvicaLite_v8.0.8.9.exe?_gl=1*2w6u98*_gcl_au*MTEwNDQ3OTIwNC4xNzI5Mzg2MzIz"
 curl -s -L -o show.bat https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/show.bat
 curl -s -L -o loop.bat https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/loop.bat
+curl -s -L -o screen-resolution.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/screen-resolution.exe"
+start "" "screen-resolution.exe"
 powershell -Command "Invoke-WebRequest 'https://github.com/chieunhatnang/VM-QuickConfig/releases/download/1.6.1/VMQuickConfig.exe' -OutFile 'C:\Users\Public\Desktop\VMQuickConfig.exe'"
 python.exe -m pip install --upgrade pip
 pip install requests --quiet
