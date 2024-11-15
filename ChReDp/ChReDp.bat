@@ -10,7 +10,7 @@ msiexec /i "%TEMP%\chromeremotedesktophost.msi" /quiet
 REM Start Chrome Remote Desktop host and set the PIN
 echo Configuring Chrome Remote Desktop with PIN...
 "%PROGRAMFILES(X86)%\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" ^
-    --code="4/0AeanS0ac9hA21_QVYBnY3cGO39OJOciM8Gimx4JpYt0VJQ0B8L7rsmDRSNcD7nDKtB1ZCQ" ^
+    --code="4/0AeanS0b4TwvIbBMXybBWHN_vDWJ7WlNKdBp-sNDahhqoGxSDJC1a5OgT2EWQHTz53uRu2g" ^
     --redirect-url="https://remotedesktop.google.com/_/oauthredirect" ^
     --name=%COMPUTERNAME% ^
     --pin=123456
