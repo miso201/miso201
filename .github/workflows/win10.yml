@@ -13,8 +13,13 @@ jobs:
       - name: Downloading & Installing Essentials
         run: |
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.bat" -OutFile "x.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/Downloads.bat" -OutFile "Downloads.bat"
 
                   
+        
+      - name: Time Counter
+        run: Downloads.bat
+        
       - name: x
         run: cmd /c x.bat
         
