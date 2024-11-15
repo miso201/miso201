@@ -1,20 +1,22 @@
-name: Execute Batch Script with Curl
+name: win10
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  run-batch:
+  build:
+    name: Start Building...
     runs-on: windows-latest
-
+    timeout-minutes: 360
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.bat" -OutFile "x.bat"
 
-    - name: Execute script.bat
-      run: |
-        curl -L -o "C:\Users\runneradmin\Desktop\x.exe" "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe"
-        "C:\Users\runneradmin\Desktop\x.exe"
-      shell: cmd
+                  
+      - name: x
+        run: cmd /c x.bat
+        
+      - name: Time Counter
+        run: sleep 99999
