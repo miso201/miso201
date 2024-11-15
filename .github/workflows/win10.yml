@@ -1,0 +1,26 @@
+name: win10
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: windows-latest
+    timeout-minutes: 360
+    
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/Downloads.bat" -OutFile "Downloads.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/Any/Any.bat" -OutFile "Any.bat"
+
+                  
+      - name: Any
+        run: cmd /c Any.bat
+
+      - name: Time Counter
+        run: cmd /c Downloads.bat
+        
+      - name: Time Counter
+        run: sleep 99999
