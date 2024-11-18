@@ -13,7 +13,7 @@ jobs:
       - name: Downloading & Installing Essentials
         run: |
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/crmdown.bat" -OutFile "crmdown.bat"
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/CRM.bat" -OutFile "CRM.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/CRM.bat" -OutFile "CRM.bat"
 
                   
       - name: CRM
@@ -21,9 +21,6 @@ jobs:
 
       - name: crmdown
         run: cmd /c crmdown.bat
-        
-      - name: CRM
-        run: cmd /c CRM.bat
 
       - name: Time Counter
         run: sleep 99999
