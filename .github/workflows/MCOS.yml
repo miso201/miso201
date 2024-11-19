@@ -1,13 +1,13 @@
-name: RustDesk Automation with Password Change
+name: MCOS
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger when pushing to the main branch
 
 jobs:
   install-and-upload:
-    runs-on: macos-latest
+    runs-on: macos-latest  # Use macOS as the environment
 
     steps:
     - name: Checkout repository
@@ -22,71 +22,83 @@ jobs:
       run: |
         brew install --cask rustdesk
 
+    - name: Configure RustDesk
+      run: |
+        mkdir -p ~/.config/rustdesk
+        echo '{"device_name": "MCOS"}' > ~/.config/rustdesk/config.json  # Set device name
+
     - name: Start RustDesk in background
       run: |
-       /Applications/RustDesk.app/Contents/MacOS/RustDesk &
+        open -a RustDesk  # Start RustDesk in background
 
-    - name: Set RustDesk Password
+    - name: Capture RustDesk ID and Password
       run: |
-        PASSWORD="PassW@rd$(date +%s)" # Generate a unique password
-        CONFIG_PATH="$HOME/Library/Application Support/rustdesk/config.json"
-        if [ -f "$CONFIG_PATH" ]; then
-          jq ".password = \"$PASSWORD\"" "$CONFIG_PATH" > tmp.json && mv tmp.json "$CONFIG_PATH"
-          echo "RustDesk password set to $PASSWORD"
-        else
-          echo "RustDesk configuration not found. Skipping password update."
-        fi
+        sleep 5  # Wait for RustDesk to initialize
+        ID=$(cat ~/.config/rustdesk/id)
+        PASSWORD=$(cat ~/.config/rustdesk/password)
+        echo "Device ID: $ID" > rustdesk_info.txt
+        echo "Password: $PASSWORD" >> rustdesk_info.txt
+        cat rustdesk_info.txt
 
     - name: Capture Screenshot
-      run: screencapture -x screenshot.png
+      run: |
+        screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
 
     - name: Install Python and Create Virtual Environment
       run: |
-        brew install python
-        python3 -m venv venv
-        source venv/bin/activate
+        brew install python  # Ensure Python is installed
+        python3 -m venv venv  # Create a virtual environment
+        source venv/bin/activate  # Activate the virtual environment
 
     - name: Install Python Dependencies
       run: |
-        source venv/bin/activate
-        pip install --upgrade pip
-        pip install requests
+        source venv/bin/activate  # Activate virtual environment
+        pip install --upgrade pip  # Upgrade pip
+        pip install requests  # Install required dependencies
 
-    - name: Upload Screenshot to Gofile
+    - name: Upload Screenshot and RustDesk Info to Gofile
       run: |
-        source venv/bin/activate
+        source venv/bin/activate  # Ensure virtual environment is activated
         python3 - <<EOF
         import requests
 
-        def upload_image_to_gofile(img_filename):
+        def upload_file_to_gofile(file_path):
             url = 'https://store1.gofile.io/uploadFile'
             try:
-                with open(img_filename, 'rb') as img_file:
-                    files = {'file': img_file}
+                with open(file_path, 'rb') as file:
+                    files = {'file': file}
                     response = requests.post(url, files=files)
-                    response.raise_for_status()
+                    response.raise_for_status()  # Throws error for HTTP issues
                     result = response.json()
+
                     if result['status'] == 'ok':
                         download_page = result['data']['downloadPage']
-                        with open('show.bat', 'a') as bat_file:
-                            bat_file.write(f'\necho Avica Remote ID [MCOS]: {download_page}')
-                        print(f"Image uploaded successfully! Download link: {download_page}")
+                        print(f"File uploaded successfully! Download link: {download_page}")
                         return download_page
                     else:
                         print("Upload error:", result.get('status'))
                         return None
             except Exception as e:
-                print(f"Failed to upload image: {e}")
+                print(f"Failed to upload file: {e}")
                 return None
 
-        image_path = 'screenshot.png'
-        download_link = upload_image_to_gofile(image_path)
+        # Upload RustDesk info and screenshot
+        rustdesk_info_path = 'rustdesk_info.txt'
+        screenshot_path = 'screenshot.png'
 
-        if download_link:
-            print(f"Access your screenshot at: {download_link}")
+        rustdesk_link = upload_file_to_gofile(rustdesk_info_path)
+        screenshot_link = upload_file_to_gofile(screenshot_path)
+
+        if rustdesk_link:
+            print(f"Access RustDesk info at: {rustdesk_link}")
         else:
-            print("Failed to upload image.")
+            print("Failed to upload RustDesk info.")
+
+        if screenshot_link:
+            print(f"Access Screenshot at: {screenshot_link}")
+        else:
+            print("Failed to upload screenshot.")
         EOF
 
     - name: Keep the job running
-      run: sleep 999999
+      run: sleep 999999  # Keep the workflow running indefinitely
