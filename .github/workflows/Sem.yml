@@ -33,14 +33,6 @@ jobs:
         echo "Checking installation of start-host binary"
         find / -name "start-host" 2>/dev/null || echo "start-host binary not found"
 
-    - name: Download Chrome Remote Desktop manually if not found
-      run: |
-        # If start-host is not found, attempt to download the latest version of Chrome Remote Desktop
-        if [ ! -f "/opt/google/chrome-remote-desktop/start-host" ]; then
-          echo "start-host not found, attempting manual installation"
-          curl -L https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -o chrome-remote-desktop.deb
-          echo "Manual installation failed for macOS: .deb packages are not compatible."
-        fi
 
     - name: Install Chrome Remote Desktop Host via dmg (macOS specific)
       run: |
@@ -62,8 +54,6 @@ jobs:
         else
           echo "Error: start-host binary not found even after installation attempts!"
           exit 1
-        fi
-
 
     - name: Instructions for manual steps
       run: |
