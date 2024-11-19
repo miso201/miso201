@@ -18,7 +18,7 @@ jobs:
         # Install Ngrok
         curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
         unzip ngrok.zip
-        ./ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+        ./ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}  # Correctly pass the token as an argument
 
     - name: Start Ngrok for VNC tunnel
       run: |
@@ -36,6 +36,6 @@ jobs:
         
     - name: Connect to VNC using Ngrok URL
       run: |
-        # Install VNC client and connect (requires 'screen' or similar)
+        # Install VNC client and connect (requires 'tigervnc' or similar)
         brew install tigervnc-viewer
         vncviewer $NGROK_URL -passwd ${{ secrets.VNC_PASSWORD }}
