@@ -1,52 +1,41 @@
-name: VNC and Ngrok Setup for macOS
+name: Connect to macOS via VNC using Ngrok
 
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the main branch, adjust as necessary
+      - main
 
 jobs:
-  setup_vnc_ngrok:
-    runs-on: macos-latest  # Ensure the runner is macOS
-    
+  connect-to-mac:
+    runs-on: macos-latest
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
-    - name: Install Homebrew and Dependencies
+    - name: Set up Ngrok
       run: |
-        # Install Homebrew if it's not installed
-        if ! command -v brew &>/dev/null; then
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        fi
-        # Install VNC Viewer using Homebrew Cask
-        brew install --cask tigervnc-viewer
         # Install Ngrok
-        brew install ngrok
-
-    - name: Setup Ngrok with Authtoken
-      run: |
-        # Install Ngrok and authenticate using the provided authtoken
         curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
         unzip ngrok.zip
-        mv ngrok /usr/local/bin/
-        ./ngrok authtoken 1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q
-        # Start Ngrok to expose VNC server on port 5901
-        nohup ./ngrok tcp 5901 &
+        ./ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+
+    - name: Start Ngrok for VNC tunnel
+      run: |
+        # Start Ngrok to expose VNC port (usually 5900)
+        ./ngrok tcp ${{ secrets.VNC_HOST }}:${{ secrets.VNC_PORT }} &
 
     - name: Wait for Ngrok to start
+      run: sleep 10
+
+    - name: Retrieve Ngrok URL
       run: |
-        sleep 5  # Wait for Ngrok to establish a tunnel
-
-
-    - name: Display Ngrok Public URL and Credentials
+        # Fetch the Ngrok URL
+        NGROK_URL=$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
+        echo "Ngrok URL: $NGROK_URL"
+        
+    - name: Connect to VNC using Ngrok URL
       run: |
-        # Output Ngrok public URL and credentials
-        echo ..........................................................
-        echo IP:
-        curl -s http://localhost:4040/api/tunnels | grep -o '"public_url":"[^"]*' | sed 's/"public_url":"//'
-        echo Username: runneradmin
-        echo Password: P@ssw0rd!
-
-    - name: Keep the job running
-      run: sleep 999999  # Keep the workflow running indefinitely
+        # Install VNC client and connect (requires 'screen' or similar)
+        brew install tigervnc-viewer
+        vncviewer $NGROK_URL -passwd ${{ secrets.VNC_PASSWORD }}
