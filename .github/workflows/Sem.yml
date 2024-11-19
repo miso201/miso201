@@ -1,67 +1,41 @@
-name: Set up Chrome Remote Desktop on MacOS
+name: Setup Chrome Remote Desktop on macOS
 
 on:
   push:
     branches:
-      - main  # Trigger the action when pushing to the main branch
+      - main
 
 jobs:
-  remote-access:
-    runs-on: macos-latest  # Use macOS as the environment
-    
+  setup-chrome-remote-desktop:
+    runs-on: macos-latest
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install Homebrew (if not installed)
-      run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        export PATH="/opt/homebrew/bin:$PATH"
+      - name: Install Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    - name: Install Google Chrome
-      run: |
-        brew install --cask google-chrome
+      - name: Install Chrome Remote Desktop Host
+        run: |
+          brew install --cask chrome-remote-desktop-host
 
-    - name: Install Chrome Remote Desktop Host
-      run: |
-        brew install --cask chrome-remote-desktop-host
-
-    - name: Create new user 'baynar' with password 'PassW@rd'
-      run: |
-        sudo sysadminctl -addUser baynar -password PassW@rd -admin
-        sudo dscl . -create /Users/baynar UserShell /bin/bash
-        sudo dscl . -create /Users/baynar RealName "Baynar User"
-        sudo dscl . -create /Users/baynar UniqueID "1001"
-        sudo dscl . -create /Users/baynar PrimaryGroupID 80
-        sudo dscl . -create /Users/baynar NFSHomeDirectory /Users/baynar
-        sudo createhomedir -c -u baynar
-
-    - name: Switch to the 'baynar' user and set up Chrome Remote Desktop Host
-      run: |
-        sudo -u baynar bash -c "
-          # Check if the start-host binary exists
-          if [ -f '/opt/google/chrome-remote-desktop/start-host' ]; then
-            ACCESS_CODE='4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g'
-            echo 'Running Chrome Remote Desktop setup with code $ACCESS_CODE'
-            /opt/google/chrome-remote-desktop/start-host --code=\"$ACCESS_CODE\" --redirect-url='https://remotedesktop.google.com/_/oauthredirect' --name=\$(hostname)
-          else
-            echo 'Error: start-host binary not found!'
-            exit 1
-          fi
-        "
-
-    - name: Download Chrome Remote Desktop manually (if necessary)
-      run: |
-        # If the above installation doesn't work, try manually downloading and installing the package
-        echo "Downloading Chrome Remote Desktop package"
-        curl -L https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -o chrome-remote-desktop.deb
-        echo "Installing chrome-remote-desktop.deb package"
-        sudo dpkg -i chrome-remote-desktop.deb
-
-    - name: Instructions for manual steps
-      run: |
-        echo "Please manually generate the access code at https://remotedesktop.google.com/access/ and replace 'your_generated_code' in the script above."
-        echo "Once the code is generated, the MacOS machine will be ready for remote access via Chrome Remote Desktop."
+      - name: Setup Chrome Remote Desktop as 'baynar' user
+        run: |
+          # Run the necessary commands as the 'baynar' user
+          echo "PassW@rd" | sudo -S -u baynar bash -c "
+            # Check if the start-host binary exists
+            if [ -f '/opt/google/chrome-remote-desktop/start-host' ]; then
+              ACCESS_CODE='4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g'
+              echo 'Running Chrome Remote Desktop setup with code \$ACCESS_CODE'
+              /opt/google/chrome-remote-desktop/start-host --code=\"$ACCESS_CODE\" --redirect-url='https://remotedesktop.google.com/_/oauthredirect' --name=\$(hostname)
+            else
+              echo 'Error: start-host binary not found!'
+              exit 1
+            fi
+          "
+        shell: /bin/bash -e {0}
 
 
     - name: Instructions for manual steps
