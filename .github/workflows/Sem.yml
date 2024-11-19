@@ -1,9 +1,9 @@
-name: Sem
+name: Set up Chrome Remote Desktop on MacOS
 
 on:
   push:
     branches:
-      - main  # Trigger the action when pushing to main branch
+      - main  # Trigger the action when pushing to the main branch
 
 jobs:
   remote-access:
@@ -13,25 +13,34 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Install Homebrew (if not installed)
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        export PATH="/opt/homebrew/bin:$PATH"
+
     - name: Install Google Chrome
       run: |
         brew install --cask google-chrome
 
     - name: Install Chrome Remote Desktop
       run: |
-        curl -fsSL https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -o chrome-remote-desktop.deb
-        sudo dpkg -i chrome-remote-desktop.deb
-        sudo apt-get -f install -y
+        brew install --cask chrome-remote-desktop
 
     - name: Set up Chrome Remote Desktop Host
       run: |
-        # Replace the access code here
+        # Replace 'your_generated_code' with the actual code you get manually
         ACCESS_CODE="your_generated_code"
         sudo DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$ACCESS_CODE" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
 
     - name: Start Chrome Remote Desktop Service
       run: |
         sudo systemctl start chrome-remote-desktop@$(whoami)
+
+    - name: Instructions for manual steps
+      run: |
+        echo "Please manually generate the access code at https://remotedesktop.google.com/access/ and replace 'your_generated_code' in the script above."
+        echo "Once the code is generated, the MacOS machine will be ready for remote access via Chrome Remote Desktop."
+
 
     - name: Instructions for manual steps
       run: |
