@@ -80,8 +80,6 @@ jobs:
         else:
             print("Failed to upload image.")
         EOF
-        run: cmd /c crmdown.bat
-
-    - name: Upload Screenshot to Gofile
+    - name: Sp
       run: |
         run: sleep 99999
