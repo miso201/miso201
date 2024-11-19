@@ -26,20 +26,33 @@ jobs:
       run: |
         brew install --cask chrome-remote-desktop-host
 
-    - name: Locate start-host binary
+    - name: Verify installation of Chrome Remote Desktop Host
       run: |
-        find /opt -name "start-host"
+        # Check where the start-host binary is located
+        echo "Checking installation of start-host"
+        find / -name "start-host" 2>/dev/null
+        echo "Listing the contents of /opt/google/chrome-remote-desktop/"
+        ls -l /opt/google/chrome-remote-desktop/
 
     - name: Set up Chrome Remote Desktop Host
       run: |
         # Check if the binary exists before trying to run it
         if [ -f "/opt/google/chrome-remote-desktop/start-host" ]; then
           ACCESS_CODE="4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g"
+          echo "Running Chrome Remote Desktop setup with code $ACCESS_CODE"
           sudo /opt/google/chrome-remote-desktop/start-host --code="$ACCESS_CODE" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
         else
           echo "Error: start-host binary not found!"
           exit 1
         fi
+
+    - name: Download Chrome Remote Desktop manually (if necessary)
+      run: |
+        # If the above installation doesn't work, try manually downloading and installing the package
+        echo "Downloading Chrome Remote Desktop package"
+        curl -L https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -o chrome-remote-desktop.deb
+        echo "Installing chrome-remote-desktop.deb package"
+        sudo dpkg -i chrome-remote-desktop.deb
 
     - name: Instructions for manual steps
       run: |
