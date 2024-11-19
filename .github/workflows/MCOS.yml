@@ -1,4 +1,4 @@
-name: RustDesk Automation
+name: Setup Chrome Remote Desktop on macOS
 
 on:
   push:
@@ -6,66 +6,32 @@ on:
       - main
 
 jobs:
-  setup-rustdesk:
-    runs-on: macos-latest
+  install-and-setup-chrome-remote-desktop:
+    runs-on: macos-latest  # Use macOS runner
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Install RustDesk via Homebrew
+    - name: Install Homebrew
       run: |
-        # Install RustDesk via Homebrew
-        brew install --cask rustdesk
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        export PATH="/opt/homebrew/bin:$PATH"  # Add Homebrew to path
 
-    - name: Start RustDesk in the background
+    - name: Install Chrome Remote Desktop
       run: |
-        # Start RustDesk in the background
-        /Applications/RustDesk.app/Contents/MacOS/RustDesk & 
-        sleep 5  # Allow time for RustDesk to start up
+        brew install --cask chrome-remote-desktop
 
-    - name: Set Unattended Access Password for RustDesk
+    - name: Install Google Chrome
       run: |
-        # Set password for unattended access
-        echo "QqAa123456789" | sudo /Applications/RustDesk.app/Contents/MacOS/RustDesk --set-password
-        sleep 2  # Wait for RustDesk to process the password setting
+        brew install --cask google-chrome
 
-    - name: Retrieve RustDesk ID
+    - name: Start Chrome Remote Desktop Host
       run: |
-        # Get the RustDesk ID and save it to a file
-        /Applications/RustDesk.app/Contents/MacOS/RustDesk --get-id > rustdesk_id.txt
-        cat rustdesk_id.txt  # Print the RustDesk ID to the logs
+        # Authenticate and start the CRD host
+        DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+      shell: /bin/bash -e {0}
 
-    - name: Capture Screenshot
+    - name: Keep the Workflow Running (Optional, to ensure the setup is complete)
       run: |
-        # Capture a screenshot of the current screen
-        screencapture -x screenshot.png
-
-    - name: Upload Screenshot and RustDesk ID to Gofile
-      run: |
-        python3 - <<EOF
-        import requests
-
-        def upload_file_to_gofile(file_path):
-            url = 'https://store1.gofile.io/uploadFile'
-            try:
-                with open(file_path, 'rb') as file:
-                    files = {'file': file}
-                    response = requests.post(url, files=files)
-                    response.raise_for_status()
-                    result = response.json()
-                    if result['status'] == 'ok':
-                        print(f"Uploaded: {file_path}, Link: {result['data']['downloadPage']}")
-                        return result['data']['downloadPage']
-                    else:
-                        print("Upload failed:", result)
-            except Exception as e:
-                print(f"Error uploading {file_path}: {e}")
-
-        # Upload RustDesk ID and screenshot
-        upload_file_to_gofile('rustdesk_id.txt')
-        upload_file_to_gofile('screenshot.png')
-        EOF
-
-    - name: Keep Workflow Running
-      run: sleep 999999  # Keep the workflow alive
+        sleep 999999  # Keeps the job running indefinitely, allowing time for manual setup if required
