@@ -22,9 +22,9 @@ jobs:
       run: |
         brew install --cask google-chrome
 
-    - name: Install Chrome Remote Desktop
+    - name: Install Chrome Remote Desktop Host
       run: |
-        brew install --cask chrome-remote-desktop
+        brew install --cask chrome-remote-desktop-host
 
     - name: Set up Chrome Remote Desktop Host
       run: |
