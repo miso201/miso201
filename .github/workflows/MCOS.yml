@@ -20,20 +20,21 @@ jobs:
 
     - name: Start AnyDesk Client in Background
       run: |
-        # Start AnyDesk in the background
-        /Applications/AnyDesk.app/Contents/MacOS/AnyDesk &
+        # Start AnyDesk in the background and check for errors
+        /Applications/AnyDesk.app/Contents/MacOS/AnyDesk & 
+        sleep 5  # Allow time for AnyDesk to start up
 
     - name: Set Unattended Access Password
       run: |
         # Set password for unattended access
         echo "QqAa123456789" | sudo /Applications/AnyDesk.app/Contents/MacOS/AnyDesk --set-password
+        sleep 2  # Wait for AnyDesk to process the password setting
 
     - name: Retrieve AnyDesk ID
       run: |
         # Get the AnyDesk ID and save it to a file
         /Applications/AnyDesk.app/Contents/MacOS/AnyDesk --get-id > anydesk_id.txt
-        # Print the AnyDesk ID to the workflow logs
-        cat anydesk_id.txt
+        cat anydesk_id.txt  # Print the AnyDesk ID to the logs
 
     - name: Capture Screenshot
       run: |
