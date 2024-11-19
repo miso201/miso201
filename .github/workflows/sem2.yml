@@ -25,7 +25,7 @@ jobs:
     - name: Start RustDesk
       run: |
         # Start RustDesk in the background (assuming it runs headlessly)
-        nohup rustdesk &
+        rustdesk
 
     - name: Capture Screenshot on macOS
       run: |
