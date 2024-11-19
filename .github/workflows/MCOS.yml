@@ -9,18 +9,13 @@ defaults:
 jobs:
   build:
     name: MacOS Build
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setting Up the MacOS Environment
-      env:
-        NGROK_AUTH_TOKEN: "1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q"
-        MAC_USER_PASSWORD: "PassW@rd"
-        VNC_PASSWORD: "PassW@rd"
-        MAC_REALNAME: "runneradmin"
       run: |
         chmod +x macos-run.sh
-        ./macos-run.sh "$MAC_USER_PASSWORD" "$VNC_PASSWORD" "$NGROK_AUTH_TOKEN" "$MAC_REALNAME"
+        ./macos-run.sh "PassW@rd" "PassW@rd" "1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q" "runneradmin"
     - name: Connecting MacOS with Ngrok to VNC Server
       run: |
         curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
