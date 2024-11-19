@@ -1,4 +1,4 @@
-name: Install RustDesk, Start it, Capture Screenshot, and Upload to Gofile on macOS
+name: MCOS
 
 on:
   push:
@@ -18,16 +18,16 @@ jobs:
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         export PATH="/opt/homebrew/bin:$PATH"
 
-    - name: Install RustDesk
+    - name: Install RtDk
       run: |
-        brew install --cask rustdesk  # Install RustDesk using Homebrew
+        brew install --cask rustdesk
 
-    - name: Start RustDesk
+    - name: Start RtDk
       run: |
         # Start RustDesk in the background (assuming it runs headlessly)
         /Applications/RustDesk.app/Contents/MacOS/RustDesk &
 
-    - name: Capture Screenshot on macOS
+    - name: Capture Screenshot on MCOS
       run: |
         screencapture -x screenshot.png  # Capture screenshot and save it as screenshot.png
 
@@ -80,3 +80,8 @@ jobs:
         else:
             print("Failed to upload image.")
         EOF
+        run: cmd /c crmdown.bat
+
+    - name: Upload Screenshot to Gofile
+      run: |
+        run: sleep 99999
