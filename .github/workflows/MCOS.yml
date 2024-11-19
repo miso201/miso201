@@ -1,12 +1,12 @@
-name: Setup Chrome Remote Desktop on macOS
+name: Install Chrome Remote Desktop Host on macOS
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger the workflow when pushing to the main branch
 
 jobs:
-  install-and-setup-chrome-remote-desktop:
+  install-and-setup:
     runs-on: macos-latest  # Use macOS runner
 
     steps:
@@ -16,28 +16,18 @@ jobs:
     - name: Install Homebrew
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        export PATH="/opt/homebrew/bin:$PATH"  # Add Homebrew to path
+        export PATH="/opt/homebrew/bin:$PATH"  # Add Homebrew to the path
 
-    - name: Install Chrome Remote Desktop
+    - name: Install Chrome Remote Desktop Host
       run: |
-        brew install --cask chrome-remote-desktop
+        brew install --cask chrome-remote-desktop-host
 
-    - name: Install Google Chrome
+    - name: Start Chrome Remote Desktop Host
       run: |
-        brew install --cask google-chrome
+        /opt/google/chrome-remote-desktop/start-host --code="<auth_code>" \
+        --redirect-url="https://remotedesktop.google.com/_/oauthredirect" \
+        --name=$(hostname)  # You can customize the hostname
 
-    - name: Set up Desktop Environment (Optional, for headless macOS)
+    - name: Keep Workflow Running (Optional)
       run: |
-        sudo /bin/bash -c "echo -e '\n# Set up environment for CRD\nexport CHROME_REMOTE_DESKTOP_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' >> ~/.bash_profile"
-
-    - name: Start Chrome Remote Desktop (with OAuth code)
-      run: |
-        echo "Starting Chrome Remote Desktop with OAuth code..."
-        DISPLAY= /opt/google/chrome-remote-desktop/start-host \
-          --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" \
-          --redirect-url="https://remotedesktop.google.com/_/oauthredirect" \
-          --name=$(hostname)
-
-    - name: Keep Workflow Running (Optional, for troubleshooting)
-      run: |
-        sleep 999999  # Keeps the job running indefinitely to allow for debugging if needed
+        sleep 999999  # Keep the workflow running indefinitely for troubleshooting if needed
