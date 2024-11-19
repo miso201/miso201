@@ -18,18 +18,17 @@ jobs:
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         export PATH="/opt/homebrew/bin:$PATH"
 
-    - name: Install RtDk
+    - name: Install RustDesk
       run: |
         brew install --cask rustdesk
 
-    - name: Start RtDk
+    - name: Start RustDesk in background
       run: |
-        # Start RustDesk in the background (assuming it runs headlessly)
-        /Applications/RustDesk.app/Contents/MacOS/RustDesk &
+       /Applications/RustDesk.app/Contents/MacOS/RustDesk &
 
-    - name: Capture Screenshot on MCOS
+    - name: Capture Screenshot
       run: |
-        screencapture -x screenshot.png  # Capture screenshot and save it as screenshot.png
+        screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
 
     - name: Install Python and Create Virtual Environment
       run: |
@@ -80,6 +79,6 @@ jobs:
         else:
             print("Failed to upload image.")
         EOF
-    - name: Sp
-      run: |
-        run: sleep 99999
+
+    - name: Keep the job running
+      run: sleep 999999  # Keep the workflow running indefinitely
