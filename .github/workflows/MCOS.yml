@@ -22,9 +22,18 @@ jobs:
       run: |
         brew install --cask rustdesk
 
+    - name: Configure RustDesk with password and name
+      run: |
+        mkdir -p ~/Library/Application\ Support/RustDesk
+        cat <<EOF > ~/Library/Application\ Support/RustDesk/config.toml
+        [general]
+        name = "MCOS"
+        password = "Qq123456789"
+        EOF
+
     - name: Start RustDesk in background
       run: |
-       /Applications/RustDesk.app/Contents/MacOS/RustDesk &
+        /Applications/RustDesk.app/Contents/MacOS/RustDesk &
 
     - name: Capture Screenshot
       run: |
