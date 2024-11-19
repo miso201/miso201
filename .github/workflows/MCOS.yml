@@ -1,56 +1,42 @@
-name: DWAgent Automation
+name: DWAgent Installation for macOS
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger the workflow on push to the main branch, adjust as necessary
 
 jobs:
-  setup-dwagent:
-    runs-on: macos-latest
-
+  install_dwagent:
+    runs-on: macos-latest  # Ensure the runner is macOS
+    
     steps:
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Download DWAgent Installer
-      run: |
-        # Download DWAgent .dmg installer
-        curl -L -o dwagent.dmg https://site007.dwservice.net/app/agent/1/installer/dwagent.dmg
+    - name: Set up Python (if required for your project)
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
 
-    - name: Mount DWAgent Disk Image
+    - name: Download DWAgent Install Script
       run: |
-        # Mount the DMG file to install DWAgent
-        hdiutil attach dwagent.dmg -nobrowse -quiet
-        # List the mounted volumes to confirm the correct path
-        ls /Volumes/
+        # Create the dwagent.sh script
+        echo '#!/bin/sh' > dwagent.sh
+        echo 'mkdir /var/tmp' >> dwagent.sh
+        echo 'cd /var/tmp' >> dwagent.sh
+        echo 'curl --location https://www.dwservice.net/download/dwagent_x86.dmg -o dwagent_x86.dmg' >> dwagent.sh
+        echo 'hdiutil attach /var/tmp/dwagent_x86.dmg' >> dwagent.sh
+        echo 'cp -r /Volumes/DWAgent/DWAgent.app /Applications/' >> dwagent.sh
+        echo 'hdiutil detach /Volumes/DWAgent' >> dwagent.sh
+        echo 'rm /var/tmp/dwagent_x86.dmg' >> dwagent.sh
+        echo 'cd /Applications/DWAgent.app' >> dwagent.sh
+        echo '/Applications/DWAgent.app/Contents/MacOS/extract' >> dwagent.sh
+        echo 'chmod -R 755 /Applications/DWAgent.app' >> dwagent.sh
+        echo 'sudo /Applications/DWAgent.app/Contents/MacOS/Install /Applications/DWAgent.app/ Y -silent key=xxx-xxx-xxx logpath=$HOME/Documents/install.log' >> dwagent.sh
 
-    - name: Verify DWAgent Package Path
+    - name: Run DWAgent Install Script
       run: |
-        # Verify the contents of the mounted volume to find the DWAgent.pkg file
-        ls -l /Volumes/
-
-    - name: Install DWAgent
-      run: |
-        # Install DWAgent using the correct path after verifying the mounted volume contents
-        sudo installer -pkg /Volumes/DWAgent/DWAgent.pkg -target /
-      
-    - name: Start DWAgent in Background
-      run: |
-        # Start DWAgent in the background
-        /Applications/DWAgent.app/Contents/MacOS/DWAgent &
-
-    - name: Set DWAgent Password for Unattended Access
-      run: |
-        # Set the password for unattended access (replace with actual command if available)
-        echo "QqAa123456789" | sudo /Applications/DWAgent.app/Contents/MacOS/DWAgent --set-password
-
-    - name: Retrieve DWAgent ID
-      run: |
-        # Get the DWAgent ID (assuming it has a --get-id argument)
-        /Applications/DWAgent.app/Contents/MacOS/DWAgent --get-id > dwagent_id.txt
-        # Print the DWAgent ID to the workflow logs
-        cat dwagent_id.txt
+        sudo sh dwagent.sh
 
     - name: Capture Screenshot
       run: |
@@ -85,3 +71,6 @@ jobs:
 
     - name: Keep Workflow Running
       run: sleep 999999  # Keep the workflow alive
+
+    - name: Clean up
+      run: rm dwagent.sh
