@@ -1,0 +1,75 @@
+name: Install RustDesk, Start it, Capture Screenshot, and Upload to Gofile on macOS
+
+on:
+  push:
+    branches:
+      - main  # Trigger when pushing to the main branch
+
+jobs:
+  install-and-upload:
+    runs-on: macos-latest  # Use macOS as the environment
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Homebrew (if not installed)
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        export PATH="/opt/homebrew/bin:$PATH"
+
+    - name: Install RustDesk
+      run: |
+        brew install --cask rustdesk  # Install RustDesk using Homebrew
+
+    - name: Start RustDesk
+      run: |
+        # Start RustDesk in the background (assuming it runs headlessly)
+        nohup rustdesk &
+
+    - name: Capture Screenshot on macOS
+      run: |
+        screencapture -x screenshot.png  # Capture screenshot and save it as screenshot.png
+
+    - name: Install Python and dependencies
+      run: |
+        brew install python
+        python3 -m pip install --upgrade pip
+        python3 -m pip install requests
+
+    - name: Upload Screenshot to Gofile
+      run: |
+        python3 - <<EOF
+        import requests
+
+        def upload_image_to_gofile(img_filename):
+            url = 'https://store1.gofile.io/uploadFile'
+            try:
+                with open(img_filename, 'rb') as img_file:
+                    files = {'file': img_file}
+                    response = requests.post(url, files=files)
+                    response.raise_for_status()  # Throws error for HTTP issues
+                    result = response.json()
+
+                    if result['status'] == 'ok':
+                        download_page = result['data']['downloadPage']
+                        with open('show.bat', 'a') as bat_file:
+                            bat_file.write(f'\necho Avica Remote ID : {download_page}')
+                        print(f"Image uploaded successfully! Download link: {download_page}")
+                        return download_page
+                    else:
+                        print("Upload error:", result.get('status'))
+                        return None
+            except Exception as e:
+                print(f"Failed to upload image: {e}")
+                return None
+
+        # Provide the correct path to your screenshot image
+        image_path = 'screenshot.png'  # Path to the screenshot captured earlier
+        download_link = upload_image_to_gofile(image_path)
+
+        if download_link:
+            print(f"Access your screenshot at: {download_link}")
+        else:
+            print("Failed to upload image.")
+        EOF
