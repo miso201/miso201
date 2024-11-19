@@ -19,12 +19,10 @@ jobs:
         if ! command -v brew &>/dev/null; then
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
-        brew install xquartz ngrok tigervnc
-
-    - name: Download and Install VNC Server (TigerVNC)
-      run: |
-        # Install TigerVNC server and configure it
-        vncserver :1 -geometry 1280x1024 -depth 24
+        # Install VNC Viewer using Homebrew Cask
+        brew install --cask tigervnc-viewer
+        # Install Ngrok
+        brew install ngrok
 
     - name: Setup Ngrok with Authtoken
       run: |
@@ -40,7 +38,7 @@ jobs:
       run: |
         sleep 5  # Wait for Ngrok to establish a tunnel
 
-    - name: Open VNC Server and Capture Screenshot
+    - name: Open VNC Viewer and Capture Screenshot
       run: |
         # Capture screenshot of the VNC server window
         screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
