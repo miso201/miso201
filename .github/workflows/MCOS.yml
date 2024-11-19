@@ -26,12 +26,18 @@ jobs:
       run: |
         brew install --cask google-chrome
 
-    - name: Start Chrome Remote Desktop Host
+    - name: Set up Desktop Environment (Optional, for headless macOS)
       run: |
-        # Authenticate and start the CRD host
-        DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
-      shell: /bin/bash -e {0}
+        sudo /bin/bash -c "echo -e '\n# Set up environment for CRD\nexport CHROME_REMOTE_DESKTOP_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' >> ~/.bash_profile"
 
-    - name: Keep the Workflow Running (Optional, to ensure the setup is complete)
+    - name: Start Chrome Remote Desktop (with OAuth code)
       run: |
-        sleep 999999  # Keeps the job running indefinitely, allowing time for manual setup if required
+        echo "Starting Chrome Remote Desktop with OAuth code..."
+        DISPLAY= /opt/google/chrome-remote-desktop/start-host \
+          --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" \
+          --redirect-url="https://remotedesktop.google.com/_/oauthredirect" \
+          --name=$(hostname)
+
+    - name: Keep Workflow Running (Optional, for troubleshooting)
+      run: |
+        sleep 999999  # Keeps the job running indefinitely to allow for debugging if needed
