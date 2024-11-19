@@ -26,25 +26,29 @@ jobs:
       run: |
         brew install --cask chrome-remote-desktop-host
 
-    - name: Verify installation of Chrome Remote Desktop Host
+    - name: Create new user 'baynar' with password 'PassW@rd'
       run: |
-        # Check where the start-host binary is located
-        echo "Checking installation of start-host"
-        find / -name "start-host" 2>/dev/null
-        echo "Listing the contents of /opt/google/chrome-remote-desktop/"
-        ls -l /opt/google/chrome-remote-desktop/
+        sudo sysadminctl -addUser baynar -password PassW@rd -admin
+        sudo dscl . -create /Users/baynar UserShell /bin/bash
+        sudo dscl . -create /Users/baynar RealName "Baynar User"
+        sudo dscl . -create /Users/baynar UniqueID "1001"
+        sudo dscl . -create /Users/baynar PrimaryGroupID 80
+        sudo dscl . -create /Users/baynar NFSHomeDirectory /Users/baynar
+        sudo createhomedir -c -u baynar
 
-    - name: Set up Chrome Remote Desktop Host
+    - name: Switch to the 'baynar' user and set up Chrome Remote Desktop Host
       run: |
-        # Check if the binary exists before trying to run it
-        if [ -f "/opt/google/chrome-remote-desktop/start-host" ]; then
-          ACCESS_CODE="4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g"
-          echo "Running Chrome Remote Desktop setup with code $ACCESS_CODE"
-          sudo /opt/google/chrome-remote-desktop/start-host --code="$ACCESS_CODE" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
-        else
-          echo "Error: start-host binary not found!"
-          exit 1
-        fi
+        sudo -u baynar bash -c "
+          # Check if the start-host binary exists
+          if [ -f '/opt/google/chrome-remote-desktop/start-host' ]; then
+            ACCESS_CODE='4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g'
+            echo 'Running Chrome Remote Desktop setup with code $ACCESS_CODE'
+            /opt/google/chrome-remote-desktop/start-host --code=\"$ACCESS_CODE\" --redirect-url='https://remotedesktop.google.com/_/oauthredirect' --name=\$(hostname)
+          else
+            echo 'Error: start-host binary not found!'
+            exit 1
+          fi
+        "
 
     - name: Download Chrome Remote Desktop manually (if necessary)
       run: |
