@@ -44,7 +44,24 @@ jobs:
 
     - name: Wait for 15 seconds
       run: |
-        sleep 15  # Wait for 15 seconds before capturing the screenshot
+        sleep 15  # Wait for 15 seconds before simulating mouse clicks
+
+    - name: Simulate Click on "Run" (Using Python and PyAutoGUI)
+      run: |
+        python3 - <<EOF
+        import pyautogui
+        import time
+
+        # Allow time for the application to fully load
+        time.sleep(5)  # Extra time to wait if necessary
+
+        # Simulate mouse click on the "Run" button (coordinates should be adjusted based on your screen)
+        # You will need to manually find the X and Y coordinates of the "Run" button on your screen
+        pyautogui.click(x=500, y=500)  # Example coordinates for the "Run" button, adjust as needed
+
+        # Wait for the next action to complete
+        time.sleep(5)  # Wait for the next screen or dialog to load
+        EOF
 
     - name: Capture Screenshot
       run: |
