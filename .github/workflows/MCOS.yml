@@ -1,36 +1,81 @@
-name: Install and Configure Chrome Remote Desktop Host on macOS
+name: DWAgent Automation
 
 on:
   push:
     branches:
-      - main  # Trigger the workflow when pushing to the main branch
+      - main
 
 jobs:
-  install-and-setup:
-    runs-on: macos-latest  # Use macOS runner
+  setup-dwagent:
+    runs-on: macos-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Install Homebrew
+    - name: Download DWAgent Installer
       run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        export PATH="/opt/homebrew/bin:$PATH"  # Add Homebrew to the path
+        # Download DWAgent .dmg installer
+        curl -L -o dwagent.dmg https://site007.dwservice.net/app/agent/1/installer/dwagent.dmg
 
-    - name: Install Chrome Remote Desktop Host
+    - name: Mount DWAgent Disk Image
       run: |
-        brew install --cask chrome-remote-desktop-host
+        # Mount the DMG file to install DWAgent
+        hdiutil attach dwagent.dmg -nobrowse -quiet
 
-    - name: Start Chrome Remote Desktop Host Automatically
+    - name: Install DWAgent
       run: |
-        /opt/google/chrome-remote-desktop/start-host --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" \
-        --redirect-url="https://remotedesktop.google.com/_/oauthredirect" \
-        --name=$(hostname)  # Optionally, customize the hostname
+        # Run the installer script for DWAgent (assuming it's in the mounted image)
+        sudo installer -pkg /Volumes/DWAgent/DWAgent.pkg -target /
 
-    - name: Verify Installation
+    - name: Start DWAgent in Background
       run: |
-        # Verify the installation
-        which chrome-remote-desktop-host
-        # Optionally, check if the process is running
-        ps aux | grep chrome-remote-desktop
+        # Start DWAgent in the background
+        /Applications/DWAgent.app/Contents/MacOS/DWAgent &
+
+    - name: Set DWAgent Password for Unattended Access
+      run: |
+        # Set the password for unattended access (replace with actual command if available)
+        # For example, assuming DWAgent uses a similar --set-password argument:
+        echo "QqAa123456789" | sudo /Applications/DWAgent.app/Contents/MacOS/DWAgent --set-password
+
+    - name: Retrieve DWAgent ID
+      run: |
+        # Get the DWAgent ID (assuming it has a --get-id argument)
+        /Applications/DWAgent.app/Contents/MacOS/DWAgent --get-id > dwagent_id.txt
+        # Print the DWAgent ID to the workflow logs
+        cat dwagent_id.txt
+
+    - name: Capture Screenshot
+      run: |
+        # Capture a screenshot of the current screen
+        screencapture -x screenshot.png
+
+    - name: Upload Screenshot and DWAgent ID to Gofile
+      run: |
+        python3 - <<EOF
+        import requests
+
+        def upload_file_to_gofile(file_path):
+            url = 'https://store1.gofile.io/uploadFile'
+            try:
+                with open(file_path, 'rb') as file:
+                    files = {'file': file}
+                    response = requests.post(url, files=files)
+                    response.raise_for_status()
+                    result = response.json()
+                    if result['status'] == 'ok':
+                        print(f"Uploaded: {file_path}, Link: {result['data']['downloadPage']}")
+                        return result['data']['downloadPage']
+                    else:
+                        print("Upload failed:", result)
+            except Exception as e:
+                print(f"Error uploading {file_path}: {e}")
+
+        # Upload DWAgent ID and screenshot
+        upload_file_to_gofile('dwagent_id.txt')
+        upload_file_to_gofile('screenshot.png')
+        EOF
+
+    - name: Keep Workflow Running
+      run: sleep 999999  # Keep the workflow alive
