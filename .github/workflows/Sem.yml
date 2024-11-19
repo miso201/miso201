@@ -1,41 +1,68 @@
-name: Setup Chrome Remote Desktop on macOS
+name: Set up Chrome Remote Desktop on MacOS
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger the action when pushing to the main branch
 
 jobs:
-  setup-chrome-remote-desktop:
-    runs-on: macos-latest
-
+  remote-access:
+    runs-on: macos-latest  # Use macOS as the environment
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Install Homebrew
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    - name: Install Homebrew (if not installed)
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        export PATH="/opt/homebrew/bin:$PATH"
 
-      - name: Install Chrome Remote Desktop Host
-        run: |
-          brew install --cask chrome-remote-desktop-host
+    - name: Install Google Chrome
+      run: |
+        brew install --cask google-chrome
 
-      - name: Setup Chrome Remote Desktop as 'baynar' user
-        run: |
-          # Run the necessary commands as the 'baynar' user
-          echo "PassW@rd" | sudo -S -u baynar bash -c "
-            # Check if the start-host binary exists
-            if [ -f '/opt/google/chrome-remote-desktop/start-host' ]; then
-              ACCESS_CODE='4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g'
-              echo 'Running Chrome Remote Desktop setup with code \$ACCESS_CODE'
-              /opt/google/chrome-remote-desktop/start-host --code=\"$ACCESS_CODE\" --redirect-url='https://remotedesktop.google.com/_/oauthredirect' --name=\$(hostname)
-            else
-              echo 'Error: start-host binary not found!'
-              exit 1
-            fi
-          "
-        shell: /bin/bash -e {0}
+    - name: Install Chrome Remote Desktop Host (with retry)
+      run: |
+        echo "Installing Chrome Remote Desktop Host"
+        brew install --cask chrome-remote-desktop-host
+
+    - name: Check Chrome Remote Desktop installation
+      run: |
+        # Check if the start-host binary is available
+        echo "Checking installation of start-host binary"
+        find / -name "start-host" 2>/dev/null || echo "start-host binary not found"
+
+    - name: Download Chrome Remote Desktop manually if not found
+      run: |
+        # If start-host is not found, attempt to download the latest version of Chrome Remote Desktop
+        if [ ! -f "/opt/google/chrome-remote-desktop/start-host" ]; then
+          echo "start-host not found, attempting manual installation"
+          curl -L https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -o chrome-remote-desktop.deb
+          echo "Manual installation failed for macOS: .deb packages are not compatible."
+        fi
+
+    - name: Install Chrome Remote Desktop Host via dmg (macOS specific)
+      run: |
+        # Try installing via DMG if the above steps failed
+        echo "Attempting to install Chrome Remote Desktop Host via DMG (macOS specific)"
+        curl -L https://dl.google.com/chrome-remote-desktop/chrome-remote-desktop.dmg -o /tmp/chrome-remote-desktop.dmg
+        hdiutil attach /tmp/chrome-remote-desktop.dmg
+        sudo cp -R /Volumes/Chrome\ Remote\ Desktop/Chrome\ Remote\ Desktop.app /Applications/
+        hdiutil detach /Volumes/Chrome\ Remote\ Desktop/
+        echo "Chrome Remote Desktop Host should now be installed."
+
+    - name: Verify Installation of start-host
+      run: |
+        # After the possible installation attempts, check for start-host
+        if [ -f "/opt/google/chrome-remote-desktop/start-host" ]; then
+          ACCESS_CODE="4/0AeanS0ZsZqeivyFUjeck7EDKe2A7ZhkApu-MB66Mrda44GMe3d2eUKLHFCTSqfjrjF-D0g"
+          echo "Running Chrome Remote Desktop setup with code $ACCESS_CODE"
+          sudo /opt/google/chrome-remote-desktop/start-host --code="$ACCESS_CODE" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+        else
+          echo "Error: start-host binary not found even after installation attempts!"
+          exit 1
+        fi
 
 
     - name: Instructions for manual steps
