@@ -40,37 +40,57 @@ jobs:
 
     - name: Capture Screenshot
       run: |
-        # Capture a screenshot of the current screen
-        screencapture -x screenshot.png
+        screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
 
-    - name: Upload Screenshot and DWAgent ID to Gofile
+    - name: Install Python and Create Virtual Environment
       run: |
+        brew install python  # Ensure Python is installed
+        python3 -m venv venv  # Create a virtual environment
+        source venv/bin/activate  # Activate the virtual environment
+
+    - name: Install Python Dependencies
+      run: |
+        source venv/bin/activate  # Activate virtual environment
+        pip install --upgrade pip  # Upgrade pip
+        pip install requests  # Install required dependencies
+
+    - name: Upload Screenshot to Gofile
+      run: |
+        source venv/bin/activate  # Ensure virtual environment is activated
         python3 - <<EOF
         import requests
 
-        def upload_file_to_gofile(file_path):
+        def upload_image_to_gofile(img_filename):
             url = 'https://store1.gofile.io/uploadFile'
             try:
-                with open(file_path, 'rb') as file:
-                    files = {'file': file}
+                with open(img_filename, 'rb') as img_file:
+                    files = {'file': img_file}
                     response = requests.post(url, files=files)
-                    response.raise_for_status()
+                    response.raise_for_status()  # Throws error for HTTP issues
                     result = response.json()
-                    if result['status'] == 'ok':
-                        print(f"Uploaded: {file_path}, Link: {result['data']['downloadPage']}")
-                        return result['data']['downloadPage']
-                    else:
-                        print("Upload failed:", result)
-            except Exception as e:
-                print(f"Error uploading {file_path}: {e}")
 
-        # Upload DWAgent ID and screenshot
-        upload_file_to_gofile('dwagent_id.txt')
-        upload_file_to_gofile('screenshot.png')
+                    if result['status'] == 'ok':
+                        download_page = result['data']['downloadPage']
+                        with open('show.bat', 'a') as bat_file:
+                            bat_file.write(f'\necho Avica Remote ID : {download_page}')
+                        print(f"Image uploaded successfully! Download link: {download_page}")
+                        return download_page
+                    else:
+                        print("Upload error:", result.get('status'))
+                        return None
+            except Exception as e:
+                print(f"Failed to upload image: {e}")
+                return None
+
+        # Provide the correct path to your screenshot image
+        image_path = 'screenshot.png'  # Path to the screenshot captured earlier
+        download_link = upload_image_to_gofile(image_path)
+
+        if download_link:
+            print(f"Access your screenshot at: {download_link}")
+        else:
+            print("Failed to upload image.")
         EOF
 
-    - name: Keep Workflow Running
-      run: sleep 999999  # Keep the workflow alive
-
-    - name: Clean up
-      run: rm dwagent.sh
+    - name: Keep the job running
+      run: sleep 999999  # Keep the workflow running indefinitely
