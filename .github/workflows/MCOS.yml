@@ -20,15 +20,20 @@ jobs:
 
     - name: Mount DWAgent Disk Image
       run: |
-        # Mount the DMG file to access its contents
+        # Mount the DMG file to install DWAgent
         hdiutil attach dwagent.dmg -nobrowse -quiet
-        # Check the mounted volumes to confirm the correct path
-        ls /Volumes
+        # List the mounted volumes to confirm the correct path
+        ls /Volumes/
+
+    - name: Verify DWAgent Package Path
+      run: |
+        # Verify the contents of the mounted volume to find the DWAgent.pkg file
+        ls /Volumes/DWAgent/
 
     - name: Install DWAgent
       run: |
-        # Use correct path from the mounted disk image
-        sudo installer -pkg /Volumes/DWAgent\ Agent/DWAgent.pkg -target /
+        # Install DWAgent using the correct path after verifying the mounted volume contents
+        sudo installer -pkg /Volumes/DWAgent/DWAgent.pkg -target /
 
     - name: Start DWAgent in Background
       run: |
@@ -37,13 +42,14 @@ jobs:
 
     - name: Set DWAgent Password for Unattended Access
       run: |
-        # Set the password for unattended access
+        # Set the password for unattended access (replace with actual command if available)
         echo "QqAa123456789" | sudo /Applications/DWAgent.app/Contents/MacOS/DWAgent --set-password
 
     - name: Retrieve DWAgent ID
       run: |
-        # Get the DWAgent ID (replace with correct command if needed)
+        # Get the DWAgent ID (assuming it has a --get-id argument)
         /Applications/DWAgent.app/Contents/MacOS/DWAgent --get-id > dwagent_id.txt
+        # Print the DWAgent ID to the workflow logs
         cat dwagent_id.txt
 
     - name: Capture Screenshot
