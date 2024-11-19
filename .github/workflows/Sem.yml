@@ -1,0 +1,38 @@
+name: Sem
+
+on:
+  push:
+    branches:
+      - main  # Trigger the action when pushing to main branch
+
+jobs:
+  remote-access:
+    runs-on: macos-latest  # Use macOS as the environment
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Google Chrome
+      run: |
+        brew install --cask google-chrome
+
+    - name: Install Chrome Remote Desktop
+      run: |
+        curl -fsSL https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -o chrome-remote-desktop.deb
+        sudo dpkg -i chrome-remote-desktop.deb
+        sudo apt-get -f install -y
+
+    - name: Set up Chrome Remote Desktop Host
+      run: |
+        # Replace the access code here
+        ACCESS_CODE="your_generated_code"
+        sudo DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$ACCESS_CODE" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+
+    - name: Start Chrome Remote Desktop Service
+      run: |
+        sudo systemctl start chrome-remote-desktop@$(whoami)
+
+    - name: Instructions for manual steps
+      run: |
+        run: sleep 99999
