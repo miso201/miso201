@@ -18,10 +18,10 @@ jobs:
         # Install AnyDesk via Homebrew
         brew install --cask anydesk
 
-    - name: Start AnyDesk Client
+    - name: Start AnyDesk Client in Background
       run: |
-        # Launch AnyDesk
-        open -a AnyDesk
+        # Start AnyDesk in the background
+        /Applications/AnyDesk.app/Contents/MacOS/AnyDesk &
 
     - name: Set Unattended Access Password
       run: |
