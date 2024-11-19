@@ -38,6 +38,10 @@ jobs:
       run: |
         sudo sh dwagent.sh
 
+    - name: Open DWAgent (if GUI is available)
+      run: |
+        open /Applications/DWAgent.app  # Try to open the DWAgent application (Note: GUI apps won't work in GitHub Actions)
+
     - name: Capture Screenshot
       run: |
         screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
