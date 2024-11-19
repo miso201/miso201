@@ -26,13 +26,15 @@ jobs:
 
     - name: Setup Ngrok with Authtoken
       run: |
-        # Install Ngrok and authenticate using the provided authtoken
+        # Download and unzip ngrok
         curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
         unzip ngrok.zip
-        mv ngrok /usr/local/bin/
-        ./ngrok authtoken 1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q
+        chmod +x ngrok  # Make ngrok executable
+        mv ngrok /usr/local/bin/  # Move ngrok to a directory included in the PATH
+        # Authenticate Ngrok with your authtoken
+        ngrok authtoken 1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q
         # Start Ngrok to expose VNC server on port 5901
-        nohup ./ngrok tcp 5901 &
+        nohup ngrok tcp 5901 &
 
     - name: Wait for Ngrok to start
       run: |
