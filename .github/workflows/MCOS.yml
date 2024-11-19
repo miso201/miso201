@@ -1,41 +1,28 @@
-name: Connect to macOS via VNC using Ngrok
+name: MacOS Virtual Machine
+on: 
+  workflow_dispatch:
 
-on:
-  push:
-    branches:
-      - main
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  connect-to-mac:
-    runs-on: macos-latest
-
+  build:
+    name: MacOS Build
+    runs-on: macos-13
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Ngrok
+    - uses: actions/checkout@v2
+    - name: Setting Up the MacOS Environment
+      env:
+        NGROK_AUTH_TOKEN: "1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q"
+        MAC_USER_PASSWORD: "PassW@rd"
+        VNC_PASSWORD: "PassW@rd"
+        MAC_REALNAME: "runneradmin"
       run: |
-        # Install Ngrok
-        curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
-        unzip ngrok.zip
-        ./ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}  # Correctly pass the token as an argument
-
-    - name: Start Ngrok for VNC tunnel
+        chmod +x macos-run.sh
+        ./macos-run.sh "$MAC_USER_PASSWORD" "$VNC_PASSWORD" "$NGROK_AUTH_TOKEN" "$MAC_REALNAME"
+    - name: Connecting MacOS with Ngrok to VNC Server
       run: |
-        # Start Ngrok to expose VNC port (usually 5900)
-        ./ngrok tcp ${{ secrets.VNC_HOST }}:${{ secrets.VNC_PORT }} &
-
-    - name: Wait for Ngrok to start
-      run: sleep 10
-
-    - name: Retrieve Ngrok URL
-      run: |
-        # Fetch the Ngrok URL
-        NGROK_URL=$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
-        echo "Ngrok URL: $NGROK_URL"
-        
-    - name: Connect to VNC using Ngrok URL
-      run: |
-        # Install VNC client and connect (requires 'tigervnc' or similar)
-        brew install tigervnc-viewer
-        vncviewer $NGROK_URL -passwd ${{ secrets.VNC_PASSWORD }}
+        curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
+    - name: Keep Running MacOS System and keepAlive
+      uses: mxschmitt/action-tmate@v2
