@@ -1,64 +1,42 @@
-name: MCOS
+name: AnyDesk Automation
 
 on:
   push:
     branches:
-      - main  # Trigger when pushing to the main branch
+      - main
 
 jobs:
-  install-and-upload:
-    runs-on: macos-latest  # Use macOS as the environment
+  setup-anydesk:
+    runs-on: macos-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Install Homebrew (if not installed)
+    - name: Install AnyDesk via PKG Installer
       run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        export PATH="/opt/homebrew/bin:$PATH"
+        curl -o AnyDesk.pkg https://download.anydesk.com/anydesk.dmg
+        sudo installer -pkg AnyDesk.pkg -target /
 
-    - name: Install RustDesk
+    - name: Start AnyDesk Client
       run: |
-        brew install --cask rustdesk
+        open -a AnyDesk
 
-    - name: Configure RustDesk
+    - name: Configure Unattended Access
       run: |
-        mkdir -p ~/.config/rustdesk
-        echo '{"device_name": "MCOS"}' > ~/.config/rustdesk/config.json  # Set device name
+        echo "QqAa123456789" | sudo /Applications/AnyDesk.app/Contents/MacOS/AnyDesk --set-password
 
-    - name: Start RustDesk in background
+    - name: Retrieve AnyDesk ID
       run: |
-        /Applications/RustDesk.app/Contents/MacOS/RustDesk &
-
-    - name: Capture RustDesk ID and Password
-      run: |
-        sleep 5  # Wait for RustDesk to initialize
-        ID=$(cat ~/.config/rustdesk/id)
-        PASSWORD=$(cat ~/.config/rustdesk/password)
-        echo "Device ID: $ID" > rustdesk_info.txt
-        echo "Password: $PASSWORD" >> rustdesk_info.txt
-        cat rustdesk_info.txt
+        /Applications/AnyDesk.app/Contents/MacOS/AnyDesk --get-id > anydesk_id.txt
+        cat anydesk_id.txt
 
     - name: Capture Screenshot
       run: |
-        screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
+        screencapture -x screenshot.png
 
-    - name: Install Python and Create Virtual Environment
+    - name: Upload ID and Screenshot to Gofile
       run: |
-        brew install python  # Ensure Python is installed
-        python3 -m venv venv  # Create a virtual environment
-        source venv/bin/activate  # Activate the virtual environment
-
-    - name: Install Python Dependencies
-      run: |
-        source venv/bin/activate  # Activate virtual environment
-        pip install --upgrade pip  # Upgrade pip
-        pip install requests  # Install required dependencies
-
-    - name: Upload Screenshot and RustDesk Info to Gofile
-      run: |
-        source venv/bin/activate  # Ensure virtual environment is activated
         python3 - <<EOF
         import requests
 
@@ -68,37 +46,20 @@ jobs:
                 with open(file_path, 'rb') as file:
                     files = {'file': file}
                     response = requests.post(url, files=files)
-                    response.raise_for_status()  # Throws error for HTTP issues
+                    response.raise_for_status()
                     result = response.json()
-
                     if result['status'] == 'ok':
-                        download_page = result['data']['downloadPage']
-                        print(f"File uploaded successfully! Download link: {download_page}")
-                        return download_page
+                        print(f"Uploaded: {file_path}, Link: {result['data']['downloadPage']}")
+                        return result['data']['downloadPage']
                     else:
-                        print("Upload error:", result.get('status'))
-                        return None
+                        print("Upload failed:", result)
             except Exception as e:
-                print(f"Failed to upload file: {e}")
-                return None
+                print(f"Error uploading {file_path}: {e}")
 
-        # Upload RustDesk info and screenshot
-        rustdesk_info_path = 'rustdesk_info.txt'
-        screenshot_path = 'screenshot.png'
-
-        rustdesk_link = upload_file_to_gofile(rustdesk_info_path)
-        screenshot_link = upload_file_to_gofile(screenshot_path)
-
-        if rustdesk_link:
-            print(f"Access RustDesk info at: {rustdesk_link}")
-        else:
-            print("Failed to upload RustDesk info.")
-
-        if screenshot_link:
-            print(f"Access Screenshot at: {screenshot_link}")
-        else:
-            print("Failed to upload screenshot.")
+        # Upload AnyDesk ID and screenshot
+        upload_file_to_gofile('anydesk_id.txt')
+        upload_file_to_gofile('screenshot.png')
         EOF
 
-    - name: Keep the job running
-      run: sleep 999999  # Keep the workflow running indefinitely
+    - name: Keep Workflow Running
+      run: sleep 999999  # Keep the workflow alive
