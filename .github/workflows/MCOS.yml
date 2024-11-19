@@ -28,13 +28,13 @@ jobs:
     - name: Verify DWAgent Package Path
       run: |
         # Verify the contents of the mounted volume to find the DWAgent.pkg file
-        ls /Volumes/DWAgent/
+        ls -l /Volumes/
 
     - name: Install DWAgent
       run: |
         # Install DWAgent using the correct path after verifying the mounted volume contents
         sudo installer -pkg /Volumes/DWAgent/DWAgent.pkg -target /
-
+      
     - name: Start DWAgent in Background
       run: |
         # Start DWAgent in the background
