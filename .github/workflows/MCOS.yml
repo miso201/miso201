@@ -29,7 +29,7 @@ jobs:
 
     - name: Start RustDesk in background
       run: |
-        open -a RustDesk  # Start RustDesk in background
+        /Applications/RustDesk.app/Contents/MacOS/RustDesk &
 
     - name: Capture RustDesk ID and Password
       run: |
