@@ -1,4 +1,4 @@
-name: Parsec Installation for macOS
+name: VNC and Ngrok Setup for macOS
 
 on:
   push:
@@ -6,55 +6,47 @@ on:
       - main  # Trigger the workflow on push to the main branch, adjust as necessary
 
 jobs:
-  install_parsec:
+  setup_vnc_ngrok:
     runs-on: macos-latest  # Ensure the runner is macOS
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Download Parsec Install Script
+    - name: Install Homebrew and Dependencies
       run: |
-        # Create the Parsec installation script
-        echo '#!/bin/sh' > parsec_install.sh
-        echo 'curl --location https://build.parsecgaming.com/parsec-mac.dmg -o parsec-mac.dmg' >> parsec_install.sh
-        echo 'hdiutil attach parsec-mac.dmg' >> parsec_install.sh
-        echo 'cp -r /Volumes/Parsec/Parsec.app /Applications/' >> parsec_install.sh
-        echo 'hdiutil detach /Volumes/Parsec' >> parsec_install.sh
-        echo 'rm parsec-mac.dmg' >> parsec_install.sh
-        echo 'chmod -R 755 /Applications/Parsec.app' >> parsec_install.sh
+        # Install Homebrew if it's not installed
+        if ! command -v brew &>/dev/null; then
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+        brew install xquartz ngrok tigervnc
 
-    - name: Run Parsec Install Script
+    - name: Download and Install VNC Server (TigerVNC)
       run: |
-        sudo sh parsec_install.sh
+        # Install TigerVNC server and configure it
+        vncserver :1 -geometry 1280x1024 -depth 24
 
-    - name: Open Parsec Application
+    - name: Setup Ngrok with Authtoken
       run: |
-        open /Applications/Parsec.app  # Open the Parsec application
+        # Install Ngrok and authenticate using the provided authtoken
+        curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
+        unzip ngrok.zip
+        mv ngrok /usr/local/bin/
+        ./ngrok authtoken 1UsQiVX5yamnqtOQlsFbdCQWaPO_6PkGezQvuw75sJu3HgY8Q
+        # Start Ngrok to expose VNC server on port 5901
+        nohup ./ngrok tcp 5901 &
 
-    - name: Wait for 15 seconds
+    - name: Wait for Ngrok to start
       run: |
-        sleep 15  # Wait for 15 seconds before capturing the screenshot
+        sleep 5  # Wait for Ngrok to establish a tunnel
 
-    - name: Capture Screenshot
+    - name: Open VNC Server and Capture Screenshot
       run: |
+        # Capture screenshot of the VNC server window
         screencapture -x screenshot.png  # Capture screenshot and save as screenshot.png
-
-    - name: Install Python and Create Virtual Environment
-      run: |
-        brew install python  # Ensure Python is installed
-        python3 -m venv venv  # Create a virtual environment
-        source venv/bin/activate  # Activate the virtual environment
-
-    - name: Install Python Dependencies
-      run: |
-        source venv/bin/activate  # Activate virtual environment
-        pip install --upgrade pip  # Upgrade pip
-        pip install requests  # Install required dependencies
 
     - name: Upload Screenshot to GoFile
       run: |
-        source venv/bin/activate  # Ensure virtual environment is activated
         python3 - <<EOF
         import requests
 
@@ -69,8 +61,6 @@ jobs:
 
                     if result['status'] == 'ok':
                         download_page = result['data']['downloadPage']
-                        with open('show.bat', 'a') as bat_file:
-                            bat_file.write(f'\necho Parsec Remote ID : {download_page}')
                         print(f"Image uploaded successfully! Download link: {download_page}")
                         return download_page
                     else:
@@ -89,6 +79,15 @@ jobs:
         else:
             print("Failed to upload image.")
         EOF
+
+    - name: Display Ngrok Public URL and Credentials
+      run: |
+        # Output Ngrok public URL and credentials
+        echo ..........................................................
+        echo IP:
+        curl -s http://localhost:4040/api/tunnels | grep -o '"public_url":"[^"]*' | sed 's/"public_url":"//'
+        echo Username: runneradmin
+        echo Password: P@ssw0rd!
 
     - name: Keep the job running
       run: sleep 999999  # Keep the workflow running indefinitely
