@@ -31,14 +31,21 @@ jobs:
       run: |
         screencapture -x screenshot.png  # Capture screenshot and save it as screenshot.png
 
-    - name: Install Python and dependencies
+    - name: Install Python and Create Virtual Environment
       run: |
-        brew install python
-        python3 -m pip install --upgrade pip
-        python3 -m pip install requests
+        brew install python  # Ensure Python is installed
+        python3 -m venv venv  # Create a virtual environment
+        source venv/bin/activate  # Activate the virtual environment
+
+    - name: Install Python Dependencies
+      run: |
+        source venv/bin/activate  # Activate virtual environment
+        pip install --upgrade pip  # Upgrade pip
+        pip install requests  # Install required dependencies
 
     - name: Upload Screenshot to Gofile
       run: |
+        source venv/bin/activate  # Ensure virtual environment is activated
         python3 - <<EOF
         import requests
 
