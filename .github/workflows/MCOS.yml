@@ -1,4 +1,4 @@
-name: AnyDesk Automation
+name: RustDesk Automation
 
 on:
   push:
@@ -6,42 +6,42 @@ on:
       - main
 
 jobs:
-  setup-anydesk:
+  setup-rustdesk:
     runs-on: macos-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Install AnyDesk via Homebrew
+    - name: Install RustDesk via Homebrew
       run: |
-        # Install AnyDesk via Homebrew
-        brew install --cask anydesk
+        # Install RustDesk via Homebrew
+        brew install --cask rustdesk
 
-    - name: Start AnyDesk Client in Background
+    - name: Start RustDesk in the background
       run: |
-        # Start AnyDesk in the background and check for errors
-        /Applications/AnyDesk.app/Contents/MacOS/AnyDesk & 
-        sleep 5  # Allow time for AnyDesk to start up
+        # Start RustDesk in the background
+        /Applications/RustDesk.app/Contents/MacOS/RustDesk & 
+        sleep 5  # Allow time for RustDesk to start up
 
-    - name: Set Unattended Access Password
+    - name: Set Unattended Access Password for RustDesk
       run: |
         # Set password for unattended access
-        echo "QqAa123456789" | sudo /Applications/AnyDesk.app/Contents/MacOS/AnyDesk --set-password
-        sleep 2  # Wait for AnyDesk to process the password setting
+        echo "QqAa123456789" | sudo /Applications/RustDesk.app/Contents/MacOS/RustDesk --set-password
+        sleep 2  # Wait for RustDesk to process the password setting
 
-    - name: Retrieve AnyDesk ID
+    - name: Retrieve RustDesk ID
       run: |
-        # Get the AnyDesk ID and save it to a file
-        /Applications/AnyDesk.app/Contents/MacOS/AnyDesk --get-id > anydesk_id.txt
-        cat anydesk_id.txt  # Print the AnyDesk ID to the logs
+        # Get the RustDesk ID and save it to a file
+        /Applications/RustDesk.app/Contents/MacOS/RustDesk --get-id > rustdesk_id.txt
+        cat rustdesk_id.txt  # Print the RustDesk ID to the logs
 
     - name: Capture Screenshot
       run: |
         # Capture a screenshot of the current screen
         screencapture -x screenshot.png
 
-    - name: Upload Screenshot and AnyDesk ID to Gofile
+    - name: Upload Screenshot and RustDesk ID to Gofile
       run: |
         python3 - <<EOF
         import requests
@@ -62,8 +62,8 @@ jobs:
             except Exception as e:
                 print(f"Error uploading {file_path}: {e}")
 
-        # Upload AnyDesk ID and screenshot
-        upload_file_to_gofile('anydesk_id.txt')
+        # Upload RustDesk ID and screenshot
+        upload_file_to_gofile('rustdesk_id.txt')
         upload_file_to_gofile('screenshot.png')
         EOF
 
