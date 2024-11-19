@@ -18,6 +18,10 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install pyautogui for GUI automation
+      run: |
+        pip install pyautogui  # Install pyautogui to simulate mouse clicks
+
     - name: Download DWAgent Install Script
       run: |
         # Create the dwagent.sh script
