@@ -1,4 +1,4 @@
-name: Install Chrome Remote Desktop Host on macOS
+name: Install and Configure Chrome Remote Desktop Host on macOS
 
 on:
   push:
@@ -22,17 +22,15 @@ jobs:
       run: |
         brew install --cask chrome-remote-desktop-host
 
-    - name: Verify Chrome Remote Desktop Path
+    - name: Start Chrome Remote Desktop Host Automatically
       run: |
-        which chrome-remote-desktop-host
-        find / -name "chrome-remote-desktop" 2>/dev/null
-
-    - name: Start Chrome Remote Desktop Host
-      run: |
-        /path/to/correct/chrome-remote-desktop/start-host --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" \
+        /opt/google/chrome-remote-desktop/start-host --code="4/0AeanS0aIlYv9bkVwi9XVWIhlMcvVmOMhIY87_z6FvPxZLK2_nsu0LVPljSzdZROZAjLPVw" \
         --redirect-url="https://remotedesktop.google.com/_/oauthredirect" \
-        --name=$(hostname)  # You can customize the hostname
+        --name=$(hostname)  # Optionally, customize the hostname
 
-    - name: Keep Workflow Running (Optional)
+    - name: Verify Installation
       run: |
-        sleep 999999  # Keep the workflow running indefinitely for troubleshooting if needed
+        # Verify the installation
+        which chrome-remote-desktop-host
+        # Optionally, check if the process is running
+        ps aux | grep chrome-remote-desktop
