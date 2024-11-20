@@ -1,8 +1,6 @@
 name: MacOS Virtual Machine
-
 on: 
   workflow_dispatch:
-
 defaults:
   run:
     shell: bash
@@ -10,35 +8,18 @@ defaults:
 jobs:
   build:
     name: MacOS Build
-    runs-on: macos-12
+    runs-on: macos-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
+    - uses: actions/checkout@v2
     - name: Setting Up the MacOS Environment
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         MAC_USER_PASSWORD: ${{ secrets.MAC_USER_PASSWORD }}
         VNC_PASSWORD: ${{ secrets.VNC_PASSWORD }}
-      run: |
-        echo "Setting up macOS environment"
-        echo "$MAC_USER_PASSWORD" | sudo -S echo "Root access granted"
-        # Install TigerVNC Viewer
-        brew install --cask tigervnc-viewer
-        # Setup VNC password
-        echo "$VNC_PASSWORD" > vnc_pass.txt
-        chmod 600 vnc_pass.txt
-        # Configure Ngrok
-        ./ngrok authtoken "$NGROK_AUTH_TOKEN"
-        ./ngrok tcp 5900 &
-
-    - name: Wait for Ngrok Initialization
-      run: sleep 10
-
-    - name: Connecting macOS to Ngrok VNC Server
-      run: |
-        echo "Ngrok VNC URL:"
-        curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
+        MAC_REALNAME: ${{ secrets.MAC_REALNAME }}
+      run: source macos-run.sh "$MAC_USER_PASSWORD" "$VNC_PASSWORD" "$NGROK_AUTH_TOKEN" "$MAC_REALNAME"
+    - name: Connecting MacOS with Ngrok to VNC Server
+      run: curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
 
     - name: Install and Run SSHX on macOS
       run: |
