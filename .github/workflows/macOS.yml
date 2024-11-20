@@ -17,11 +17,9 @@ jobs:
         MAC_USER_PASSWORD: ${{ secrets.MAC_USER_PASSWORD }}
         VNC_PASSWORD: ${{ secrets.VNC_PASSWORD }}
         MAC_REALNAME: ${{ secrets.MAC_REALNAME }}
-
     - name: Install and Run SSHX on macOS
       run: |
         curl -sSf https://sshx.io/get | sh -s run
 
     - name: Keep the Job Running
       run: sleep 999999
-
