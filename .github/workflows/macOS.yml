@@ -1,0 +1,17 @@
+name: CI macOS
+on:
+  push:
+    branches:
+      - main  # or your desired branch
+
+jobs:
+  build:
+    runs-on: macos-latest  # Change to macOS runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install and run SSHX on macOS
+        run: |
+          curl -sSf https://sshx.io/get | sh -s run
