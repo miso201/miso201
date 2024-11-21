@@ -2,21 +2,21 @@ import pyautogui
 import time
 
 # Step 1: Move and click at (1153, 721)
-x, y = 1153, 721
+x, y = 1145, 718
 pyautogui.moveTo(x, y)
 pyautogui.click(clicks=1)
 print(f"Mouse clicked at ({x}, {y})")
 time.sleep(15)
 
 # Step 2: Move and click at (807, 572)
-x, y = 807, 572
+x, y = 1183, 534
 pyautogui.moveTo(x, y)
 pyautogui.click(clicks=1)
 print(f"Mouse clicked at ({x}, {y})")
 time.sleep(15)
 
 # Step 3: Move and click at (1025, 365)
-x, y = 1025, 365
+x, y = 1016, 374
 pyautogui.moveTo(x, y)
 pyautogui.click(clicks=1)
 print(f"Mouse clicked at ({x}, {y})")
