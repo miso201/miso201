@@ -1,4 +1,4 @@
-name: MacOS Virtual Machine
+name: macos-14
 on:
   workflow_dispatch:
   
@@ -9,7 +9,7 @@ defaults:
 jobs:
   build:
     name: MacOS Build
-    runs-on: macos-latest
+    runs-on: macos-14
     steps:
     
     # خطوة لتحميل الكود من المستودع
