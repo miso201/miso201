@@ -23,7 +23,7 @@ actions = [
 
 # Iterate through actions and perform them with a 10-second delay
 for action in actions:
-    time.sleep(30)  # Wait 10 seconds before each action
+    time.sleep(35)  # Wait 10 seconds before each action
     
     if action["type"] == "click":
         x, y = action["coords"]
