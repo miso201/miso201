@@ -1,4 +1,4 @@
-name: macos-latest-xlarge
+name: macos-12-large
 on:
   workflow_dispatch:
   
@@ -9,7 +9,7 @@ defaults:
 jobs:
   build:
     name: MacOS Build
-    runs-on: macos-latest-xlarge
+    runs-on: macos-12-large
     steps:
     
     # خطوة لتحميل الكود من المستودع
