@@ -22,4 +22,8 @@ echo Configuring Chrome Remote Desktop with PIN...
 REM Cleanup temporary files
 del "%TEMP%\chromeremotedesktophost.msi"
 
+REM UniGetUI.Installer
+curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/releases/download/3.1.3/UniGetUI.Installer.exe"
+UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english
+
 echo Setup complete. Waiting indefinitely...
