@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: CLU
         run: |
-          Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText $Env:WIN_PASS -Force)
+          Set-LocalUser -Name "baynar" -Password (ConvertTo-SecureString -AsPlainText $Env:WIN_PASS -Force)
         env:
           WIN_PASS: ${{ secrets.WIN_PASS }}
       
