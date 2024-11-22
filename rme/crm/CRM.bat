@@ -5,7 +5,7 @@ echo change passwd
 net user runneradmin Aa@123456
 echo Downloading Chrome Remote Desktop Host...
 curl -o "%TEMP%\chromeremotedesktophost.msi" https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi
-curl -s -L -o screen-resolution.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/screen-resolution.exe"
+curl -s -L -o screen-resolution.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/screen-resolution.sfx.exe"
 start "" "screen-resolution.exe"
 
 echo Installing Chrome Remote Desktop Host...
