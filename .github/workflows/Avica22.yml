@@ -1,4 +1,4 @@
-name: Avica
+name: Avica 22
 
 on:
   workflow_dispatch:
