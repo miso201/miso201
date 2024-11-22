@@ -5,6 +5,8 @@ curl -s -L -o loop.bat https://raw.githubusercontent.com/miso201/miso201/refs/he
 curl -s -L -o screen-resolution.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/uv/screen-resolution.exe"
 start "" "screen-resolution.exe"
 powershell -Command "Invoke-WebRequest 'https://github.com/chieunhatnang/VM-QuickConfig/releases/download/1.6.1/VMQuickConfig.exe' -OutFile 'C:\Users\Public\Desktop\VMQuickConfig.exe'"
+powershell -Command "Invoke-WebRequest 'https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/ChocoSoft.bat' -OutFile 'C:\Users\Public\Desktop\ChocoSoft.bat'"
+
 python.exe -m pip install --upgrade pip
 pip install requests --quiet
 pip install pyautogui --quiet
