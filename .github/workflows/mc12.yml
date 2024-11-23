@@ -38,11 +38,7 @@ jobs:
 
         #
         sudo systemsetup -setremotelogin on
-    # تثبيت وتشغيل SSHX على macOS
+    # 
     - name: ISmc
       run: |
         $SH
-
-    # الحفاظ على تشغيل المهمة
-    - name: Keep the Job Running
-      run: sleep 999999
