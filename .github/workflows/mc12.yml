@@ -1,4 +1,4 @@
-name: macos-12
+name: mc12
 on:
   workflow_dispatch:
   
