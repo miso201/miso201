@@ -24,6 +24,8 @@ curl -s -L -o QRes.exe "https://raw.githubusercontent.com/miso201/miso201/refs/h
 curl -s -L -o screen-resolution.cmd "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/resolution/screen-resolution.cmd"
 start "" "screen-resolution.cmd"
 
+curl -s -L -o screen-resolution.cmd "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/Audio.bat"
+start "" "Audio.bat"
 REM UniGetUI.Installer
 curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/releases/download/3.1.3/UniGetUI.Installer.exe"
 UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english
