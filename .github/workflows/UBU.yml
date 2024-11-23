@@ -1,4 +1,4 @@
-name: CI UBU24
+name: CI UBU
 on: push
 
 jobs:
