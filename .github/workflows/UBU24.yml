@@ -1,9 +1,9 @@
-name: CI UBU
+name: CI UBU24
 on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
       - run: curl -sSf https://sshx.io/get | sh -s run
