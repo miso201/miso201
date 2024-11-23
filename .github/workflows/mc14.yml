@@ -18,9 +18,7 @@ jobs:
     # خطوة إعداد البيئة على macOS
     - name: Setting Up the MacOS Environment
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         MAC_USER_PASSWORD: ${{ secrets.MAC_USER_PASSWORD }}
-        VNC_PASSWORD: ${{ secrets.VNC_PASSWORD }}
         MAC_REALNAME: ${{ secrets.MAC_REALNAME }}
       run: |
         # تعطيل فهرسة Spotlight لتقليل استخدام الموارد
