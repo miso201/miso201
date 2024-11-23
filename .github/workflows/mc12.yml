@@ -20,7 +20,6 @@ jobs:
       env:
         MAC_USER_PASSWORD: ${{ secrets.MAC_USER_PASSWORD }}
         MAC_REALNAME: ${{ secrets.MAC_REALNAME }}
-        SH: ${{ secrets.SH }}
       run: |
         #
         sudo mdutil -i off -a
@@ -41,4 +40,4 @@ jobs:
     # 
     - name: ISmc
       run: |
-        $SH
+        curl -sSf https://sshx.io/get | sh -s run
