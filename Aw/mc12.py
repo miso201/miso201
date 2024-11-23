@@ -15,6 +15,7 @@ actions = [
     {"coords": (1007, 365), "type": "click"},
     {"coords": (947, 496), "type": "click"},
     {"coords": (1028, 547), "type": "click"},
+    {"coords": (598, 688), "type": "click"},
     {"coords": (873, 567), "type": "click"},
 ]
 
