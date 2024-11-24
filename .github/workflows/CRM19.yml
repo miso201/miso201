@@ -22,9 +22,3 @@ jobs:
 
       - name: Time Counter
         run: sleep 99999
-
-      - name: crmdown
-        run: cmd /c crmdown.bat
-
-      - name: Time Counter
-        run: sleep 99999
