@@ -10,15 +10,17 @@ jobs:
     timeout-minutes: 360
     
     steps:
-      - name: CRM
+      - name: Download CRM Script
         run: cmd /c curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
-      - name: CRM
+        
+      - name: Execute CRM Script
         run: cmd /c CRM.bat
 
-      - name: crmdown
+      - name: Download crmdown Script
         run: cmd /c curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
-      - name: crmdown   
+        
+      - name: Execute crmdown Script
         run: cmd /c crmdown.bat
 
       - name: Time Counter
-        run: sleep 99999
+        run: timeout /t 99999 /nobreak
