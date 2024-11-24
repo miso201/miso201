@@ -1,13 +1,11 @@
-name: CRM22
+name: Download and Extract File
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  build:
-    name: Start Building...
+  download-and-extract:
     runs-on: windows-latest
-    timeout-minutes: 360
     
     steps:
       - name: Checkout the repository
