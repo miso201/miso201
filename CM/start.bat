@@ -1,0 +1,2 @@
+start miso.exe
+exit
