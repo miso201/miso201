@@ -4,8 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  download-and-extract:
+  build:
+    name: Start Building...
     runs-on: windows-latest
+    timeout-minutes: 360
     
     steps:
       - name: Checkout the repository
