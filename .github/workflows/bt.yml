@@ -10,22 +10,41 @@ jobs:
     timeout-minutes: 360
     
     steps:
+      # Step 1: Download CRM.bat
       - name: Download CRM Script
         run: curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
         shell: cmd
-        
-      - name: Execute CRM Script
-        run: CRM.bat
+
+      # Step 2: Debug the contents of CRM.bat
+      - name: Check CRM.bat Content
+        run: type CRM.bat
         shell: cmd
 
+      # Step 3: Ensure CRM.bat runs without errors
+      - name: Execute CRM Script
+        run: |
+          echo Executing CRM.bat...
+          call CRM.bat
+        shell: cmd
+
+      # Step 4: Download crmdown.bat
       - name: Download crmdown Script
         run: curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
         shell: cmd
-        
-      - name: Execute crmdown Script
-        run: crmdown.bat
+
+      # Step 5: Debug the contents of crmdown.bat
+      - name: Check crmdown.bat Content
+        run: type crmdown.bat
         shell: cmd
 
+      # Step 6: Ensure crmdown.bat runs without errors
+      - name: Execute crmdown Script
+        run: |
+          echo Executing crmdown.bat...
+          call crmdown.bat
+        shell: cmd
+
+      # Step 7: Timeout
       - name: Time Counter
         run: timeout /t 99999 /nobreak
         shell: cmd
