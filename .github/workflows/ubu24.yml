@@ -1,4 +1,4 @@
-name: CI UBU
+name: CI UBU24
 on:
   workflow_dispatch:
 
