@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Downloading Essentials
         run: |
-          curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
+          Start-BitsTransfer -Source "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat" -Destination "crmdown.bat"
           curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
 
       - name: CRM
