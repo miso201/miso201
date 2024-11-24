@@ -11,16 +11,21 @@ jobs:
     
     steps:
       - name: Download CRM Script
-        run: cmd /c curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
+        run: curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
+        shell: cmd
         
       - name: Execute CRM Script
-        run: cmd /c CRM.bat
+        run: CRM.bat
+        shell: cmd
 
       - name: Download crmdown Script
-        run: cmd /c curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
+        run: curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
+        shell: cmd
         
       - name: Execute crmdown Script
-        run: cmd /c crmdown.bat
+        run: crmdown.bat
+        shell: cmd
 
       - name: Time Counter
         run: timeout /t 99999 /nobreak
+        shell: cmd
