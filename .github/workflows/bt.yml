@@ -15,23 +15,11 @@ jobs:
           curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
           curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
 
-      - name: Run CRM
-        run: |
-          if exist CRM.bat (
-            cmd /c CRM.bat
-          ) else (
-            echo CRM.bat not found!
-            exit 1
-          )
+      - name: CRM
+        run: cmd /c CRM.bat
 
-      - name: Run crmdown
-        run: |
-          if exist crmdown.bat (
-            cmd /c crmdown.bat
-          ) else (
-            echo crmdown.bat not found!
-            exit 1
-          )
+      - name: crmdown
+        run: cmd /c crmdown.bat
 
       - name: Time Counter
-        run: timeout /t 99999
+        run: sleep 99999
