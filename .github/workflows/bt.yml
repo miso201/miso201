@@ -1,0 +1,26 @@
+name: bt22
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: windows-latest
+    timeout-minutes: 360
+    
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat" -OutFile "crmdown.bat"
+          Invoke-WebRequest -Uri "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat" -OutFile "CRM.bat"
+
+                  
+      - name: CRM
+        run: cmd /c CRM.bat
+
+      - name: crmdown
+        run: cmd /c crmdown.bat
+
+      - name: Time Counter
+        run: sleep 99999
