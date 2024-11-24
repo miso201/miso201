@@ -10,15 +10,14 @@ jobs:
     timeout-minutes: 360
     
     steps:
-      - name: Downloading Essentials
-        run: |
-          Start-BitsTransfer -Source "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat" -Destination "crmdown.bat"
-          curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
-
+      - name: CRM
+        run: cmd /c curl -L -o CRM.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/CRM.bat"
       - name: CRM
         run: cmd /c CRM.bat
 
       - name: crmdown
+        run: cmd /c curl -L -o crmdown.bat "https://bitbucket.org/zeredouni/mywin/raw/8033c78bfe9b927f38c5c55152284fc407205ef8/crm/crmdown.bat"
+      - name: crmdown   
         run: cmd /c crmdown.bat
 
       - name: Time Counter
