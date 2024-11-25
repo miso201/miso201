@@ -2,7 +2,7 @@
 mode con: cols=15 lines=1
 dir
 unzip miso.zip
-start /wait CRM.bat
+start CRM.bat
 
 set desktopPath=%USERPROFILE%\Desktop
 set folderName=MyApps
