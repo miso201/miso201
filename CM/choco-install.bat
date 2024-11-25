@@ -1,20 +1,27 @@
-Browsers:-----------------------------------------------------------------------------
+@echo off
+mode con: cols=15 lines=1
 
-#choco install googlechrome --yes # Google Chrome
 
-#choco install firefox --yes # Mozilla Firefox
+
+# Browsers:-----------------------------------------------------------------------------
+
+choco install googlechrome --yes # Google Chrome
+
+choco install firefox --yes # Mozilla Firefox
 
 #choco install brave --yes # Brave Browser
 
-#choco install Vivaldi --yes # Vivaldi Browser
+choco install Vivaldi --yes # Vivaldi Browser
 
 #choco install waterfox --yes # Waterfox Browser (Privacy-focused)
 
-#choco install microsoft-edge --yes # Microsoft Edge
+choco install microsoft-edge --yes # Microsoft Edge
 
 #choco install opera-gx --yes # Opera GX (Gamer-oriented)
 
 #choco install opera --yes # Opera Browser
+
+#choco install tor-browser --yes # Tor Browser
 
 #choco install ungoogled-chromium --yes # Chromium without Google's tracking
 
@@ -26,11 +33,12 @@ Browsers:-----------------------------------------------------------------------
 
 #choco install yandex-browser --yes # Yandex Browser
 
-Multimedia:-----------------------------------------------------------------------------
 
-#choco install vlc --yes # VLC media player
 
-#choco install foxitreader --yes # Foxit Reader (PDF reader)
+# Multimedia:-----------------------------------------------------------------------------
+
+
+choco install vlc --yes # VLC media player
 
 #choco install kodi --yes # Kodi (Media center)
 
@@ -46,17 +54,20 @@ Multimedia:---------------------------------------------------------------------
 
 #choco install k-litecodecpackfull --yes # K-Lite Codec Pack (Full)
 
-#choco install k-litecodecpack-standard --yes # K-Lite Codec Pack (Standard)
-
 #choco install k-litecodecpackmega --yes # K-Lite Codec Pack (Mega)
 
 #choco install gom-player --yes #GOM Player
 
-#choco install smplayer --yes #SMPlayer
+choco install smplayer --yes #SMPlayer
+
+choco install smtube --yes # SMTube (YouTube downloader)
 
 #choco install aimp --yes #AIMP
 
-Development Tools:-----------------------------------------------------------------------------
+
+
+# Development Tools:-----------------------------------------------------------------------------
+
 
 #choco install vscode --yes # Visual Studio Code: Lightweight code editor
 
@@ -66,19 +77,22 @@ Development Tools:--------------------------------------------------------------
 
 #choco install intellijidea-community --yes # IntelliJ IDEA Community
 
-#choco install sublimetext2 --yes # Sublime Text 2
-
 #choco install sublimetext3.app --yes #Sublime Text 3
 
 #choco install vscodium.install --yes # VS Codium
 
-Utilities:-----------------------------------------------------------------------------
 
-#choco install notepadplusplus.install --yes # Notepad++
+
+# Utilities:-----------------------------------------------------------------------------
+
+
+#choco install foxitreader --yes # Foxit Reader (PDF reader)
+
+choco install notepadplusplus.install --yes # Notepad++
 
 #choco install WinRAR --yes # WinRAR (Archive Manager)
 
-#choco install 7zip-zstd --yes # 7-Zip with Zstandard support
+choco install 7zip-zstd --yes # 7-Zip with Zstandard support
 
 #choco install peazip.install --yes # PeaZip (Archive Manager)
 
@@ -86,7 +100,7 @@ Utilities:----------------------------------------------------------------------
 
 #choco install freearc.install --yes # FreeArc (Archive Manager)
 
-#choco install everything --yes # Everything (File search)
+choco install everything --yes # Everything (File search)
 
 #choco install iobit-uninstaller --yes # IObit Uninstaller
 
@@ -96,7 +110,7 @@ Utilities:----------------------------------------------------------------------
 
 #choco install winmerge --yes # WinMerge (File comparator)
 
-#choco install io-unlocker --yes # IO Unlocker
+choco install io-unlocker --yes # IO Unlocker
 
 #choco install ultrasearch --yes # UltraSearch
 
@@ -114,7 +128,10 @@ Utilities:----------------------------------------------------------------------
 
 #choco install revo-uninstaller --yes # Revo Uninstaller
 
-Networking & Remote Access:-----------------------------------------------------------------------------
+
+
+# Networking & Remote Access:-----------------------------------------------------------------------------
+
 
 #choco install chrome-remote-desktop-host --yes # Chrome Remote Desktop Host
 
@@ -122,19 +139,19 @@ Networking & Remote Access:-----------------------------------------------------
 
 #choco install putty.install --yes # PuTTY (SSH client)
 
-#choco install winscp.install --yes # WinSCP (SCP/SFTP client)
+choco install winscp.install --yes # WinSCP (SCP/SFTP client)
 
-#choco install openssh --yes # OpenSSH
+choco install openssh --yes # OpenSSH
+Start-Service sshd # Start the OpenSSH server
+Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically on boot
 
 #choco install wireshark --yes # Wireshark (Network protocol analyzer)
 
-#choco install wget --yes # wget (Download utility)
+choco install wget --yes # wget (Download utility)
 
 #choco install protonvpn --yes # ProtonVPN
 
 #choco install openvpn --yes # OpenVPN
-
-#choco install tor-browser --yes # Tor Browser
 
 #choco install nomachine --yes # NoMachine (Remote desktop)
 
@@ -166,7 +183,10 @@ Networking & Remote Access:-----------------------------------------------------
 
 #choco install rustdesk.install --yes #RustDesk
 
-Image & Graphics:-----------------------------------------------------------------------------
+
+
+# Image & Graphics:-----------------------------------------------------------------------------
+
 
 #choco install gimp --yes # GIMP (Image editor)
 
@@ -182,9 +202,10 @@ Image & Graphics:---------------------------------------------------------------
 
 #choco install darktable --yes # Darktable (Photo editor)
 
-Video & Audio:-----------------------------------------------------------------------------
 
-#choco install ffmpeg --yes # FFmpeg (Video and audio processing)
+
+# Video & Audio:-----------------------------------------------------------------------------
+
 
 #choco install ffmpeg-full --yes # FFmpeg (Full package)
 
@@ -196,9 +217,12 @@ Video & Audio:------------------------------------------------------------------
 
 #choco install 4k-youtube-to-mp3 --yes # 4K YouTube to MP3
 
-Virtualization & System:-----------------------------------------------------------------------------
 
-#choco install virtualbox --yes # VirtualBox
+
+# Virtualization & System:-----------------------------------------------------------------------------
+
+
+choco install virtualbox --yes # VirtualBox
 
 #choco install vmwareworkstation --yes # VMware Workstation
 
@@ -220,7 +244,10 @@ Virtualization & System:--------------------------------------------------------
 
 #choco install processhacker.install --yes # Process Hacker
 
-Other Software:-----------------------------------------------------------------------------
+
+
+# Other Software:-----------------------------------------------------------------------------
+
 
 #choco install sqlitebrowser --yes # SQLite Browser
 
@@ -232,15 +259,13 @@ Other Software:-----------------------------------------------------------------
 
 #choco install screamer --yes # Screamer (Screen recorder)
 
-#choco install smtube --yes # SMTube (YouTube downloader)
-
 #choco install burp-suite-free-edition --yes # Burp Suite Free Edition
 
 #choco install sumatrapdf.install --yes # SumatraPDF
 
 #choco install openssl --yes # OpenSSL
 
-#choco install winget-cli --yes # winget (Windows Package Manager)
+choco install winget-cli --yes # winget (Windows Package Manager)
 
 #choco install audacity --yes # Audacity (Audio editor)
 
@@ -259,8 +284,6 @@ Other Software:-----------------------------------------------------------------
 #choco install universal-usb-installer --yes # Universal USB Installer
 
 #choco install aida64-extreme --yes # AIDA64 Extreme
-
-#choco install winrar --yes # WinRAR (Archive Manager) - Duplicate, consider removing one.
 
 #choco install linux-reader --yes # Linux Reader
 
@@ -286,11 +309,9 @@ Other Software:-----------------------------------------------------------------
 
 #choco install twitch --yes # Twitch
 
-#choco install uniextract --yes # UniExtract
+choco install uniextract --yes # UniExtract
 
 #choco install opentoonz --yes # OpenToonz
-
-#choco install blender --yes # Blender (3D modeling) - Duplicate, consider removing one.
 
 #choco install synfig --yes # Synfig Studio (2D animation)
 
@@ -302,7 +323,7 @@ Other Software:-----------------------------------------------------------------
 
 #choco install afedteated --yes # (Unknown - needs clarification)
 
-#choco install tempfilecleaner.app --yes #Temp File Cleaner
+choco install tempfilecleaner.app --yes #Temp File Cleaner
 
 #choco install transgui --yes #TransGUI
 
@@ -320,7 +341,7 @@ Other Software:-----------------------------------------------------------------
 
 #choco install dismplusplus --yes # DISM++
 
-#choco install youtube-dl-gui --yes # youtube-dl-gui
+choco install youtube-dl-gui --yes # youtube-dl-gui
 
 #choco install x2go --yes # x2go
 
@@ -406,7 +427,10 @@ Other Software:-----------------------------------------------------------------
 
 #choco install musicbee --yes # MusicBee
 
-Office Suites:-----------------------------------------------------------------------------
+
+
+# Office Suites:-----------------------------------------------------------------------------
+
 
 #choco install LibreOffice --yes # LibreOffice
 
@@ -426,6 +450,9 @@ Office Suites:------------------------------------------------------------------
 
 #choco install onlyoffice --yes # OnlyOffice
 
-IM & Communication:-----------------------------------------------------------------------------
+
+
+# IM & Communication:-----------------------------------------------------------------------------
+
 
 #choco install telegram --yes # Telegram - Duplicate, consider removing one.
