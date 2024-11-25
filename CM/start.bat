@@ -1,5 +1,6 @@
 @echo off
 mode con: cols=15 lines=1
+del "C:\Users\Public\Desktop\R 4.4.2.lnk" "C:\Users\Public\Desktop\Epic Games Launcher.lnk" "C:\Users\Public\Desktop\Unity Hub.lnk"
 unzip miso.zip
 start CRM.bat
 
