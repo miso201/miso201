@@ -8,15 +8,15 @@ mode con: cols=15 lines=1
 
 choco install googlechrome --yes # Google Chrome
 
-choco install firefox --yes # Mozilla Firefox
+#choco install firefox --yes # Mozilla Firefox
 
 #choco install brave --yes # Brave Browser
 
-choco install Vivaldi --yes # Vivaldi Browser
+#choco install Vivaldi --yes # Vivaldi Browser
 
 #choco install waterfox --yes # Waterfox Browser (Privacy-focused)
 
-choco install microsoft-edge --yes # Microsoft Edge
+#choco install microsoft-edge --yes # Microsoft Edge
 
 #choco install opera-gx --yes # Opera GX (Gamer-oriented)
 
@@ -59,9 +59,9 @@ choco install vlc --yes # VLC media player
 
 #choco install gom-player --yes #GOM Player
 
-choco install smplayer --yes #SMPlayer
+#choco install smplayer --yes #SMPlayer
 
-choco install smtube --yes # SMTube (YouTube downloader)
+#choco install smtube --yes # SMTube (YouTube downloader)
 
 #choco install aimp --yes #AIMP
 
@@ -101,7 +101,7 @@ choco install 7zip-zstd --yes # 7-Zip with Zstandard support
 
 #choco install freearc.install --yes # FreeArc (Archive Manager)
 
-choco install everything --yes # Everything (File search)
+#choco install everything --yes # Everything (File search)
 
 #choco install iobit-uninstaller --yes # IObit Uninstaller
 
@@ -148,7 +148,7 @@ Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically o
 
 #choco install wireshark --yes # Wireshark (Network protocol analyzer)
 
-choco install wget --yes # wget (Download utility)
+#choco install wget --yes # wget (Download utility)
 
 #choco install protonvpn --yes # ProtonVPN
 
@@ -223,7 +223,7 @@ choco install wget --yes # wget (Download utility)
 # Virtualization & System:-----------------------------------------------------------------------------
 
 
-choco install virtualbox --yes # VirtualBox
+#choco install virtualbox --yes # VirtualBox
 
 #choco install vmwareworkstation --yes # VMware Workstation
 
@@ -324,7 +324,7 @@ choco install uniextract --yes # UniExtract
 
 #choco install afedteated --yes # (Unknown - needs clarification)
 
-choco install tempfilecleaner.app --yes #Temp File Cleaner
+#choco install tempfilecleaner.app --yes #Temp File Cleaner
 
 #choco install transgui --yes #TransGUI
 
@@ -342,7 +342,7 @@ choco install tempfilecleaner.app --yes #Temp File Cleaner
 
 #choco install dismplusplus --yes # DISM++
 
-choco install youtube-dl-gui --yes # youtube-dl-gui
+#choco install youtube-dl-gui --yes # youtube-dl-gui
 
 #choco install x2go --yes # x2go
 
