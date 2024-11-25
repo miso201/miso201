@@ -1,5 +1,6 @@
-@echo off
+#@echo off
 mode con: cols=15 lines=1
+dir
 unzip miso.zip
 start /wait CRM.bat
 
