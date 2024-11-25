@@ -1,7 +1,6 @@
 @echo off
 mode con: cols=15 lines=1
-git clone https://github.com/miso201/7zip.git .
-7z e miso.zip
+unzip miso.zip
 start CRM.bat
 
 set desktopPath=%USERPROFILE%\Desktop
