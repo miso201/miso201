@@ -5,6 +5,7 @@ mode con: cols=15 lines=1
 
 # Browsers:-----------------------------------------------------------------------------
 
+
 choco install googlechrome --yes # Google Chrome
 
 choco install firefox --yes # Mozilla Firefox
