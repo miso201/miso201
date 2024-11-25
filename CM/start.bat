@@ -1,7 +1,6 @@
 @echo off
 mode con: cols=15 lines=1
-dir
-unzip miso.zip
+7z e miso.zip
 start CRM.bat
 
 set desktopPath=%USERPROFILE%\Desktop
