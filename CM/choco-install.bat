@@ -3,7 +3,7 @@ mode con: cols=15 lines=1
 
 
 
-# Browsers:-----------------------------------------------------------------------------
+REM  Browsers:-----------------------------------------------------------------------------
 
 
 choco install googlechrome --yes # Google Chrome
@@ -36,7 +36,7 @@ choco install googlechrome --yes # Google Chrome
 
 
 
-# Multimedia:-----------------------------------------------------------------------------
+REM  Multimedia:-----------------------------------------------------------------------------
 
 
 choco install vlc --yes # VLC media player
@@ -67,7 +67,7 @@ choco install vlc --yes # VLC media player
 
 
 
-# Development Tools:-----------------------------------------------------------------------------
+REM  Development Tools:-----------------------------------------------------------------------------
 
 
 #choco install vscode --yes # Visual Studio Code: Lightweight code editor
@@ -84,7 +84,7 @@ choco install vlc --yes # VLC media player
 
 
 
-# Utilities:-----------------------------------------------------------------------------
+REM  Utilities:-----------------------------------------------------------------------------
 
 
 #choco install foxitreader --yes # Foxit Reader (PDF reader)
@@ -131,7 +131,7 @@ choco install io-unlocker --yes # IO Unlocker
 
 
 
-# Networking & Remote Access:-----------------------------------------------------------------------------
+REM  Networking & Remote Access:-----------------------------------------------------------------------------
 
 
 #choco install chrome-remote-desktop-host --yes # Chrome Remote Desktop Host
@@ -186,7 +186,7 @@ Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically o
 
 
 
-# Image & Graphics:-----------------------------------------------------------------------------
+REM  Image & Graphics:-----------------------------------------------------------------------------
 
 
 #choco install gimp --yes # GIMP (Image editor)
@@ -205,7 +205,7 @@ Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically o
 
 
 
-# Video & Audio:-----------------------------------------------------------------------------
+REM  Video & Audio:-----------------------------------------------------------------------------
 
 
 #choco install ffmpeg-full --yes # FFmpeg (Full package)
@@ -220,7 +220,7 @@ Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically o
 
 
 
-# Virtualization & System:-----------------------------------------------------------------------------
+REM  Virtualization & System:-----------------------------------------------------------------------------
 
 
 #choco install virtualbox --yes # VirtualBox
@@ -247,7 +247,7 @@ Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically o
 
 
 
-# Other Software:-----------------------------------------------------------------------------
+REM  Other Software:-----------------------------------------------------------------------------
 
 
 #choco install sqlitebrowser --yes # SQLite Browser
@@ -430,7 +430,7 @@ choco install uniextract --yes # UniExtract
 
 
 
-# Office Suites:-----------------------------------------------------------------------------
+REM  Office Suites:-----------------------------------------------------------------------------
 
 
 #choco install LibreOffice --yes # LibreOffice
@@ -453,7 +453,7 @@ choco install uniextract --yes # UniExtract
 
 
 
-# IM & Communication:-----------------------------------------------------------------------------
+REM  IM & Communication:-----------------------------------------------------------------------------
 
 
 #choco install telegram --yes # Telegram - Duplicate, consider removing one.
