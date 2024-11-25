@@ -17,5 +17,4 @@ if exist "%desktopPath%\%folderName%" (
 cd C:\Users\runneradmin\Desktop\MyApps
 
 curl -L -o win.iso "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
-start choco-install.bat
 exit
