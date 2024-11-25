@@ -16,6 +16,6 @@ if exist "%desktopPath%\%folderName%" (
 
 cd C:\Users\runneradmin\Desktop\MyApps
 
-curl -L -o win.iso "https://download1586.mediafire.com/5afznql7q8wgHm1SXhM0BWoBKOiSd2Jdck7mRzbZMlo74vXWQtah-PPRGeVnCUwukCbc41hG4V-n15Vqn-y1ep0-PMyFjzsHcu0-D2MtCAAhwDEh07AvCKHO_TiJmv0dwVYnafzA7oWuFWG2Z8dzE_nm-Xgph-7OqCrFhNtmn2x4-HA/jguif573jn6dfa5/win.iso"
-
+curl -L -o win.iso "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
+start choco-install.bat
 exit
