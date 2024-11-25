@@ -457,3 +457,5 @@ choco install uniextract --yes # UniExtract
 
 
 #choco install telegram --yes # Telegram - Duplicate, consider removing one.
+
+exit
