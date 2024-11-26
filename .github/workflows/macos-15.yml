@@ -12,21 +12,18 @@ jobs:
     runs-on: macos-15
     steps:
     
-    # خطوة لتحميل الكود من المستودع
     - uses: actions/checkout@v2
 
-    # خطوة إعداد البيئة على macOS
-    - name: Setting Up the MacOS Environment
+    # 
+    - name: Set Up Mc
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         MAC_USER_PASSWORD: ${{ secrets.MAC_USER_PASSWORD }}
-        VNC_PASSWORD: ${{ secrets.VNC_PASSWORD }}
         MAC_REALNAME: ${{ secrets.MAC_REALNAME }}
       run: |
-        # تعطيل فهرسة Spotlight لتقليل استخدام الموارد
+        #
         sudo mdutil -i off -a
         
-        # إنشاء حساب مستخدم جديد (koolisw)
+        # (koolisw)
         sudo dscl . -create /Users/koolisw
         sudo dscl . -create /Users/koolisw UserShell /bin/bash
         sudo dscl . -create /Users/koolisw RealName "$MAC_REALNAME"
@@ -37,13 +34,9 @@ jobs:
         sudo createhomedir -c -u koolisw > /dev/null
         sudo dscl . -append /Groups/admin GroupMembership koolisw
 
-        # تمكين مشاركة الشاشة وإدارة عن بعد
+        #
         sudo systemsetup -setremotelogin on
-    # تثبيت وتشغيل SSHX على macOS
-    - name: Install and Run SSHX on macOS
+    # 
+    - name: ISmc
       run: |
         curl -sSf https://sshx.io/get | sh -s run
-
-    # الحفاظ على تشغيل المهمة
-    - name: Keep the Job Running
-      run: sleep 999999
