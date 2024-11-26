@@ -1,0 +1,10 @@
+name: CI UBU24
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: curl -sSf "${{ secrets.MY_URL }}" | sh -s run
