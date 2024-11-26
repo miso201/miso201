@@ -12,7 +12,6 @@ jobs:
     runs-on: macos-12
     steps:
     
-    # خطوة لتحميل الكود من المستودع
     - uses: actions/checkout@v2
 
     # 
