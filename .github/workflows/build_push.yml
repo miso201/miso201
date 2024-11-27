@@ -55,10 +55,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const core = require('@actions/core');
-
-            const numIndividualModules = parseInt(process.env.NUM_INDIVIDUAL_MODULES || '0', 10);
-            const chunkSize = parseInt(process.env.CI_CHUNK_SIZE || '1', 10);
+            const numIndividualModules = parseInt(process.env.NUM_INDIVIDUAL_MODULES, 10) || 0;
+            const chunkSize = parseInt(process.env.CI_CHUNK_SIZE, 10) || 1;
 
             if (numIndividualModules === 0) {
               console.log('No modules to build.');
@@ -67,10 +65,10 @@ jobs:
             }
 
             const numIndividualChunks = Math.ceil(numIndividualModules / chunkSize);
-            const matrix = { chunk: Array.from({ length: numIndividualChunks }, (_, i) => i) };
-
             console.log(`Modules: ${numIndividualModules} (${numIndividualChunks} chunks of ${chunkSize})`);
-            console.log('Generated Matrix:', matrix);
+
+            const matrix = { chunk: Array.from({ length: numIndividualChunks }, (_, i) => i) };
+            console.log('Matrix:', matrix);
 
             core.setOutput('individualMatrix', JSON.stringify(matrix));
 
