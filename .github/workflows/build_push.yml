@@ -127,7 +127,7 @@ jobs:
 
       - name: Upload APKs (chunk ${{ matrix.chunk }})
         uses: actions/upload-artifact@v3
-        if: "github.repository == 'moolmop/tachiyomi-unofficial-extensions'"
+        if: "github.repository == 'miso201/miso201'"
         with:
           name: "individual-apks-${{ matrix.chunk }}"
           path: "**/*.apk"
@@ -140,7 +140,7 @@ jobs:
     name: Publish repo
     needs:
       - build
-    if: "github.repository == 'moolmop/tachiyomi-unofficial-extensions'"
+    if: "github.repository == 'miso201/miso201'"
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifacts
@@ -182,4 +182,4 @@ jobs:
 
       - name: Purge JSDelivr cache
         run: |
-          curl https://purge.jsdelivr.net/gh/moolmop/tachiyomi-unofficial-extensions@repo/index.min.json
+          curl https://purge.jsdelivr.net/gh/miso201/miso201@repo/index.min.json
