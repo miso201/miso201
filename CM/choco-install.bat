@@ -40,6 +40,7 @@ REM  Multimedia:----------------------------------------------------------------
 
 
 choco install vlc --yes # VLC media player
+del "C:\Users\Public\Desktop\VLC media player.lnk"
 
 #choco install kodi --yes # Kodi (Media center)
 
@@ -112,6 +113,7 @@ choco install 7zip-zstd --yes # 7-Zip with Zstandard support
 #choco install winmerge --yes # WinMerge (File comparator)
 
 choco install io-unlocker --yes # IO Unlocker
+del "C:\Users\Public\Desktop\IObit Unlocker.lnk"
 
 #choco install ultrasearch --yes # UltraSearch
 
@@ -141,6 +143,7 @@ REM  Networking & Remote Access:------------------------------------------------
 #choco install putty.install --yes # PuTTY (SSH client)
 
 choco install winscp.install --yes # WinSCP (SCP/SFTP client)
+del "C:\Users\Public\Desktop\WinSCP.lnk"
 
 choco install openssh --yes # OpenSSH
 Start-Service sshd # Start the OpenSSH server
