@@ -50,19 +50,30 @@ jobs:
         run: |
           echo "NUM_INDIVIDUAL_MODULES=$(./gradlew -q projects | grep '.*extensions\:.*\:.*' | wc -l)" >> $GITHUB_ENV
 
-      - id: generate-matrices
-        name: Create output matrices
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const numIndividualModules = process.env.NUM_INDIVIDUAL_MODULES;
-            const chunkSize = process.env.CI_CHUNK_SIZE;
+- id: generate-matrices
+  name: Create output matrices
+  uses: actions/github-script@v6
+  with:
+    script: |
+      const core = require('@actions/core'); // Declare core only once
+      
+      const numIndividualModules = parseInt(process.env.NUM_INDIVIDUAL_MODULES, 10) || 0;
+      const chunkSize = parseInt(process.env.CI_CHUNK_SIZE, 10) || 1;
 
-            const numIndividualChunks = Math.ceil(numIndividualModules / chunkSize);
+      if (numIndividualModules === 0) {
+        console.log('No modules to build.');
+        core.setOutput('individualMatrix', JSON.stringify({ chunk: [] }));
+        return;
+      }
 
-            console.log(`Modules: ${numIndividualModules} (${numIndividualChunks} chunks of ${chunkSize})`);
+      const numIndividualChunks = Math.ceil(numIndividualModules / chunkSize);
+      console.log(`Modules: ${numIndividualModules} (${numIndividualChunks} chunks of ${chunkSize})`);
 
-            core.setOutput('individualMatrix', { 'chunk': [...Array(numIndividualChunks).keys()] });
+      const matrix = { chunk: Array.from({ length: numIndividualChunks }, (_, i) => i) };
+      console.log('Matrix:', matrix);
+
+      core.setOutput('individualMatrix', JSON.stringify(matrix));
+
 
   build:
     name: Build individual modules
