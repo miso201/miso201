@@ -1,7 +1,7 @@
 ext {
     extName = 'MANGA Plus by SHUEISHA'
     extClass = '.MangaPlusFactory'
-    extVersionCode = 13
+    extVersionCode = 1613
 }
 
 apply from: "$rootDir/common.gradle"
