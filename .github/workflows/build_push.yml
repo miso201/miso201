@@ -55,14 +55,24 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const numIndividualModules = process.env.NUM_INDIVIDUAL_MODULES;
-            const chunkSize = process.env.CI_CHUNK_SIZE;
+            const core = require('@actions/core');
+
+            const numIndividualModules = parseInt(process.env.NUM_INDIVIDUAL_MODULES || '0', 10);
+            const chunkSize = parseInt(process.env.CI_CHUNK_SIZE || '1', 10);
+
+            if (numIndividualModules === 0) {
+              console.log('No modules to build.');
+              core.setOutput('individualMatrix', JSON.stringify({ chunk: [] }));
+              return;
+            }
 
             const numIndividualChunks = Math.ceil(numIndividualModules / chunkSize);
+            const matrix = { chunk: Array.from({ length: numIndividualChunks }, (_, i) => i) };
 
             console.log(`Modules: ${numIndividualModules} (${numIndividualChunks} chunks of ${chunkSize})`);
+            console.log('Generated Matrix:', matrix);
 
-            core.setOutput('individualMatrix', { 'chunk': [...Array(numIndividualChunks).keys()] });
+            core.setOutput('individualMatrix', JSON.stringify(matrix));
 
   build:
     name: Build individual modules
@@ -87,60 +97,22 @@ jobs:
           java-version: 17
           distribution: adopt
 
-      - name: Generate signing key and keystore
-        run: |
-          # Set the keystore password and key password
-          KEY_STORE_PASSWORD="zxcvbnm,./"
-          KEY_PASSWORD="zxcvbnm,./"
-          
-          # Set the alias name
-          KEY_ALIAS="baynar"
-          
-          # Create a keystore with a self-signed certificate
-          keytool -genkeypair -v -keystore signingkey.jks -keyalg RSA -keysize 2048 \
-            -validity 3650 -dname "CN=Automated Signing Key, OU=CI, O=Company, L=City, ST=State, C=US" \
-            -storepass $KEY_STORE_PASSWORD -keypass $KEY_PASSWORD -alias $KEY_ALIAS
-
-          # Generate salts for MANGAPLUS and MANGAGAUGAU (randomized)
-          MANGAPLUS_SALT=$(openssl rand -hex 16)
-          MANGAGAUGAU_SALT=$(openssl rand -hex 16)
-
-          # Save them as environment variables for later steps
-          echo "KEY_STORE_PASSWORD=$KEY_STORE_PASSWORD" >> $GITHUB_ENV
-          echo "KEY_PASSWORD=$KEY_PASSWORD" >> $GITHUB_ENV
-          echo "MANGAPLUS_SALT=$MANGAPLUS_SALT" >> $GITHUB_ENV
-          echo "MANGAGAUGAU_SALT=$MANGAGAUGAU_SALT" >> $GITHUB_ENV
-          echo "KEY_ALIAS=$KEY_ALIAS" >> $GITHUB_ENV  # Save alias as environment variable
-          echo "SIGNING_KEY_PATH=$(pwd)/signingkey.jks" >> $GITHUB_ENV
-
       - name: Build extensions (chunk ${{ matrix.chunk }})
         uses: gradle/gradle-command-action@v2
-        env:
-          CI_CHUNK_NUM: ${{ matrix.chunk }}
-          ALIAS: ${{ env.KEY_ALIAS }}
-          KEY_STORE_PASSWORD: ${{ env.KEY_STORE_PASSWORD }}
-          KEY_PASSWORD: ${{ env.KEY_PASSWORD }}
-          MANGAPLUS_SALT: ${{ env.MANGAPLUS_SALT }}
-          MANGAGAUGAU_SALT: ${{ env.MANGAGAUGAU_SALT }}
         with:
           arguments: assembleRelease
 
       - name: Upload APKs (chunk ${{ matrix.chunk }})
         uses: actions/upload-artifact@v3
-        if: "github.repository == 'miso201/miso201'"
         with:
           name: "individual-apks-${{ matrix.chunk }}"
           path: "**/*.apk"
           retention-days: 1
 
-      - name: Clean up CI files
-        run: rm signingkey.jks
-
   publish_repo:
     name: Publish repo
     needs:
       - build
-    if: "github.repository == 'miso201/miso201'"
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifacts
