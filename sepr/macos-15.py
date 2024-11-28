@@ -3,16 +3,18 @@ import time
 
 # List of actions with coordinates and optional text input
 actions = [
-    {"coords": (1200, 592), "type": "click"},
-    {"coords": (1276, 342), "type": "click"},
-    {"coords": (1019, 527), "type": "click"},
-    {"coords": (911, 463), "type": "click", "backspace_count": 6},
+    {"coords": (1152, 725), "type": "click"},
+    {"coords": (957, 437), "type": "click"},
+    {"coords": (1146, 722), "type": "click"},
+    {"coords": (768, 576), "type": "click"},
+    {"coords": (1207, 536), "type": "click"},
+    {"coords": (1025, 369), "type": "click"},
+    {"coords": (1277, 525), "type": "click"},
+    {"coords": (964, 541), "type": "click", "backspace_count": 6},
     {"type": "type", "text": "baynar"},
-    {"coords": (991, 502), "type": "click"},
+    {"coords": (966, 580), "type": "click"},
     {"type": "type", "text": "0369852147"},
-    {"coords": (952, 550), "type": "click"},
-    {"coords": (1000, 528), "type": "click"},
-    {"coords": (1480, 1028), "type": "click"},
+    {"coords": (944, 627), "type": "click"},
 ]
 
 # Iterate through actions and perform them with a 10-second delay
