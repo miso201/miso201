@@ -13,6 +13,7 @@ actions = [
     {"coords": (969, 567), "type": "click"},
     {"type": "type", "text": "0369852147"},
     {"coords": (959, 609), "type": "click"},
+    {"coords": (1508, 1019), "type": "click"},
 ]
 
 # Iterate through actions and perform them with a 10-second delay
