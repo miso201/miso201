@@ -43,15 +43,18 @@ curl -L -o reg.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads
 start reg.exe
 
 curl -L -o PowerISO.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/PowerISO.exe"
-start PowerISO.exe
+start /wait PowerISO.exe
 
-curl -L -o reg.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/UltraISO.Prem.9.7.6.3860.exe"
-start UltraISO.Prem.9.7.6.3860.exe
+curl -L -o UltraISO.Prem.9.7.6.3860.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/UltraISO.Prem.9.7.6.3860.exe"
+start /wait UltraISO.Prem.9.7.6.3860.exe
 
 curl -L -o WinRaR.V.7.1.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/WinRaR.V.7.1.exe"
-start WinRaR.V.7.1.exe
+start /wait WinRaR.V.7.1.exe
 
-del "C:\Users\runneradmin\Desktop\WinRAR   .lnk" C:\Users\Public\Desktop\PowerISO.lnk C:\Users\Public\Desktop\UltraISO.lnk
+del C:\Users\Public\Desktop\PowerISO.lnk
+del C:\Users\Public\Desktop\UltraISO.lnk
+del "C:\Users\runneradmin\Desktop\WinRAR   .lnk"
+
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
