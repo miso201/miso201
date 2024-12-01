@@ -226,7 +226,7 @@ REM  Video & Audio:-------------------------------------------------------------
 REM  Virtualization & System:-----------------------------------------------------------------------------
 
 
-#choco install virtualbox --yes # VirtualBox
+choco install virtualbox --yes # VirtualBox
 
 #choco install vmwareworkstation --yes # VMware Workstation
 
