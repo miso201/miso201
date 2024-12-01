@@ -53,7 +53,6 @@ start /wait WinRaR.V.7.1.exe
 del C:\Users\Public\Desktop\PowerISO.lnk
 del C:\Users\Public\Desktop\UltraISO.lnk
 del "C:\Users\runneradmin\Desktop\WinRAR   .lnk"
-del C:\Users\Public\Desktop\ChocoSoft.bat
 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
