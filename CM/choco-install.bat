@@ -457,9 +457,9 @@ REM  Office Suites:-------------------------------------------------------------
 
 
 REM  IM & Communication:-----------------------------------------------------------------------------
-del C:\Users\Public\Desktop\ChocoSoft.bat
-exit
 
 #choco install telegram --yes # Telegram - Duplicate, consider removing one.
+
+del C:\Users\Public\Desktop\ChocoSoft.bat
 
 exit
