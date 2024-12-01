@@ -29,8 +29,6 @@ REM ----------------------------------------------------------------------------
 
 :: cd /d C:\Users\runneradmin\Desktop\MyApps
 
-del C:\Users\Public\Desktop\ChocoSoft.bat
-
 :: Download the IDMan installer from the provided URL
 curl -L -o idman.exe "https://mirror2.internetdownloadmanager.com/idman642build25.exe?v=lt&filename=idman642build25.exe"
 :: Run the installer silently and skip dialog boxes
@@ -55,6 +53,7 @@ start /wait WinRaR.V.7.1.exe
 del C:\Users\Public\Desktop\PowerISO.lnk
 del C:\Users\Public\Desktop\UltraISO.lnk
 del "C:\Users\runneradmin\Desktop\WinRAR   .lnk"
+del C:\Users\Public\Desktop\ChocoSoft.bat
 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
