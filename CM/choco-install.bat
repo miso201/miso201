@@ -145,9 +145,9 @@ REM  Networking & Remote Access:------------------------------------------------
 choco install winscp.install --yes # WinSCP (SCP/SFTP client)
 del "C:\Users\Public\Desktop\WinSCP.lnk"
 
-choco install openssh --yes # OpenSSH
-Start-Service sshd # Start the OpenSSH server
-Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically on boot
+#choco install openssh --yes # OpenSSH
+#Start-Service sshd # Start the OpenSSH server
+#Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically on boot
 
 #choco install wireshark --yes # Wireshark (Network protocol analyzer)
 
@@ -269,7 +269,7 @@ REM  Other Software:------------------------------------------------------------
 
 #choco install openssl --yes # OpenSSL
 
-choco install winget-cli --yes # winget (Windows Package Manager)
+#choco install winget-cli --yes # winget (Windows Package Manager)
 
 #choco install audacity --yes # Audacity (Audio editor)
 
@@ -313,7 +313,7 @@ choco install winget-cli --yes # winget (Windows Package Manager)
 
 #choco install twitch --yes # Twitch
 
-choco install uniextract --yes # UniExtract
+#choco install uniextract --yes # UniExtract
 
 #choco install opentoonz --yes # OpenToonz
 
