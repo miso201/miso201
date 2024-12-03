@@ -227,6 +227,7 @@ REM  Virtualization & System:---------------------------------------------------
 
 
 choco install virtualbox --yes # VirtualBox
+choco install virtualbox-guest-additions-guest.install
 
 #choco install vmwareworkstation --yes # VMware Workstation
 
