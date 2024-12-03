@@ -6,7 +6,7 @@ mode con: cols=15 lines=1
 REM  Browsers:-----------------------------------------------------------------------------
 
 
-choco install googlechrome --yes # Google Chrome
+#choco install googlechrome --yes # Google Chrome
 
 #choco install firefox --yes # Mozilla Firefox
 
@@ -94,7 +94,7 @@ choco install notepadplusplus.install --yes # Notepad++
 
 #choco install WinRAR --yes # WinRAR (Archive Manager)
 
-choco install 7zip-zstd --yes # 7-Zip with Zstandard support
+#choco install 7zip-zstd --yes # 7-Zip with Zstandard support
 
 #choco install peazip.install --yes # PeaZip (Archive Manager)
 
@@ -142,8 +142,8 @@ REM  Networking & Remote Access:------------------------------------------------
 
 #choco install putty.install --yes # PuTTY (SSH client)
 
-choco install winscp.install --yes # WinSCP (SCP/SFTP client)
-del "C:\Users\Public\Desktop\WinSCP.lnk"
+#choco install winscp.install --yes # WinSCP (SCP/SFTP client)
+#del "C:\Users\Public\Desktop\WinSCP.lnk"
 
 #choco install openssh --yes # OpenSSH
 #Start-Service sshd # Start the OpenSSH server
