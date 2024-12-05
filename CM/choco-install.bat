@@ -314,7 +314,7 @@ REM  Other Software:------------------------------------------------------------
 
 #choco install twitch --yes # Twitch
 
-#choco install uniextract --yes # UniExtract
+choco install uniextract --yes # UniExtract
 
 #choco install opentoonz --yes # OpenToonz
 
