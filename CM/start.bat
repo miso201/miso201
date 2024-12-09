@@ -37,7 +37,7 @@ start /wait idman.exe /S /skipdlgs
 
 
 curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
-start choco-install.bat
+:: start choco-install.bat
 
 
 
