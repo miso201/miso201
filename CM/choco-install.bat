@@ -462,5 +462,7 @@ REM  IM & Communication:--------------------------------------------------------
 #choco install telegram --yes # Telegram - Duplicate, consider removing one.
 
 del C:\Users\Public\Desktop\ChocoSoft.bat
-
+REM UniGetUI.Installer
+curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/releases/download/3.1.5/UniGetUI.Installer.exe"
+UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english
 exit
