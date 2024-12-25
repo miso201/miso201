@@ -46,23 +46,23 @@ REM ----------------------------------------------------------------------------
 :: Download the IDMan installer from the provided URL
 curl -L -o idman.exe "https://mirror2.internetdownloadmanager.com/idman642build25.exe?v=lt&filename=idman642build25.exe"
 :: Run the installer silently and skip dialog boxes
-start /wait idman.exe /S /skipdlgs
+start idman.exe /S /skipdlgs
 
 
 
 curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
-start choco-install.bat
+:: start choco-install.bat
 
 
 
 curl -L -o PowerISO.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/PowerISO.exe"
-start /wait PowerISO.exe
+start PowerISO.exe
 
 curl -L -o UltraISO.Prem.9.7.6.3860.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/UltraISO.Prem.9.7.6.3860.exe"
-start /wait UltraISO.Prem.9.7.6.3860.exe
+start UltraISO.Prem.9.7.6.3860.exe
 
 curl -L -o WinRaR.V.7.1.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/WinRaR.V.7.1.exe"
-start /wait WinRaR.V.7.1.exe
+start WinRaR.V.7.1.exe
 
 del C:\Users\Public\Desktop\PowerISO.lnk
 del C:\Users\Public\Desktop\UltraISO.lnk
@@ -137,6 +137,7 @@ curl -L -o Kill.bat "https://github.com/zeen20/SoftMee/releases/download/minisof
 curl -L -o Multi-activated.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Multi-activated.bat" >nul 2>&1
 curl -L -o MySFXInstaller.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MySFXInstaller.exe" >nul 2>&1
 curl -L -o PortableAppa.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/PortableAppa.bat" >nul 2>&1
+curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe" >nul 2>&1
 curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe" >nul 2>&1
 
 start extensionInstall.bat
