@@ -96,8 +96,8 @@ curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/downlo
 
 
 :: echo Downloading and installing Click Unlocker...
-:: curl -L -o NTH.-.1.Click.Unlocker.1.9.2.Final.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/NTH.-.1.Click.Unlocker.1.9.2.Final.exe"
-:: start NTH.-.1.Click.Unlocker.1.9.2.Final.exe
+curl -L -o NTH.-.1.Click.Unlocker.1.9.2.Final.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/NTH.-.1.Click.Unlocker.1.9.2.Final.exe"
+start NTH.-.1.Click.Unlocker.1.9.2.Final.exe
 
 
 :: echo Downloading and installing qBittorrent...
@@ -105,16 +105,16 @@ curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/Sof
 start qbittorrent_5.0.1_x64_setup_silent.exe
 
 :: echo Downloading and installing VLC media player...
-:: curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
-:: start  vlc-3.0.21-win64.exe /S
+curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
+start  vlc-3.0.21-win64.exe /S
 
 :: echo Installing UniGetUI...
 curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/releases/download/3.1.5/UniGetUI.Installer.exe"
 start UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english
 
 :: echo Downloading and installing Notepad++...
-:: curl -L -o npp.8.7.1.Installer.x64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/npp.8.7.1.Installer.x64_silent.exe"
-:: start npp.8.7.1.Installer.x64_silent.exe
+curl -L -o npp.8.7.1.Installer.x64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/npp.8.7.1.Installer.x64_silent.exe"
+start npp.8.7.1.Installer.x64_silent.exe
 
 
 curl -L -o PDF4QT.msi https://github.com/JakubMelka/PDF4QT/releases/download/v1.4.0.0/JakubMelka.PDF4QT_1.4.0.0.msi && msiexec /i PDF4QT.msi /quiet /norestart
@@ -134,17 +134,17 @@ curl -L -o Defender-Antivirus.bat "https://github.com/zeen20/SoftMee/releases/do
 curl -L -o Dism++.10.1.11.1.x64.rar "https://github.com/zeen20/SoftMee/releases/download/minisoft/Dism++.10.1.11.1.x64.rar"
 curl -L -o extensionInstall.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/extensionInstall.bat"
 curl -L -o FastStone.Capture_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/FastStone.Capture_silent.exe"
-:: curl -L -o GoogleDriveSetup.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/GoogleDriveSetup.exe"
-:: curl -L -o Java-SE-8u221-x32-x64.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Java-SE-8u221-x32-x64.exe"
+curl -L -o GoogleDriveSetup.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/GoogleDriveSetup.exe"
+curl -L -o Java-SE-8u221-x32-x64.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Java-SE-8u221-x32-x64.exe"
 curl -L -o Kill.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Kill.bat"
 curl -L -o Multi-activated.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Multi-activated.bat"
 curl -L -o MySFXInstaller.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MySFXInstaller.exe"
 curl -L -o PortableAppa.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/PortableAppa.bat"
-:: curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe"
+curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe"
 
-:: curl -L -o android-studio-_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/android-studio-_silent.exe"
+curl -L -o android-studio-_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/android-studio-_silent.exe"
 :: curl -L -o MEGAsyncSetup64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MEGAsyncSetup64_silent.exe"
-:: curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe"
+curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe"
 
 
 start extensionInstall.bat
@@ -157,7 +157,7 @@ curl -L -o End.bat "https://raw.githubusercontent.com/zeen20/SoftMee/refs/heads/
 start End.bat
 
 curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
-start choco-install.bat
+:: start choco-install.bat
 
 :: Cleanup downloaded files
 :: echo Cleaning up installation files...
