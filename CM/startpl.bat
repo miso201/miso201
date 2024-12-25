@@ -199,7 +199,7 @@ curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/
 :: del "C:\Users\%USERNAME%\Desktop\Internet Download Manager.lnk" "C:\Users\%USERNAME%\Desktop\WinRAR   .lnk" C:\Users\Public\Desktop\PowerISO.lnk C:\Users\Public\Desktop\UltraISO.lnk "C:\Users\Public\Desktop\VLC media player.lnk" "C:\Users\Public\Desktop\Foxit PDF Reader.lnk"
 
 
-
+del "C:\Users\Public\Desktop\VLC media player.lnk"
 set targetPath=C:\MyApps
 set shortcutPath=%UserProfile%\Desktop\MyApps.lnk
 
