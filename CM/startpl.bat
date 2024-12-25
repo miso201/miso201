@@ -211,5 +211,25 @@ echo Shortcut created at %shortcutPath%.
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+@echo off
+:: Disable the "Welcome to Microsoft Edge" first-run experience
+NET SESSION >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    echo You need to run this script as Administrator.
+    
+    exit /b
+)
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Edge" /f
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f
+
+
+
+
+
+
 :: Exit the script
 exit
