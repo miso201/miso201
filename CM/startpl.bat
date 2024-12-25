@@ -76,12 +76,12 @@ start /wait idm.exe
 
 :: Start downloading and installing software
 
-echo Downloading and installing NetFx3online ...
+:: echo Downloading and installing NetFx3online ...
 curl -L -o NetFx3online.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/NetFx3online.bat" >nul 2>&1
 :: start /wait NetFx3online.bat >nul 2>&1
 
 
-echo Downloading and installing 7-Zip...
+:: echo Downloading and installing 7-Zip...
 curl -L -o 7z2409-x64.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/7z2409-x64_silent.exe" >nul 2>&1
 start /wait 7z2409-x64.exe >nul 2>&1
 
@@ -109,9 +109,13 @@ start qbittorrent_5.0.1_x64_setup_silent.exe >nul 2>&1
 curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" >nul 2>&1
 start  vlc-3.0.21-win64.exe /S >nul 2>&1
 
+:: echo Installing UniGetUI...
+curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/releases/download/3.1.5/UniGetUI.Installer.exe" >nul 2>&1
+start UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english >nul 2>&1
 
-
-
+:: echo Downloading and installing Notepad++...
+curl -L -o npp.8.7.1.Installer.x64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/npp.8.7.1.Installer.x64_silent.exe" >nul 2>&1
+start npp.8.7.1.Installer.x64_silent.exe >nul 2>&1
 
 
 curl -L -o PDF4QT.msi https://github.com/JakubMelka/PDF4QT/releases/download/v1.4.0.0/JakubMelka.PDF4QT_1.4.0.0.msi && msiexec /i PDF4QT.msi /quiet /norestart
