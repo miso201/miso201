@@ -3,8 +3,7 @@ cls
 Color 3f
 mode con: cols=25 lines=2
 
-curl -L -o crmdown.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/crmdown.bat"
-start /wait crmdown.bat
+
 
 REM Check if C:\MyApps\Inustall exists
 if not exist "C:\MyApps\Inustall" (
@@ -43,7 +42,8 @@ del "C:\Users\Public\Desktop\R 4.4.2.lnk" "C:\Users\Public\Desktop\Epic Games La
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+curl -L -o crmdown.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/crmdown.bat"
+:: start /wait crmdown.bat
 
 :: Download the IDMan installer from the provided URL
 curl -L -o idman.exe "https://mirror2.internetdownloadmanager.com/idman642build25.exe?v=lt&filename=idman642build25.exe"
