@@ -1,15 +1,8 @@
 @echo off
 cls
 Color 3f
-mode con:cols=69 lines=7
+mode con: cols=25 lines=2
 
-:: Displaying the welcome message
-echo //////////////////////////////////////////////////////////////
-echo /                                                            /
-echo /                       Please wait...                       /
-echo /                  Don't close this window                   /
-echo /                                                            /
-echo //////////////////////////////////////////////////////////////
 
 REM Check if C:\MyApps\Inustall exists
 if not exist "C:\MyApps\Inustall" (
@@ -94,27 +87,27 @@ start /wait 7z2409-x64.exe >nul 2>&1
 
 
 
-echo Downloading and installing DirectX 11...
+:: echo Downloading and installing DirectX 11...
 curl -L -o DirectX.11_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX.11_silent.exe" >nul 2>&1
 :: start /wait DirectX.11_silent.exe >nul 2>&1
 
-echo Downloading and installing DirectX...
+:: echo Downloading and installing DirectX...
 curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX_silent.exe" >nul 2>&1
 :: start /wait DirectX_silent.exe >nul 2>&1
 
 
-echo Downloading and installing Click Unlocker...
+:: echo Downloading and installing Click Unlocker...
 curl -L -o NTH.-.1.Click.Unlocker.1.9.2.Final.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/NTH.-.1.Click.Unlocker.1.9.2.Final.exe" >nul 2>&1
-start /wait NTH.-.1.Click.Unlocker.1.9.2.Final.exe >nul 2>&1
+start NTH.-.1.Click.Unlocker.1.9.2.Final.exe >nul 2>&1
 
 
-echo Downloading and installing qBittorrent...
+:: echo Downloading and installing qBittorrent...
 curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe" >nul 2>&1
-start /wait qbittorrent_5.0.1_x64_setup_silent.exe >nul 2>&1
+start qbittorrent_5.0.1_x64_setup_silent.exe >nul 2>&1
 
-echo Downloading and installing VLC media player...
+:: echo Downloading and installing VLC media player...
 curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" >nul 2>&1
-start /wait vlc-3.0.21-win64.exe /S >nul 2>&1
+start  vlc-3.0.21-win64.exe /S >nul 2>&1
 
 
 
@@ -146,9 +139,9 @@ curl -L -o MySFXInstaller.exe "https://github.com/zeen20/SoftMee/releases/downlo
 curl -L -o PortableAppa.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/PortableAppa.bat" >nul 2>&1
 curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe" >nul 2>&1
 
-start /wait extensionInstall.bat
-start /wait Audio.bat
-start /wait Kill.bat
+start extensionInstall.bat
+start Audio.bat
+start Kill.bat
 
 :: Cleanup downloaded files
 :: echo Cleaning up installation files...
@@ -188,7 +181,7 @@ start /wait Kill.bat
 :: del "C:\Users\%USERNAME%\Desktop\Internet Download Manager.lnk" "C:\Users\%USERNAME%\Desktop\WinRAR   .lnk" C:\Users\Public\Desktop\PowerISO.lnk C:\Users\Public\Desktop\UltraISO.lnk "C:\Users\Public\Desktop\VLC media player.lnk" "C:\Users\Public\Desktop\Foxit PDF Reader.lnk"
 
 curl -L -o End.bat "https://raw.githubusercontent.com/zeen20/SoftMee/refs/heads/main/End.bat" >nul 2>&1
-start /wait End.bat
+start End.bat
 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
