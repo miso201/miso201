@@ -188,6 +188,14 @@ start Kill.bat
 curl -L -o End.bat "https://raw.githubusercontent.com/zeen20/SoftMee/refs/heads/main/End.bat" >nul 2>&1
 start End.bat
 
+set targetPath=C:\MyApps
+set shortcutPath=%UserProfile%\Desktop\MyApps.lnk
+
+:: Create a shortcut using PowerShell
+powershell -Command ^
+    "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%shortcutPath%'); $s.TargetPath = '%targetPath%'; $s.Save();"
+
+echo Shortcut created at %shortcutPath%.
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
