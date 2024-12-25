@@ -50,8 +50,7 @@ start idman.exe /S /skipdlgs
 
 
 
-curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
-:: start choco-install.bat
+
 
 
 
@@ -97,8 +96,8 @@ curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/downlo
 
 
 :: echo Downloading and installing Click Unlocker...
-curl -L -o NTH.-.1.Click.Unlocker.1.9.2.Final.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/NTH.-.1.Click.Unlocker.1.9.2.Final.exe"
-start NTH.-.1.Click.Unlocker.1.9.2.Final.exe
+:: curl -L -o NTH.-.1.Click.Unlocker.1.9.2.Final.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/NTH.-.1.Click.Unlocker.1.9.2.Final.exe"
+:: start NTH.-.1.Click.Unlocker.1.9.2.Final.exe
 
 
 :: echo Downloading and installing qBittorrent...
@@ -106,16 +105,16 @@ curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/Sof
 start qbittorrent_5.0.1_x64_setup_silent.exe
 
 :: echo Downloading and installing VLC media player...
-curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
-start  vlc-3.0.21-win64.exe /S
+:: curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
+:: start  vlc-3.0.21-win64.exe /S
 
 :: echo Installing UniGetUI...
 curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/releases/download/3.1.5/UniGetUI.Installer.exe"
 start UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english
 
 :: echo Downloading and installing Notepad++...
-curl -L -o npp.8.7.1.Installer.x64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/npp.8.7.1.Installer.x64_silent.exe"
-start npp.8.7.1.Installer.x64_silent.exe
+:: curl -L -o npp.8.7.1.Installer.x64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/npp.8.7.1.Installer.x64_silent.exe"
+:: start npp.8.7.1.Installer.x64_silent.exe
 
 
 curl -L -o PDF4QT.msi https://github.com/JakubMelka/PDF4QT/releases/download/v1.4.0.0/JakubMelka.PDF4QT_1.4.0.0.msi && msiexec /i PDF4QT.msi /quiet /norestart
@@ -155,6 +154,12 @@ start Kill.bat
 
 del "C:\Users\runneradmin\Desktop\WinRAR   .lnk" "C:\Users\runneradmin\Desktop\Internet Download Manager.lnk" "C:\Users\Public\Desktop\VLC media player.lnk" C:\Users\Public\Desktop\UltraISO.lnk C:\Users\Public\Desktop\PowerISO.lnk
 
+curl -L -o End.bat "https://raw.githubusercontent.com/zeen20/SoftMee/refs/heads/main/End.bat"
+start End.bat
+
+curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
+start choco-install.bat
+
 :: Cleanup downloaded files
 :: echo Cleaning up installation files...
 :: del /f /q UltraISO.Prem.9.7.6.3860.exe
@@ -192,8 +197,7 @@ del "C:\Users\runneradmin\Desktop\WinRAR   .lnk" "C:\Users\runneradmin\Desktop\I
 
 :: del "C:\Users\%USERNAME%\Desktop\Internet Download Manager.lnk" "C:\Users\%USERNAME%\Desktop\WinRAR   .lnk" C:\Users\Public\Desktop\PowerISO.lnk C:\Users\Public\Desktop\UltraISO.lnk "C:\Users\Public\Desktop\VLC media player.lnk" "C:\Users\Public\Desktop\Foxit PDF Reader.lnk"
 
-curl -L -o End.bat "https://raw.githubusercontent.com/zeen20/SoftMee/refs/heads/main/End.bat"
-start End.bat
+
 
 set targetPath=C:\MyApps
 set shortcutPath=%UserProfile%\Desktop\MyApps.lnk
