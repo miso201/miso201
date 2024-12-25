@@ -6,460 +6,460 @@ mode con: cols=15 lines=1
 REM  Browsers:-----------------------------------------------------------------------------
 
 
-#choco install googlechrome --yes # Google Chrome
+REM  choco install googlechrome --yes REM   Google Chrome
 
-#choco install firefox --yes # Mozilla Firefox
+REM  choco install firefox --yes REM   Mozilla Firefox
 
-#choco install brave --yes # Brave Browser
+REM  choco install brave --yes REM   Brave Browser
 
-#choco install Vivaldi --yes # Vivaldi Browser
+REM  choco install Vivaldi --yes REM   Vivaldi Browser
 
-#choco install waterfox --yes # Waterfox Browser (Privacy-focused)
+REM  choco install waterfox --yes REM   Waterfox Browser (Privacy-focused)
 
-#choco install microsoft-edge --yes # Microsoft Edge
+REM  choco install microsoft-edge --yes REM   Microsoft Edge
 
-#choco install opera-gx --yes # Opera GX (Gamer-oriented)
+REM  choco install opera-gx --yes REM   Opera GX (Gamer-oriented)
 
-#choco install opera --yes # Opera Browser
+REM  choco install opera --yes REM   Opera Browser
 
-#choco install tor-browser --yes # Tor Browser
+REM  choco install tor-browser --yes REM   Tor Browser
 
-#choco install ungoogled-chromium --yes # Chromium without Google's tracking
+REM  choco install ungoogled-chromium --yes REM   Chromium without Google's tracking
 
-#choco install chromium --yes # Chromium open-source browser
+REM  choco install chromium --yes REM   Chromium open-source browser
 
-#choco install maxthon --yes # Maxthon Browser
+REM  choco install maxthon --yes REM   Maxthon Browser
 
-#choco install centbrowser --yes # Cent Browser
+REM  choco install centbrowser --yes REM   Cent Browser
 
-#choco install yandex-browser --yes # Yandex Browser
+REM  choco install yandex-browser --yes REM   Yandex Browser
 
 
 
 REM  Multimedia:-----------------------------------------------------------------------------
 
 
-choco install vlc --yes # VLC media player
+choco install vlc --yes REM   VLC media player
 del "C:\Users\Public\Desktop\VLC media player.lnk"
 
-#choco install kodi --yes # Kodi (Media center)
+REM  choco install kodi --yes REM   Kodi (Media center)
 
-#choco install spotify --yes # Spotify Music
+REM  choco install spotify --yes REM   Spotify Music
 
-#choco install clementine --yes # Clementine Music Player
+REM  choco install clementine --yes REM   Clementine Music Player
 
-#choco install bsplayer --yes # BSPlayer (Media Player)
+REM  choco install bsplayer --yes REM   BSPlayer (Media Player)
 
-#choco install winamp --yes # Winamp (Media Player)
+REM  choco install winamp --yes REM   Winamp (Media Player)
 
-#choco install potplayer --yes # PotPlayer (Media Player)
+REM  choco install potplayer --yes REM   PotPlayer (Media Player)
 
-#choco install k-litecodecpackfull --yes # K-Lite Codec Pack (Full)
+REM  choco install k-litecodecpackfull --yes REM   K-Lite Codec Pack (Full)
 
-#choco install k-litecodecpackmega --yes # K-Lite Codec Pack (Mega)
+REM  choco install k-litecodecpackmega --yes REM   K-Lite Codec Pack (Mega)
 
-#choco install gom-player --yes #GOM Player
+REM  choco install gom-player --yes REM  GOM Player
 
-#choco install smplayer --yes #SMPlayer
+REM  choco install smplayer --yes REM  SMPlayer
 
-#choco install smtube --yes # SMTube (YouTube downloader)
+REM  choco install smtube --yes REM   SMTube (YouTube downloader)
 
-#choco install aimp --yes #AIMP
+REM  choco install aimp --yes REM  AIMP
 
 
 
 REM  Development Tools:-----------------------------------------------------------------------------
 
 
-#choco install vscode --yes # Visual Studio Code: Lightweight code editor
+REM  choco install vscode --yes REM   Visual Studio Code: Lightweight code editor
 
-#choco install androidstudio --yes # Android Studio
+REM  choco install androidstudio --yes REM   Android Studio
 
-#choco install intellijidea-ultimate --yes # IntelliJ IDEA Ultimate
+REM  choco install intellijidea-ultimate --yes REM   IntelliJ IDEA Ultimate
 
-#choco install intellijidea-community --yes # IntelliJ IDEA Community
+REM  choco install intellijidea-community --yes REM   IntelliJ IDEA Community
 
-#choco install sublimetext3.app --yes #Sublime Text 3
+REM  choco install sublimetext3.app --yes REM  Sublime Text 3
 
-#choco install vscodium.install --yes # VS Codium
+REM  choco install vscodium.install --yes REM   VS Codium
 
 
 
 REM  Utilities:-----------------------------------------------------------------------------
 
 
-#choco install foxitreader --yes # Foxit Reader (PDF reader)
+REM  choco install foxitreader --yes REM   Foxit Reader (PDF reader)
 
-choco install notepadplusplus.install --yes # Notepad++
+choco install notepadplusplus.install --yes REM   Notepad++
 
-#choco install WinRAR --yes # WinRAR (Archive Manager)
+REM  choco install WinRAR --yes REM   WinRAR (Archive Manager)
 
-#choco install 7zip-zstd --yes # 7-Zip with Zstandard support
+REM  choco install 7zip-zstd --yes REM   7-Zip with Zstandard support
 
-#choco install peazip.install --yes # PeaZip (Archive Manager)
+REM  choco install peazip.install --yes REM   PeaZip (Archive Manager)
 
-#choco install bandizip --yes # Bandizip (Archive Manager)
+REM  choco install bandizip --yes REM   Bandizip (Archive Manager)
 
-#choco install freearc.install --yes # FreeArc (Archive Manager)
+REM  choco install freearc.install --yes REM   FreeArc (Archive Manager)
 
-#choco install everything --yes # Everything (File search)
+REM  choco install everything --yes REM   Everything (File search)
 
-#choco install iobit-uninstaller --yes # IObit Uninstaller
+REM  choco install iobit-uninstaller --yes REM   IObit Uninstaller
 
-#choco install cheatengine --yes # Cheat Engine
+REM  choco install cheatengine --yes REM   Cheat Engine
 
-#choco install ultraedit --yes # UltraEdit
+REM  choco install ultraedit --yes REM   UltraEdit
 
-#choco install winmerge --yes # WinMerge (File comparator)
+REM  choco install winmerge --yes REM   WinMerge (File comparator)
 
-choco install io-unlocker --yes # IO Unlocker
+choco install io-unlocker --yes REM   IO Unlocker
 del "C:\Users\Public\Desktop\IObit Unlocker.lnk"
 
-#choco install ultrasearch --yes # UltraSearch
+REM  choco install ultrasearch --yes REM   UltraSearch
 
-#choco install teracopy --yes # TeraCopy
+REM  choco install teracopy --yes REM   TeraCopy
 
-#choco install totalcommander --yes # Total Commander
+REM  choco install totalcommander --yes REM   Total Commander
 
-#choco install rdm --yes # Remote Desktop Manager
+REM  choco install rdm --yes REM   Remote Desktop Manager
 
-#choco install glaryutilities-free --yes # Glary Utilities Free
+REM  choco install glaryutilities-free --yes REM   Glary Utilities Free
 
-#choco install defraggler --yes # Defraggler
+REM  choco install defraggler --yes REM   Defraggler
 
-#choco install treesize --yes # TreeSize
+REM  choco install treesize --yes REM   TreeSize
 
-#choco install revo-uninstaller --yes # Revo Uninstaller
+REM  choco install revo-uninstaller --yes REM   Revo Uninstaller
 
 
 
 REM  Networking & Remote Access:-----------------------------------------------------------------------------
 
 
-#choco install chrome-remote-desktop-host --yes # Chrome Remote Desktop Host
+REM  choco install chrome-remote-desktop-host --yes REM   Chrome Remote Desktop Host
 
-#choco install filezilla --yes # FileZilla (FTP client)
+REM  choco install filezilla --yes REM   FileZilla (FTP client)
 
-#choco install putty.install --yes # PuTTY (SSH client)
+REM  choco install putty.install --yes REM   PuTTY (SSH client)
 
-#choco install winscp.install --yes # WinSCP (SCP/SFTP client)
-#del "C:\Users\Public\Desktop\WinSCP.lnk"
+REM  choco install winscp.install --yes REM   WinSCP (SCP/SFTP client)
+REM  del "C:\Users\Public\Desktop\WinSCP.lnk"
 
-#choco install openssh --yes # OpenSSH
-#Start-Service sshd # Start the OpenSSH server
-#Set-Service -Name sshd -StartupType Automatic # Ensure it starts automatically on boot
+REM  choco install openssh --yes REM   OpenSSH
+REM  Start-Service sshd REM   Start the OpenSSH server
+REM  Set-Service -Name sshd -StartupType Automatic REM   Ensure it starts automatically on boot
 
-#choco install wireshark --yes # Wireshark (Network protocol analyzer)
+REM  choco install wireshark --yes REM   Wireshark (Network protocol analyzer)
 
-#choco install wget --yes # wget (Download utility)
+REM  choco install wget --yes REM   wget (Download utility)
 
-#choco install protonvpn --yes # ProtonVPN
+REM  choco install protonvpn --yes REM   ProtonVPN
 
-#choco install openvpn --yes # OpenVPN
+REM  choco install openvpn --yes REM   OpenVPN
 
-#choco install nomachine --yes # NoMachine (Remote desktop)
+REM  choco install nomachine --yes REM   NoMachine (Remote desktop)
 
-#choco install vnc-viewer --yes # VNC Viewer
+REM  choco install vnc-viewer --yes REM   VNC Viewer
 
-#choco install openvpn-connect --yes # OpenVPN Connect
+REM  choco install openvpn-connect --yes REM   OpenVPN Connect
 
-#choco install ultravnc --yes # UltraVNC
+REM  choco install ultravnc --yes REM   UltraVNC
 
-#choco install teamviewer9 --yes #TeamViewer 9
+REM  choco install teamviewer9 --yes REM  TeamViewer 9
 
-#choco install anydesk.install --yes#AnyDesk
+REM  choco install anydesk.install --yesREM  AnyDesk
 
-#choco install ultraviewer.install --yes #UltraViewer
+REM  choco install ultraviewer.install --yes REM  UltraViewer
 
-#choco install parsec --yes #Parsec
+REM  choco install parsec --yes REM  Parsec
 
-#choco install teamviewer --yes #TeamViewer
+REM  choco install teamviewer --yes REM  TeamViewer
 
-#choco install remote-desktop-client --yes # Remote Desktop Client
+REM  choco install remote-desktop-client --yes REM   Remote Desktop Client
 
-#choco install mremoteng --yes # mRemoteNG
+REM  choco install mremoteng --yes REM   mRemoteNG
 
-#choco install vnc-connect --yes #VNC Connect
+REM  choco install vnc-connect --yes REM  VNC Connect
 
-#choco install 1remote --yes #1Remote
+REM  choco install 1remote --yes REM  1Remote
 
-#choco install splashtop-personal --yes #Splashtop Personal
+REM  choco install splashtop-personal --yes REM  Splashtop Personal
 
-#choco install rustdesk.install --yes #RustDesk
+REM  choco install rustdesk.install --yes REM  RustDesk
 
 
 
 REM  Image & Graphics:-----------------------------------------------------------------------------
 
 
-#choco install gimp --yes # GIMP (Image editor)
+REM  choco install gimp --yes REM   GIMP (Image editor)
 
-#choco install inkscape --yes # Inkscape (Vector graphics editor)
+REM  choco install inkscape --yes REM   Inkscape (Vector graphics editor)
 
-#choco install paint.net --yes # Paint.NET (Image editor)
+REM  choco install paint.net --yes REM   Paint.NET (Image editor)
 
-#choco install imagemagick --yes # ImageMagick (Image manipulation)
+REM  choco install imagemagick --yes REM   ImageMagick (Image manipulation)
 
-#choco install xnview --yes # XnView (Image viewer)
+REM  choco install xnview --yes REM   XnView (Image viewer)
 
-#choco install xnviewmp --yes # XnView MP (Image viewer)
+REM  choco install xnviewmp --yes REM   XnView MP (Image viewer)
 
-#choco install darktable --yes # Darktable (Photo editor)
+REM  choco install darktable --yes REM   Darktable (Photo editor)
 
 
 
 REM  Video & Audio:-----------------------------------------------------------------------------
 
 
-#choco install ffmpeg-full --yes # FFmpeg (Full package)
+REM  choco install ffmpeg-full --yes REM   FFmpeg (Full package)
 
-#choco install handbrake.install --yes # HandBrake (Video transcoder)
+REM  choco install handbrake.install --yes REM   HandBrake (Video transcoder)
 
-#choco install freemake-video-converter --yes # Freemake Video Converter
+REM  choco install freemake-video-converter --yes REM   Freemake Video Converter
 
-#choco install aegisub --yes # Aegisub (Subtitle editor)
+REM  choco install aegisub --yes REM   Aegisub (Subtitle editor)
 
-#choco install 4k-youtube-to-mp3 --yes # 4K YouTube to MP3
+REM  choco install 4k-youtube-to-mp3 --yes REM   4K YouTube to MP3
 
 
 
 REM  Virtualization & System:-----------------------------------------------------------------------------
 
 
-choco install virtualbox --yes # VirtualBox
+choco install virtualbox --yes REM   VirtualBox
 choco install virtualbox-guest-additions-guest.install
 
-#choco install vmwareworkstation --yes # VMware Workstation
+REM  choco install vmwareworkstation --yes REM   VMware Workstation
 
-#choco install qemu --yes # QEMU (Emulator)
+REM  choco install qemu --yes REM   QEMU (Emulator)
 
-#choco install wsl2 --yes # Windows Subsystem for Linux 2
+REM  choco install wsl2 --yes REM   Windows Subsystem for Linux 2
 
-#choco install imdisk-toolkit --yes # ImDisk Toolkit
+REM  choco install imdisk-toolkit --yes REM   ImDisk Toolkit
 
-#choco install cygwin --yes # Cygwin (Unix environment)
+REM  choco install cygwin --yes REM   Cygwin (Unix environment)
 
-#choco install cyg-get --yes # Cygwin package manager
+REM  choco install cyg-get --yes REM   Cygwin package manager
 
-#choco install winpcap --yes # WinPcap (Network packet capture)
+REM  choco install winpcap --yes REM   WinPcap (Network packet capture)
 
-#choco install nmap --yes # Nmap (Network scanner)
+REM  choco install nmap --yes REM   Nmap (Network scanner)
 
-#choco install hwmonitor --yes # HWMonitor (Hardware monitoring)
+REM  choco install hwmonitor --yes REM   HWMonitor (Hardware monitoring)
 
-#choco install processhacker.install --yes # Process Hacker
+REM  choco install processhacker.install --yes REM   Process Hacker
 
 
 
 REM  Other Software:-----------------------------------------------------------------------------
 
 
-#choco install sqlitebrowser --yes # SQLite Browser
+REM  choco install sqlitebrowser --yes REM   SQLite Browser
 
-#choco install wechat --yes # WeChat
+REM  choco install wechat --yes REM   WeChat
 
-#choco install discord.install --yes # Discord
+REM  choco install discord.install --yes REM   Discord
 
-#choco install line --yes # LINE
+REM  choco install line --yes REM   LINE
 
-#choco install screamer --yes # Screamer (Screen recorder)
+REM  choco install screamer --yes REM   Screamer (Screen recorder)
 
-#choco install burp-suite-free-edition --yes # Burp Suite Free Edition
+REM  choco install burp-suite-free-edition --yes REM   Burp Suite Free Edition
 
-#choco install sumatrapdf.install --yes # SumatraPDF
+REM  choco install sumatrapdf.install --yes REM   SumatraPDF
 
-#choco install openssl --yes # OpenSSL
+REM  choco install openssl --yes REM   OpenSSL
 
-#choco install winget-cli --yes # winget (Windows Package Manager)
+REM  choco install winget-cli --yes REM   winget (Windows Package Manager)
 
-#choco install audacity --yes # Audacity (Audio editor)
+REM  choco install audacity --yes REM   Audacity (Audio editor)
 
-#choco install googleearthpro --yes # Google Earth Pro
+REM  choco install googleearthpro --yes REM   Google Earth Pro
 
-#choco install googleearth --yes # Google Earth
+REM  choco install googleearth --yes REM   Google Earth
 
-#choco install javaruntime --yes # Java Runtime Environment
+REM  choco install javaruntime --yes REM   Java Runtime Environment
 
-#choco install webtorrent-desktop --yes # WebTorrent Desktop
+REM  choco install webtorrent-desktop --yes REM   WebTorrent Desktop
 
-#choco install vuzeclient --yes # Vuze Client
+REM  choco install vuzeclient --yes REM   Vuze Client
 
-#choco install rufus.install --yes # Rufus (USB bootable creator)
+REM  choco install rufus.install --yes REM   Rufus (USB bootable creator)
 
-#choco install universal-usb-installer --yes # Universal USB Installer
+REM  choco install universal-usb-installer --yes REM   Universal USB Installer
 
-#choco install aida64-extreme --yes # AIDA64 Extreme
+REM  choco install aida64-extreme --yes REM   AIDA64 Extreme
 
-#choco install linux-reader --yes # Linux Reader
+REM  choco install linux-reader --yes REM   Linux Reader
 
-#choco install freedownloadmanager --yes # Free Download Manager
+REM  choco install freedownloadmanager --yes REM   Free Download Manager
 
-#choco install bluestacks --yes # BlueStacks
+REM  choco install bluestacks --yes REM   BlueStacks
 
-#choco install amiduos --yes # AMIDuOS
+REM  choco install amiduos --yes REM   AMIDuOS
 
-#choco install ppsspp --yes # PPSSPP
+REM  choco install ppsspp --yes REM   PPSSPP
 
-#choco install adobeair --yes # Adobe AIR
+REM  choco install adobeair --yes REM   Adobe AIR
 
-#choco install tapwindows --yes # Tap-Windows
+REM  choco install tapwindows --yes REM   Tap-Windows
 
-#choco install visualstudio2019buildtools --yes # Visual Studio 2019 Build Tools
+REM  choco install visualstudio2019buildtools --yes REM   Visual Studio 2019 Build Tools
 
-#choco install python3 --yes # Python 3
+REM  choco install python3 --yes REM   Python 3
 
-#choco install ruby --yes # Ruby
+REM  choco install ruby --yes REM   Ruby
 
-#choco install directx-sdk --yes # DirectX SDK
+REM  choco install directx-sdk --yes REM   DirectX SDK
 
-#choco install twitch --yes # Twitch
+REM  choco install twitch --yes REM   Twitch
 
-#choco install uniextract --yes # UniExtract
+REM  choco install uniextract --yes REM   UniExtract
 
-#choco install opentoonz --yes # OpenToonz
+REM  choco install opentoonz --yes REM   OpenToonz
 
-#choco install synfig --yes # Synfig Studio (2D animation)
+REM  choco install synfig --yes REM   Synfig Studio (2D animation)
 
-#choco install steamcmd --yes # SteamCMD
+REM  choco install steamcmd --yes REM   SteamCMD
 
-#choco install wingetui --yes # Winget UI
+REM  choco install wingetui --yes REM   Winget UI
 
-#choco install explorerplusplus --yes # Explorer++
+REM  choco install explorerplusplus --yes REM   Explorer++
 
-#choco install afedteated --yes # (Unknown - needs clarification)
+REM  choco install afedteated --yes REM   (Unknown - needs clarification)
 
-#choco install tempfilecleaner.app --yes #Temp File Cleaner
+REM  choco install tempfilecleaner.app --yes REM  Temp File Cleaner
 
-#choco install transgui --yes #TransGUI
+REM  choco install transgui --yes REM  TransGUI
 
-#choco install captura --yes #Captura
+REM  choco install captura --yes REM  Captura
 
-#choco install ultraiso --yes #UltraISO
+REM  choco install ultraiso --yes REM  UltraISO
 
-#choco install cloneapp --yes #CloneApp
+REM  choco install cloneapp --yes REM  CloneApp
 
-#choco install avginternetsecurity --yes #AVG Internet Security
+REM  choco install avginternetsecurity --yes REM  AVG Internet Security
 
-#choco install rockstar-launcher --yes # Rockstar Games Launcher
+REM  choco install rockstar-launcher --yes REM   Rockstar Games Launcher
 
-#choco install xnconvert.install --yes # XnConvert
+REM  choco install xnconvert.install --yes REM   XnConvert
 
-#choco install dismplusplus --yes # DISM++
+REM  choco install dismplusplus --yes REM   DISM++
 
-#choco install youtube-dl-gui --yes # youtube-dl-gui
+REM  choco install youtube-dl-gui --yes REM   youtube-dl-gui
 
-#choco install x2go --yes # x2go
+REM  choco install x2go --yes REM   x2go
 
-#choco install virtualclonedrive --yes # Virtual CloneDrive
+REM  choco install virtualclonedrive --yes REM   Virtual CloneDrive
 
-#choco install megasync --yes # MegaSync
+REM  choco install megasync --yes REM   MegaSync
 
-#choco install telegram.install --yes # Telegram
+REM  choco install telegram.install --yes REM   Telegram
 
-#choco install github-desktop --yes # GitHub Desktop
+REM  choco install github-desktop --yes REM   GitHub Desktop
 
-#choco install gh --yes # GitHub CLI
+REM  choco install gh --yes REM   GitHub CLI
 
-#choco install docker-cli --yes # Docker CLI
+REM  choco install docker-cli --yes REM   Docker CLI
 
-#choco install cpu-z.install --yes # CPU-Z
+REM  choco install cpu-z.install --yes REM   CPU-Z
 
-#choco install discord --yes # Discord - Duplicate, consider removing one.
+REM  choco install discord --yes REM   Discord - Duplicate, consider removing one.
 
-#choco install steam --yes # Steam
+REM  choco install steam --yes REM   Steam
 
-#choco install obs-studio --yes # OBS Studio
+REM  choco install obs-studio --yes REM   OBS Studio
 
-#choco install mkvtoolnix --yes # MKVToolNix
+REM  choco install mkvtoolnix --yes REM   MKVToolNix
 
-#choco install shotcut.install --yes # Shotcut
+REM  choco install shotcut.install --yes REM   Shotcut
 
-#choco install kitty --yes # Kitty (Terminal emulator)
+REM  choco install kitty --yes REM   Kitty (Terminal emulator)
 
-#choco install epicgameslauncher --yes # Epic Games Launcher
+REM  choco install epicgameslauncher --yes REM   Epic Games Launcher
 
-#choco install viber --yes # Viber
+REM  choco install viber --yes REM   Viber
 
-#choco install nirlauncher --yes # NirLauncher
+REM  choco install nirlauncher --yes REM   NirLauncher
 
-#choco install nanazip --yes # NanaZip
+REM  choco install nanazip --yes REM   NanaZip
 
-#choco install smartftp --yes # SmartFTP
+REM  choco install smartftp --yes REM   SmartFTP
 
-#choco install wincdemu --yes # WinCDEmu
+REM  choco install wincdemu --yes REM   WinCDEmu
 
-#choco install advanced-installer --yes # Advanced Installer
+REM  choco install advanced-installer --yes REM   Advanced Installer
 
-#choco install flutter --yes # Flutter SDK
+REM  choco install flutter --yes REM   Flutter SDK
 
-#choco install openjdk13 --yes # OpenJDK 13
+REM  choco install openjdk13 --yes REM   OpenJDK 13
 
-#choco install poweriso --yes # PowerISO
+REM  choco install poweriso --yes REM   PowerISO
 
-#choco install driverbooster --yes # Driver Booster
+REM  choco install driverbooster --yes REM   Driver Booster
 
-#choco install cmake.portable --yes # CMake Portable
+REM  choco install cmake.portable --yes REM   CMake Portable
 
-#choco install nitroreader.install --yes # Nitro Reader
+REM  choco install nitroreader.install --yes REM   Nitro Reader
 
-#choco install filezilla.server --yes # FileZilla Server
+REM  choco install filezilla.server --yes REM   FileZilla Server
 
-#choco install apktool --yes # Apktool
+REM  choco install apktool --yes REM   Apktool
 
-#choco install avgantivirusfree --yes # AVG Antivirus Free
+REM  choco install avgantivirusfree --yes REM   AVG Antivirus Free
 
-#choco install angryip --yes # Angry IP Scanner
+REM  choco install angryip --yes REM   Angry IP Scanner
 
-#choco install qdir --yes # QDir
+REM  choco install qdir --yes REM   QDir
 
-#choco install ventoy --yes # Ventoy
+REM  choco install ventoy --yes REM   Ventoy
 
-#choco install 4k-video-downloader --yes # 4K Video Downloader
+REM  choco install 4k-video-downloader --yes REM   4K Video Downloader
 
-#choco install windowsrepair --yes # Windows Repair
+REM  choco install windowsrepair --yes REM   Windows Repair
 
-#choco install bitdefenderavfree --yes # Bitdefender Antivirus Free Edition
+REM  choco install bitdefenderavfree --yes REM   Bitdefender Antivirus Free Edition
 
-#choco install avidemux --yes # Avidemux
+REM  choco install avidemux --yes REM   Avidemux
 
-#choco install notepadreplacer --yes #Notepad Replacer
+REM  choco install notepadreplacer --yes REM  Notepad Replacer
 
-#choco install jdownloader --yes #JDownloader2
+REM  choco install jdownloader --yes REM  JDownloader2
 
-#choco install tigervnc --yes #TigerVNC
+REM  choco install tigervnc --yes REM  TigerVNC
 
-#choco install transmission --yes # Transmission (BitTorrent client) - Duplicate, consider removing one.
+REM  choco install transmission --yes REM   Transmission (BitTorrent client) - Duplicate, consider removing one.
 
-#choco install musicbee --yes # MusicBee
+REM  choco install musicbee --yes REM   MusicBee
 
 
 
 REM  Office Suites:-----------------------------------------------------------------------------
 
 
-#choco install LibreOffice --yes # LibreOffice
+REM  choco install LibreOffice --yes REM   LibreOffice
 
-#choco install officeproplus2013 --yes #Microsoft Office 2013 ProPlus (requires license key)
+REM  choco install officeproplus2013 --yes REM  Microsoft Office 2013 ProPlus (requires license key)
 
-#choco install office2019proplus --yes #Microsoft Office 2019 ProPlus (requires license key)
+REM  choco install office2019proplus --yes REM  Microsoft Office 2019 ProPlus (requires license key)
 
-#choco install office365proplus --yes #Microsoft Office 365 ProPlus (requires license key)
+REM  choco install office365proplus --yes REM  Microsoft Office 365 ProPlus (requires license key)
 
-#choco install wps-office-free --yes # WPS Office Free
+REM  choco install wps-office-free --yes REM   WPS Office Free
 
-#choco install kingsoft-office-free --yes # Kingsoft Office Free - Duplicate, consider removing one.
+REM  choco install kingsoft-office-free --yes REM   Kingsoft Office Free - Duplicate, consider removing one.
 
-#choco install libreoffice-fresh --yes # LibreOffice Fresh
+REM  choco install libreoffice-fresh --yes REM   LibreOffice Fresh
 
-#choco install freeoffice --yes # FreeOffice
+REM  choco install freeoffice --yes REM   FreeOffice
 
-#choco install onlyoffice --yes # OnlyOffice
+REM  choco install onlyoffice --yes REM   OnlyOffice
 
 
 
 REM  IM & Communication:-----------------------------------------------------------------------------
 
-#choco install telegram --yes # Telegram - Duplicate, consider removing one.
+REM  choco install telegram --yes REM   Telegram - Duplicate, consider removing one.
 
 del C:\Users\Public\Desktop\ChocoSoft.bat
 REM UniGetUI.Installer
