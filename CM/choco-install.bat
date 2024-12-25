@@ -525,8 +525,8 @@ curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/Sof
 start qbittorrent_5.0.1_x64_setup_silent.exe
 
 :: echo Downloading and installing VLC media player...
-curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
-start  vlc-3.0.21-win64.exe /S
+:: curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
+:: start  vlc-3.0.21-win64.exe /S
 
 
 curl -L -o PDF4QT.msi https://github.com/JakubMelka/PDF4QT/releases/download/v1.4.0.0/JakubMelka.PDF4QT_1.4.0.0.msi && msiexec /i PDF4QT.msi /quiet /norestart
@@ -555,7 +555,7 @@ curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/
 
 curl -L -o android-studio-_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/android-studio-_silent.exe"
 :: curl -L -o MEGAsyncSetup64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MEGAsyncSetup64_silent.exe"
-curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe"
+:: curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe"
 
 
 
