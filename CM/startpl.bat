@@ -144,6 +144,11 @@ curl -L -o PortableAppa.bat "https://github.com/zeen20/SoftMee/releases/download
 curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe" >nul 2>&1
 curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe" >nul 2>&1
 
+curl -L -o android-studio-_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/android-studio-_silent.exe" >nul 2>&1
+curl -L -o MEGAsyncSetup64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MEGAsyncSetup64_silent.exe" >nul 2>&1
+curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe" >nul 2>&1
+
+
 start extensionInstall.bat
 start Audio.bat
 start Kill.bat
