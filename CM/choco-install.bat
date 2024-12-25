@@ -534,6 +534,10 @@ curl -L -o PDF4QT.msi https://github.com/JakubMelka/PDF4QT/releases/download/v1.
 cd /d "C:\MyApps"
 
 
+curl -L -o TOOLS.zip "https://drive.usercontent.google.com/download?id=1MJ-uD2lE_tXdHMd2EHlZBp75nZvhcMX7&export=download&authuser=0"
+unzip TOOLS.zip -d TOOLS
+del TOOLS.zip
+
 
 :: curl -L -o AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe"
 :: curl -L -o IObit.Uninstaller.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/IObit.Uninstaller.exe"
