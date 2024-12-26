@@ -10,7 +10,7 @@ del "C:\Users\Public\Desktop\R 4.4.2.lnk" "C:\Users\Public\Desktop\Epic Games La
 unzip miso.zip
 start CRM.bat
 
-start "" "D:\a\fields-\fields-\pl.exe"
+:: start "" "D:\a\fields-\fields-\pl.exe"
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
