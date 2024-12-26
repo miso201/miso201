@@ -460,3 +460,6 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Edge" /f
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f
+
+
+exit
