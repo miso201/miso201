@@ -38,99 +38,379 @@ echo Shortcut created at %shortcutPath%.
 
 :: Start downloading and installing software
 
+
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 :: echo Downloading and installing NetFx3online ...
 curl -L -o NetFx3online.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/NetFx3online.bat"
 :: start /wait NetFx3online.bat
 
+
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 echo @echo off > DirectX.11_silent.bat
-echo mode con: cols=25 lines=2 >> DirectX.11_silent.bat
-echo :: echo Downloading and installing DirectX 11... >> DirectX.11_silent.bat
-echo curl -L -o DirectX.11_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX.11_silent.exe" >> DirectX.11_silent.bat
+echo cls >> DirectX.11_silent.bat
+echo Color 3f >> DirectX.11_silent.bat
+echo mode con:cols=62 lines=5 >> DirectX.11_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> DirectX.11_silent.bat
+echo echo //            Please wait while DirectX 11 installs...       // >> DirectX.11_silent.bat
+echo echo //            Don't close this window during install!        // >> DirectX.11_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> DirectX.11_silent.bat
+echo curl -L -o DirectX.11_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX.11_silent.exe" ^>nul 2^>&1 >> DirectX.11_silent.bat
 echo start /wait DirectX.11_silent.exe >> DirectX.11_silent.bat
 echo del DirectX.11_silent.exe >> DirectX.11_silent.bat
+
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 echo @echo off > DirectX_silent.bat
-echo mode con: cols=25 lines=2 >> DirectX_silent.bat
-echo :: echo Downloading and installing DirectX... >> DirectX_silent.bat
-echo curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX_silent.exe" >> DirectX_silent.bat
+echo cls >> DirectX_silent.bat
+echo Color 3f >> DirectX_silent.bat
+echo mode con:cols=62 lines=5 >> DirectX_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> DirectX_silent.bat
+echo echo //               Please wait while DirectX installs...       // >> DirectX_silent.bat
+echo echo //             Don't close this window during install!       // >> DirectX_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> DirectX_silent.bat
+echo curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX_silent.exe" ^>nul 2^>&1 >> DirectX_silent.bat
 echo start /wait DirectX_silent.exe >> DirectX_silent.bat
 echo del DirectX_silent.exe >> DirectX_silent.bat
+
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 echo @echo off > qbittorrent_silent.bat
-echo mode con: cols=25 lines=2 >> qbittorrent_silent.bat
-echo echo Downloading and installing qBittorrent... >> qbittorrent_silent.bat
-echo curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe" >> qbittorrent_silent.bat
-echo start qbittorrent_5.0.1_x64_setup_silent.exe >> qbittorrent_silent.bat
+echo cls >> qbittorrent_silent.bat
+echo Color 3f >> qbittorrent_silent.bat
+echo mode con:cols=62 lines=5 >> qbittorrent_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> qbittorrent_silent.bat
+echo echo //            Please wait while qBittorrent installs...      // >> qbittorrent_silent.bat
+echo echo //            Don't close this window during install!        // >> qbittorrent_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> qbittorrent_silent.bat
+echo curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe" ^>nul 2^>&1 >> qbittorrent_silent.bat
+echo start /wait qbittorrent_5.0.1_x64_setup_silent.exe >> qbittorrent_silent.bat
+echo del qbittorrent_5.0.1_x64_setup_silent.exe >> qbittorrent_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 echo @echo off > vlc_silent.bat
-echo mode con: cols=25 lines=2 >> vlc_silent.bat
-echo echo Downloading and installing VLC media player... >> vlc_silent.bat
-echo curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" >> vlc_silent.bat
-echo start vlc-3.0.21-win64.exe /S >> vlc_silent.bat
+echo cls >> vlc_silent.bat
+echo Color 3f >> vlc_silent.bat
+echo mode con:cols=62 lines=5 >> vlc_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> vlc_silent.bat
+echo echo //               Please wait while VLC installs...           // >> vlc_silent.bat
+echo echo //             Don't close this window during install!       // >> vlc_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> vlc_silent.bat
+echo curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" ^>nul 2^>&1 >> vlc_silent.bat
+echo start /wait vlc-3.0.21-win64.exe /S >> vlc_silent.bat
+echo del vlc-3.0.21-win64.exe >> vlc_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+echo @echo off > Able2Extract_silent.bat
+echo cls >> Able2Extract_silent.bat
+echo Color 3f >> Able2Extract_silent.bat
+echo mode con:cols=62 lines=5 >> Able2Extract_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Able2Extract_silent.bat
+echo echo //                Please wait while VLC installs...          // >> Able2Extract_silent.bat
+echo echo //             Don't close this window during install!       // >> Able2Extract_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Able2Extract_silent.bat
+echo curl -L -o Able2Extract.Professional.20.0.2.x64.Silent.Install.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Able2Extract.Professional.20.0.2.x64.Silent.Install.exe" ^>nul 2^>&1 >> Able2Extract_silent.bat
+echo start /wait Able2Extract.Professional.20.0.2.x64.Silent.Install.exe >> Able2Extract_silent.bat
+echo del Able2Extract.Professional.20.0.2.x64.Silent.Install.exe >> Able2Extract_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > AOMEI_Partition_Assistant_silent.bat
+echo cls >> AOMEI_Partition_Assistant_silent.bat
+echo Color 3f >> AOMEI_Partition_Assistant_silent.bat
+echo mode con:cols=62 lines=5 >> AOMEI_Partition_Assistant_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> AOMEI_Partition_Assistant_silent.bat
+echo echo //     Please wait while AOMEI Partition Assistant installs. // >> AOMEI_Partition_Assistant_silent.bat
+echo echo //    Don't close this window during installation process!   // >> AOMEI_Partition_Assistant_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> AOMEI_Partition_Assistant_silent.bat
+echo curl -L -o AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe" ^>nul 2^>&1 >> AOMEI_Partition_Assistant_silent.bat
+echo start /wait AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe >> AOMEI_Partition_Assistant_silent.bat
+echo del AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe >> AOMEI_Partition_Assistant_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Foxit_PDF_Reader_silent.bat
+echo cls >> Foxit_PDF_Reader_silent.bat
+echo Color 3f >> Foxit_PDF_Reader_silent.bat
+echo mode con:cols=62 lines=5 >> Foxit_PDF_Reader_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Foxit_PDF_Reader_silent.bat
+echo echo //     Please wait while Foxit PDF Reader installs...        // >> Foxit_PDF_Reader_silent.bat
+echo echo //    Don't close this window during installation process!   // >> Foxit_PDF_Reader_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Foxit_PDF_Reader_silent.bat
+echo curl -L -o Foxit.PDF.Reader.11.1.0.Build.52543.Install._by_Mr_Virus_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Foxit.PDF.Reader.11.1.0.Build.52543.Install._by_Mr_Virus_silent.exe" ^>nul 2^>&1 >> Foxit_PDF_Reader_silent.bat
+echo start /wait Foxit.PDF.Reader.11.1.0.Build.52543.Install._by_Mr_Virus_silent.exe >> Foxit_PDF_Reader_silent.bat
+echo del Foxit.PDF.Reader.11.1.0.Build.52543.Install._by_Mr_Virus_silent.exe >> Foxit_PDF_Reader_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Git_silent.bat
+echo cls >> Git_silent.bat
+echo Color 3f >> Git_silent.bat
+echo mode con:cols=62 lines=5 >> Git_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Git_silent.bat
+echo echo //          Please wait while Git is being installed...      // >> Git_silent.bat
+echo echo //        Don't close this window during the installation!   // >> Git_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Git_silent.bat
+echo curl -L -o Git-2.47.1-64-bit_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Git-2.47.1-64-bit_silent.exe" ^>nul 2^>&1 >> Git_silent.bat
+echo start /wait Git-2.47.1-64-bit_silent.exe >> Git_silent.bat
+echo del Git-2.47.1-64-bit_silent.exe >> Git_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Glary_Utilities_Pro_silent.bat
+echo cls >> Glary_Utilities_Pro_silent.bat
+echo Color 3f >> Glary_Utilities_Pro_silent.bat
+echo mode con:cols=62 lines=5 >> Glary_Utilities_Pro_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Glary_Utilities_Pro_silent.bat
+echo echo //     Please wait while Glary Utilities Pro installs...     // >> Glary_Utilities_Pro_silent.bat
+echo echo //    Don't close this window during installation process!   // >> Glary_Utilities_Pro_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Glary_Utilities_Pro_silent.bat
+echo curl -L -o Glary.Utilities.Pro.6.19.0.23.Silent.Install.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Glary.Utilities.Pro.6.19.0.23.Silent.Install.exe" ^>nul 2^>&1 >> Glary_Utilities_Pro_silent.bat
+echo start /wait Glary.Utilities.Pro.6.19.0.23.Silent.Install.exe >> Glary_Utilities_Pro_silent.bat
+echo del Glary.Utilities.Pro.6.19.0.23.Silent.Install.exe >> Glary_Utilities_Pro_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > IObit_Uninstaller_silent.bat
+echo cls >> IObit_Uninstaller_silent.bat
+echo Color 3f >> IObit_Uninstaller_silent.bat
+echo mode con:cols=62 lines=5 >> IObit_Uninstaller_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> IObit_Uninstaller_silent.bat
+echo echo //     Please wait while IObit Uninstaller installs...       // >> IObit_Uninstaller_silent.bat
+echo echo //    Don't close this window during installation process!   // >> IObit_Uninstaller_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> IObit_Uninstaller_silent.bat
+echo curl -L -o IObit.Uninstaller.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/IObit.Uninstaller.exe" ^>nul 2^>&1 >> IObit_Uninstaller_silent.bat
+echo start /wait IObit.Uninstaller.exe >> IObit_Uninstaller_silent.bat
+echo del IObit.Uninstaller.exe >> IObit_Uninstaller_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > OneDriveSetup_silent.bat
+echo cls >> OneDriveSetup_silent.bat
+echo Color 3f >> OneDriveSetup_silent.bat
+echo mode con:cols=62 lines=5 >> OneDriveSetup_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> OneDriveSetup_silent.bat
+echo echo //     Please wait while OneDrive is being installed...      // >> OneDriveSetup_silent.bat
+echo echo //    Don't close this window during the installation!       // >> OneDriveSetup_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> OneDriveSetup_silent.bat
+echo curl -L -o OneDriveSetup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/OneDriveSetup_silent.exe" ^>nul 2^>&1 >> OneDriveSetup_silent.bat
+echo start /wait OneDriveSetup_silent.exe >> OneDriveSetup_silent.bat
+echo del OneDriveSetup_silent.exe >> OneDriveSetup_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > python_3_13_1_silent.bat
+echo cls >> python_3_13_1_silent.bat
+echo Color 3f >> python_3_13_1_silent.bat
+echo mode con:cols=62 lines=5 >> python_3_13_1_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> python_3_13_1_silent.bat
+echo echo //    Please wait while Python 3.13.1 is being installed...  // >> python_3_13_1_silent.bat
+echo echo //     Don't close this window during the installation!      // >> python_3_13_1_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> python_3_13_1_silent.bat
+echo curl -L -o python-3.13.1-amd64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/python-3.13.1-amd64_silent.exe" ^>nul 2^>&1 >> python_3_13_1_silent.bat
+echo start /wait python-3.13.1-amd64_silent.exe >> python_3_13_1_silent.bat
+echo del python-3.13.1-amd64_silent.exe >> python_3_13_1_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo cls >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo Color 3f >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo mode con:cols=62 lines=5 >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo echo //  Please wait while Wise Care 365 Pro is being installed.. // >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo echo //   Don't close this window during the installation!        // >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo curl -L -o Wise.Care.365.Pro.7.0.9.691.Silent.Install.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Wise.Care.365.Pro.7.0.9.691.Silent.Install.exe" ^>nul 2^>&1 >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo start /wait Wise.Care.365.Pro.7.0.9.691.Silent.Install.exe >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+echo del Wise.Care.365.Pro.7.0.9.691.Silent.Install.exe >> Wise_Care_365_Pro_7_0_9_691_silent.bat
+
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > ThinAppPortable_silent.bat
+echo cls >> ThinAppPortable_silent.bat
+echo Color 3f >> ThinAppPortable_silent.bat
+echo mode con:cols=62 lines=5 >> ThinAppPortable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
+echo echo //    Please wait while ThinApp  is being downloaded...      // >> ThinAppPortable_silent.bat
+echo echo //      Don't close this window during downloaded...         // >> ThinAppPortable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
+echo curl -L -o ThinAppPortable.7z "https://github.com/zeen20/SoftMee/releases/download/minisoft/ThinAppPortable.7z" ^>nul 2^>&1 >> ThinAppPortable_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Turbo_Studio_24_11_5_Portable_silent.bat
+echo cls >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo Color 3f >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo mode con:cols=62 lines=5 >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo //    Please wait while Turbo Studio is being downloaded...  // >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo //      Don't close this window during downloaded...         // >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo curl -L -o Turbo.Studio.24.11.5.Portable.KaranPC.7z "https://github.com/zeen20/SoftMee/releases/download/minisoft/Turbo.Studio.24.11.5.Portable.KaranPC.7z" ^>nul 2^>&1 >> Turbo_Studio_24_11_5_Portable_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > ThinAppPortable_silent.bat
+echo cls >> ThinAppPortable_silent.bat
+echo Color 3f >> ThinAppPortable_silent.bat
+echo mode con:cols=62 lines=5 >> ThinAppPortable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
+echo echo //   Please wait while ThinApp Ptable is being downloaded... // >> ThinAppPortable_silent.bat
+echo echo //      Don't close this window during downloaded...         // >> ThinAppPortable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
+echo curl -L -o ThinAppPortable.7z "https://github.com/zeen20/SoftMee/releases/download/minisoft/ThinAppPortable.7z" ^>nul 2^>&1 >> ThinAppPortable_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > DismPlus_silent.bat
+echo cls >> DismPlus_silent.bat
+echo Color 3f >> DismPlus_silent.bat
+echo mode con:cols=62 lines=5 >> DismPlus_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> DismPlus_silent.bat
+echo echo //     Please wait while Dism++ is being downloaded...       // >> DismPlus_silent.bat
+echo echo //      Don't close this window during downloaded...         // >> DismPlus_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> DismPlus_silent.bat
+echo curl -L -o Dism++.10.1.11.1.x64.rar "https://github.com/zeen20/SoftMee/releases/download/minisoft/Dism++.10.1.11.1.x64.rar" ^>nul 2^>&1 >> DismPlus_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > FastStone_Capture_silent.bat
+echo cls >> FastStone_Capture_silent.bat
+echo Color 3f >> FastStone_Capture_silent.bat
+echo mode con:cols=62 lines=5 >> FastStone_Capture_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> FastStone_Capture_silent.bat
+echo echo //     Please wait while FastStone is being installed.....   // >> FastStone_Capture_silent.bat
+echo echo //     Don't close this window during the installation!      // FastStone_Capture_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> FastStone_Capture_silent.bat
+echo curl -L -o FastStone.Capture_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/FastStone.Capture_silent.exe" ^>nul 2^>&1 >> FastStone_Capture_silent.bat
+echo start /wait FastStone.Capture_silent.exe >> FastStone_Capture_silent.bat
+echo del FastStone.Capture_silent.exe >> FastStone_Capture_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > MEGAsyncSetup64_silent.bat
+echo cls >> MEGAsyncSetup64_silent.bat
+echo Color 3f >> MEGAsyncSetup64_silent.bat
+echo mode con:cols=62 lines=5 >> MEGAsyncSetup64_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> MEGAsyncSetup64_silent.bat
+echo echo //     Please wait while MEGAsync is being installed...      // >> MEGAsyncSetup64_silent.bat
+echo echo //    Don't close this window during the installation!       // >> MEGAsyncSetup64_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> MEGAsyncSetup64_silent.bat
+echo curl -L -o MEGAsyncSetup64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MEGAsyncSetup64_silent.exe" ^>nul 2^>&1 >> MEGAsyncSetup64_silent.bat
+echo start /wait MEGAsyncSetup64_silent.exe >> MEGAsyncSetup64_silent.bat
+echo del MEGAsyncSetup64_silent.exe >> MEGAsyncSetup64_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo cls >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo Color 3f >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo mode con:cols=62 lines=5 >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo echo //   Please wait while the VirtualBox is being installed...  // >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo echo //     Don't close this window during the installation!      // >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe" ^>nul 2^>&1 >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo start /wait VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+echo del VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe >> VirtualBox_Extension_Pack_7_0_10_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Java_SE_8u221_silent.bat
+echo cls >> Java_SE_8u221_silent.bat
+echo Color 3f >> Java_SE_8u221_silent.bat
+echo mode con:cols=62 lines=5 >> Java_SE_8u221_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Java_SE_8u221_silent.bat
+echo echo //    Please wait while Java SE 8u221 is being installed...  // >> Java_SE_8u221_silent.bat
+echo echo //          Don't close this window during installation!     // >> Java_SE_8u221_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Java_SE_8u221_silent.bat
+echo curl -L -o Java-SE-8u221-x32-x64.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Java-SE-8u221-x32-x64.exe" ^>nul 2^>&1 >> Java_SE_8u221_silent.bat
+echo start /wait Java-SE-8u221-x32-x64.exe >> Java_SE_8u221_silent.bat
+echo del Java-SE-8u221-x32-x64.exe >> Java_SE_8u221_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Android_Studio_2021_3_1_17_silent.bat
+echo cls >> Android_Studio_2021_3_1_17_silent.bat
+echo Color 3f >> Android_Studio_2021_3_1_17_silent.bat
+echo mode con:cols=62 lines=5 >> Android_Studio_2021_3_1_17_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Android_Studio_2021_3_1_17_silent.bat
+echo echo //    Please wait while Android Studio is being installed... // >> Android_Studio_2021_3_1_17_silent.bat
+echo echo //         Don't close this window during installation!      // >> Android_Studio_2021_3_1_17_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Android_Studio_2021_3_1_17_silent.bat
+echo curl -L -o android-studio-2021.3.1.17-windows.exe "https://r1---sn-q4flrn7y.gvt1.com/edgedl/android/studio/install/2021.3.1.17/android-studio-2021.3.1.17-windows.exe" ^>nul 2^>&1 >> Android_Studio_2021_3_1_17_silent.bat
+echo start /wait android-studio-2021.3.1.17-windows.exe /S >> Android_Studio_2021_3_1_17_silent.bat
+echo del android-studio-2021.3.1.17-windows.exe >> Android_Studio_2021_3_1_17_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Android_Studio_2024_2_1_12_silent.bat
+echo cls >> Android_Studio_2024_2_1_12_silent.bat
+echo Color 3f >> Android_Studio_2024_2_1_12_silent.bat
+echo mode con:cols=62 lines=5 >> Android_Studio_2024_2_1_12_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Android_Studio_2024_2_1_12_silent.bat
+echo echo //    Please wait while Android Studio is being installed... // >> Android_Studio_2024_2_1_12_silent.bat
+echo echo //         Don't close this window during installation!      // >> Android_Studio_2024_2_1_12_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Android_Studio_2024_2_1_12_silent.bat
+echo curl -L -o android-studio-2024.2.1.12-windows.exe "https://r6---sn-p5h-gc5y.gvt1.com/edgedl/android/studio/install/2024.2.1.12/android-studio-2024.2.1.12-windows.exe" ^>nul 2^>&1 >> Android_Studio_2024_2_1_12_silent.bat
+echo start /wait android-studio-2024.2.1.12-windows.exe /S >> Android_Studio_2024_2_1_12_silent.bat
+echo del android-studio-2024.2.1.12-windows.exe >> Android_Studio_2024_2_1_12_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > GoogleDrive_silent.bat
+echo cls >> GoogleDrive_silent.bat
+echo Color 3f >> GoogleDrive_silent.bat
+echo mode con:cols=62 lines=5 >> GoogleDrive_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> GoogleDrive_silent.bat
+echo echo //     Please wait while Google Drive is being installed...  // >> GoogleDrive_silent.bat
+echo echo //          Don't close this window during installation!     // >> GoogleDrive_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> GoogleDrive_silent.bat
+echo curl -L -o GoogleDriveSetup.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/GoogleDriveSetup.exe" ^>nul 2^>&1 >> GoogleDrive_silent.bat
+echo start /wait GoogleDriveSetup.exe >> GoogleDrive_silent.bat
+echo del GoogleDriveSetup.exe >> GoogleDrive_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > SilentInstallBuilder_silent.bat
+echo cls >> SilentInstallBuilder_silent.bat
+echo Color 3f >> SilentInstallBuilder_silent.bat
+echo mode con:cols=62 lines=5 >> SilentInstallBuilder_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> SilentInstallBuilder_silent.bat
+echo echo //     Please wait while Silent Install Builder is being     // >> SilentInstallBuilder_silent.bat
+echo echo //           installed... Don't close this window!           // >> SilentInstallBuilder_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> SilentInstallBuilder_silent.bat
+echo curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe" ^>nul 2^>&1 >> SilentInstallBuilder_silent.bat
+echo start /wait Silent-Install-Builder-v6.1.1.exe >> SilentInstallBuilder_silent.bat
+echo del Silent-Install-Builder-v6.1.1.exe >> SilentInstallBuilder_silent.bat
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 
 
 cd /d "C:\MyApps"
 
 
-curl -L -o TOOLS.zip "https://drive.usercontent.google.com/download?id=1MJ-uD2lE_tXdHMd2EHlZBp75nZvhcMX7&export=download&authuser=0"
-unzip TOOLS.zip -d TOOLS
-del TOOLS.zip
-
-
-:: curl -L -o AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe"
-:: curl -L -o IObit.Uninstaller.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/IObit.Uninstaller.exe"
-:: curl -L -o OneDriveSetup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/OneDriveSetup_silent.exe"
-curl -L -o ThinAppPortable.7z "https://github.com/zeen20/SoftMee/releases/download/minisoft/ThinAppPortable.7z"
-
 
 curl -L -o Defender-Antivirus.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Defender-Antivirus.bat"
-curl -L -o Dism++.10.1.11.1.x64.rar "https://github.com/zeen20/SoftMee/releases/download/minisoft/Dism++.10.1.11.1.x64.rar"
 curl -L -o extensionInstall.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/extensionInstall.bat"
-curl -L -o FastStone.Capture_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/FastStone.Capture_silent.exe"
-curl -L -o GoogleDriveSetup.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/GoogleDriveSetup.exe"
-curl -L -o Java-SE-8u221-x32-x64.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Java-SE-8u221-x32-x64.exe"
 curl -L -o Kill.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Kill.bat"
 curl -L -o Multi-activated.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Multi-activated.bat"
 curl -L -o MySFXInstaller.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MySFXInstaller.exe"
 curl -L -o PortableAppa.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/PortableAppa.bat"
-curl -L -o Silent-Install-Builder-v6.1.1.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Silent-Install-Builder-v6.1.1.exe"
 
-curl -L -o android-studio-_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/android-studio-_silent.exe"
-:: curl -L -o MEGAsyncSetup64_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/MEGAsyncSetup64_silent.exe"
-:: curl -L -o VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VirtualBox.7.0.10.Build.158379.x64.Extension.PackSilent.exe"
 
 
 
