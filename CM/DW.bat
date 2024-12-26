@@ -1,5 +1,5 @@
 @echo off
-mode con: cols=15 lines=1
+mode con: cols=25 lines=2
 
 
 
