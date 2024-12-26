@@ -29,9 +29,6 @@ curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/
 start choco-install.bat
 
 
-curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
-start  vlc-3.0.21-win64.exe /S
-
 curl -L -o PowerISO.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/PowerISO.exe"
 start /wait PowerISO.exe
 
