@@ -16,6 +16,12 @@ REM ----------------------------------------------------------------------------
 
 
 
+:: Download the IDMan installer from the provided URL
+curl -L -o idman.exe "https://mirror2.internetdownloadmanager.com/idman642build25.exe?v=lt&filename=idman642build25.exe"
+:: Run the installer silently and skip dialog boxes
+start /wait idman.exe /S /skipdlgs
+
+
 
 curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/choco-install.bat"
 start choco-install.bat
@@ -37,6 +43,11 @@ del "C:\Users\runneradmin\Desktop\WinRAR   .lnk"
 curl -L -o idm.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/idm.exe"
 start /wait idm.exe
 
+del WinRaR.V.7.1.exe
+del UniGetUI.Installer.exe
+del UltraISO.Prem.9.7.6.3860.exe
+del PowerISO.exe
+del idman.exe
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
