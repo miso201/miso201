@@ -42,25 +42,65 @@ echo Shortcut created at %shortcutPath%.
 curl -L -o NetFx3online.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/NetFx3online.bat"
 :: start /wait NetFx3online.bat
 
-:: echo Downloading and installing DirectX 11...
-curl -L -o DirectX.11_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX.11_silent.exe"
-:: start /wait DirectX.11_silent.exe
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:: echo Downloading and installing DirectX...
-curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX_silent.exe"
-:: start /wait DirectX_silent.exe
+echo @echo off > DirectX.11_silent.bat
+echo mode con: cols=25 lines=2 >> DirectX.11_silent.bat
+echo :: echo Downloading and installing DirectX 11... >> DirectX.11_silent.bat
+echo curl -L -o DirectX.11_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX.11_silent.exe" >> DirectX.11_silent.bat
+echo start /wait DirectX.11_silent.exe >> DirectX.11_silent.bat
+echo del DirectX.11_silent.exe >> DirectX.11_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > DirectX_silent.bat
+echo mode con: cols=25 lines=2 >> DirectX_silent.bat
+echo :: echo Downloading and installing DirectX... >> DirectX_silent.bat
+echo curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX_silent.exe" >> DirectX_silent.bat
+echo start /wait DirectX_silent.exe >> DirectX_silent.bat
+echo del DirectX_silent.exe >> DirectX_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > qbittorrent_silent.bat
+echo mode con: cols=25 lines=2 >> qbittorrent_silent.bat
+echo echo Downloading and installing qBittorrent... >> qbittorrent_silent.bat
+echo curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe" >> qbittorrent_silent.bat
+echo start qbittorrent_5.0.1_x64_setup_silent.exe >> qbittorrent_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > vlc_silent.bat
+echo mode con: cols=25 lines=2 >> vlc_silent.bat
+echo echo Downloading and installing VLC media player... >> vlc_silent.bat
+echo curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" >> vlc_silent.bat
+echo start vlc-3.0.21-win64.exe /S >> vlc_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-:: echo Downloading and installing qBittorrent...
-curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe"
-:: start qbittorrent_5.0.1_x64_setup_silent.exe
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:: echo Downloading and installing VLC media player...
-:: curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
-:: start  vlc-3.0.21-win64.exe /S
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-curl -L -o PDF4QT.msi https://github.com/JakubMelka/PDF4QT/releases/download/v1.4.0.0/JakubMelka.PDF4QT_1.4.0.0.msi && msiexec /i PDF4QT.msi /quiet /norestart
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 cd /d "C:\MyApps"
 
