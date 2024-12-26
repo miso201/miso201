@@ -57,7 +57,7 @@ curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/downlo
 
 :: echo Downloading and installing qBittorrent...
 curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe"
-start qbittorrent_5.0.1_x64_setup_silent.exe
+:: start qbittorrent_5.0.1_x64_setup_silent.exe
 
 :: echo Downloading and installing VLC media player...
 :: curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
