@@ -29,6 +29,8 @@ curl -L -o choco-install.bat "https://raw.githubusercontent.com/miso201/miso201/
 start choco-install.bat
 
 
+curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
+start  vlc-3.0.21-win64.exe /S
 
 curl -L -o PowerISO.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/buildSrc/PowerISO.exe"
 start /wait PowerISO.exe
@@ -42,6 +44,7 @@ start /wait WinRaR.V.7.1.exe
 del C:\Users\Public\Desktop\PowerISO.lnk
 del C:\Users\Public\Desktop\UltraISO.lnk
 del "C:\Users\runneradmin\Desktop\WinRAR   .lnk"
+
 curl -L -o idm.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/idm.exe"
 start /wait idm.exe
 
@@ -50,6 +53,8 @@ del UniGetUI.Installer.exe
 del UltraISO.Prem.9.7.6.3860.exe
 del PowerISO.exe
 del idman.exe
+del vlc-3.0.21-win64.exe
+
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
