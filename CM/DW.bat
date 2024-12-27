@@ -403,7 +403,6 @@ REM ----------------------------------------------------------------------------
 cd /d "C:\MyApps"
 
 
-
 curl -L -o Defender-Antivirus.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Defender-Antivirus.bat"
 curl -L -o extensionInstall.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/extensionInstall.bat"
 curl -L -o Kill.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Kill.bat"
@@ -460,6 +459,25 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Edge" /f
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f
+
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > KeepSystemActive_silent.bat
+echo cls >> KeepSystemActive_silent.bat
+echo Color 3f >> KeepSystemActive_silent.bat
+echo mode con:cols=48 lines=3 >> KeepSystemActive_silent.bat
+echo echo ////////////////////////////////////////////////////////////// >> KeepSystemActive_silent.bat
+echo echo //    Keeping the system active by simulating a key press...   // >> KeepSystemActive_silent.bat
+echo echo ////////////////////////////////////////////////////////////// >> KeepSystemActive_silent.bat
+echo :loop >> KeepSystemActive_silent.bat
+echo rem Simulate key press every 60 seconds to keep the system active >> KeepSystemActive_silent.bat
+echo ping -n 60 127.0.0.1 > nul >> KeepSystemActive_silent.bat
+echo rem You can replace the ping command with other actions like moving the mouse or simulating a key press >> KeepSystemActive_silent.bat
+echo goto loop >> KeepSystemActive_silent.bat
+
+
+
 
 
 exit
