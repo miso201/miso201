@@ -274,6 +274,7 @@ echo echo //      Don't close this window during download...           // >> Thi
 echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
 echo start /wait 7z x ThinAppPortable.7z >> ThinAppPortable_silent.bat
 echo del ThinAppPortable.7z >> ThinAppPortable_silent.bat
+echo start /wait ThinAppPortable.exe >> ThinAppPortable_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
