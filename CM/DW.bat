@@ -534,8 +534,15 @@ echo ping -n 60 127.0.0.1 > nul >> KeepSystemActive_silent.bat
 echo rem You can replace the ping command with other actions like moving the mouse or simulating a key press >> KeepSystemActive_silent.bat
 echo goto loop >> KeepSystemActive_silent.bat
 
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+@echo off > christitus_silent.bat
+echo cls >> christitus_silent.bat
+echo Color 3f >> christitus_silent.bat
+echo mode con:cols=25 lines=2 >> christitus_silent.bat
+echo powershell -Command "Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command irm https://christitus.com/win | iex' -Verb RunAs" >> christitus_silent.bat
+echo exit >> christitus_silent.bat
 
-
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 exit
