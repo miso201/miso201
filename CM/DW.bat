@@ -328,7 +328,7 @@ echo @echo off > FastStone_Capture_silent.bat
 echo cls >> FastStone_Capture_silent.bat
 echo Color 3f >> FastStone_Capture_silent.bat
 echo mode con:cols=64 lines=1 >> FastStone_Capture_silent.bat
-echo curl -L -o FastStone.Capture_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/FastStone.Capture_silent.exe" --progress-bar >> FastStone_Capture_silent.bat
+echo curl -L -o FastStone.Capture_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/FastStone.Capture.exe" --progress-bar >> FastStone_Capture_silent.bat
 echo clear >> FastStone_Capture_silent.bat
 echo mode con:cols=64 lines=5 >> FastStone_Capture_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> FastStone_Capture_silent.bat
