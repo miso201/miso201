@@ -56,7 +56,7 @@ echo Color 3f >> DirectX.11_silent.bat
 echo mode con:cols=64 lines=1 >> DirectX.11_silent.bat
 echo curl -L -o DirectX.11_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX.11_silent.exe" --progress-bar >> DirectX.11_silent.bat
 echo clear >> DirectX.11_silent.bat
-echo mode con:cols=62 lines=5 >> DirectX.11_silent.bat
+echo mode con:cols=64 lines=5 >> DirectX.11_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> DirectX.11_silent.bat
 echo echo //            Please wait while DirectX 11 installs...       // >> DirectX.11_silent.bat
 echo echo //            Don't close this window during install!        // >> DirectX.11_silent.bat
@@ -72,7 +72,7 @@ echo Color 3f >> DirectX_silent.bat
 echo mode con:cols=64 lines=1 >> DirectX_silent.bat
 echo curl -L -o DirectX_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DirectX_silent.exe" --progress-bar >> DirectX_silent.bat
 echo clear >> DirectX_silent.bat
-echo mode con:cols=62 lines=5 >> DirectX_silent.bat
+echo mode con:cols=64 lines=5 >> DirectX_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> DirectX_silent.bat
 echo echo //               Please wait while DirectX installs...       // >> DirectX_silent.bat
 echo echo //             Don't close this window during install!       // >> DirectX_silent.bat
@@ -88,7 +88,7 @@ echo Color 3f >> qbittorrent_silent.bat
 echo mode con:cols=64 lines=1 >> qbittorrent_silent.bat
 echo curl -L -o qbittorrent_5.0.1_x64_setup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/qbittorrent_5.0.1_x64_setup_silent.exe" --progress-bar >> qbittorrent_silent.bat
 echo clear >> qbittorrent_silent.bat
-echo mode con:cols=62 lines=5 >> qbittorrent_silent.bat
+echo mode con:cols=64 lines=5 >> qbittorrent_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> qbittorrent_silent.bat
 echo echo //            Please wait while qBittorrent installs...      // >> qbittorrent_silent.bat
 echo echo //            Don't close this window during install!        // >> qbittorrent_silent.bat
@@ -104,7 +104,7 @@ echo Color 3f >> vlc_silent.bat
 echo mode con:cols=64 lines=1 >> vlc_silent.bat
 echo curl -L -o vlc-3.0.21-win64.exe "https://mirror.leitecastro.com/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" --progress-bar >> vlc_silent.bat
 echo clear >> vlc_silent.bat
-echo mode con:cols=62 lines=5 >> vlc_silent.bat
+echo mode con:cols=64 lines=5 >> vlc_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> vlc_silent.bat
 echo echo //               Please wait while VLC installs...           // >> vlc_silent.bat
 echo echo //             Don't close this window during install!       // >> vlc_silent.bat
@@ -121,7 +121,7 @@ echo Color 3f >> Able2Extract_silent.bat
 echo mode con:cols=64 lines=1 >> Able2Extract_silent.bat
 echo curl -L -o Able2Extract.Professional.20.0.2.x64.Silent.Install.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/Able2Extract.Professional.20.0.2.x64.Silent.Install.exe" --progress-bar >> Able2Extract_silent.bat
 echo clean
-echo mode con:cols=62 lines=5 >> Able2Extract_silent.bat
+echo mode con:cols=64 lines=5 >> Able2Extract_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> Able2Extract_silent.bat
 echo echo //                Please wait while VLC installs...          // >> Able2Extract_silent.bat
 echo echo //             Don't close this window during install!       // >> Able2Extract_silent.bat
@@ -134,10 +134,10 @@ REM ----------------------------------------------------------------------------
 echo @echo off > AOMEI_Partition_Assistant_silent.bat
 echo cls >> AOMEI_Partition_Assistant_silent.bat
 echo Color 3f >> AOMEI_Partition_Assistant_silent.bat
-echo mode con:cols=62 lines=1 >> AOMEI_Partition_Assistant_silent.bat
+echo mode con:cols=64 lines=1 >> AOMEI_Partition_Assistant_silent.bat
 echo curl -L -o AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/AOMEI-Partition-Assistant-Unlimited-10.6.0-Silent.exe" --progress-bar >> AOMEI_Partition_Assistant_silent.bat
 echo clear >> AOMEI_Partition_Assistant_silent.bat
-echo mode con:cols=62 lines=5 >> AOMEI_Partition_Assistant_silent.bat
+echo mode con:cols=64 lines=5 >> AOMEI_Partition_Assistant_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> AOMEI_Partition_Assistant_silent.bat
 echo echo //     Please wait while AOMEI Partition Assistant installs. // >> AOMEI_Partition_Assistant_silent.bat
 echo echo //    Don't close this window during installation process!   // >> AOMEI_Partition_Assistant_silent.bat
@@ -312,7 +312,7 @@ REM ----------------------------------------------------------------------------
 echo @echo off > DismPlus_silent.bat
 echo cls >> DismPlus_silent.bat
 echo Color 3f >> DismPlus_silent.bat
-echo mode con:cols=62 lines=5 >> DismPlus_silent.bat
+echo mode con:cols=64 lines=5 >> DismPlus_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> DismPlus_silent.bat
 echo echo //     Please wait while Dism++ is being downloaded...       // >> DismPlus_silent.bat
 echo echo //      Don't close this window during downloaded...         // >> DismPlus_silent.bat
