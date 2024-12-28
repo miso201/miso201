@@ -464,7 +464,10 @@ REM  choco install telegram --yes REM   Telegram - Duplicate, consider removing 
 
 del C:\Users\Public\Desktop\ChocoSoft.bat
 
-curl -L -o DW.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/DW.bat"
-start DW.bat
+del "C:\Users\runneradmin\Desktop\WinRAR   .lnk" "C:\Users\runneradmin\Desktop\Internet Download Manager.lnk" "C:\Users\Public\Desktop\VLC media player.lnk" C:\Users\Public\Desktop\UltraISO.lnk C:\Users\Public\Desktop\PowerISO.lnk
+
+curl -L -o End.bat "https://raw.githubusercontent.com/zeen20/SoftMee/refs/heads/main/End.bat"
+REM start End.bat
+
 
 exit
