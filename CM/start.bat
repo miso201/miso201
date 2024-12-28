@@ -19,7 +19,7 @@ curl -L -o UniGetUI.Installer.exe "https://github.com/marticliment/UniGetUI/rele
 UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart /ALLUSERS /LANG=english
 
 curl -L -o DW.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/DW.bat"
-start DW.bat
+start /wait DW.bat
 
 :: Download the IDMan installer from the provided URL
 curl -L -o idman.exe "https://mirror2.internetdownloadmanager.com/idman642build25.exe?v=lt&filename=idman642build25.exe"
