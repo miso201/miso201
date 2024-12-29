@@ -453,8 +453,40 @@ echo del Silent-Install-Builder-v6.1.1.exe >> SilentInstallBuilder_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+echo @echo off > ChromePortable.bat
+echo cls >> ChromePortable.bat
+echo Color 3f >> ChromePortable.bat
+echo mode con:cols=64 lines=1 >> ChromePortable.bat
+echo curl -L -o ChromePortable.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/ChromePortable.exe" --progress-bar >> ChromePortable.bat
+echo clear >> ChromePortable.bat
+echo mode con:cols=64 lines=5 >> ChromePortable.bat
+echo echo /////////////////////////////////////////////////////////////// >> ChromePortable.bat
+echo echo //      Please wait ChromePortable is being installed...     // >> ChromePortable.bat
+echo echo //       Don't close this window during installation!        // >> ChromePortable.bat
+echo echo /////////////////////////////////////////////////////////////// >> ChromePortable.bat
+echo start /wait ChromePortable.exe >> ChromePortable.bat
+echo del ChromePortable.exe >> ChromePortable.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > 7ZipInstall_silent.bat
+echo cls >> 7ZipInstall_silent.bat
+echo Color 3f >> 7ZipInstall_silent.bat
+echo mode con:cols=64 lines=1 >> 7ZipInstall_silent.bat
+echo curl -L -o "7z2409-x64.exe" "https://7-zip.org/a/7z2409-x64.exe" --progress-bar >> 7ZipInstall_silent.bat
+echo clear >> 7ZipInstall_silent.bat
+echo mode con:cols=64 lines=5 >> 7ZipInstall_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> 7ZipInstall_silent.bat
+echo echo //         Please wait 7-zip is being installed...           // >> 7ZipInstall_silent.bat
+echo echo //       Don't close this window during installation!        // >> 7ZipInstall_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> 7ZipInstall_silent.bat
+echo start /wait 7z2409-x64.exe /S >> 7ZipInstall_silent.bat
+echo del 7z2409-x64.exe >> 7ZipInstall_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
