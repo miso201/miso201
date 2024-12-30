@@ -226,9 +226,9 @@ REM  choco install 4k-youtube-to-mp3 --yes REM   4K YouTube to MP3
 REM  Virtualization & System:-----------------------------------------------------------------------------
 
 
-choco install virtualbox --yes REM   VirtualBox
-choco install virtualbox-guest-additions-guest.install
-del "C:\Users\Public\Desktop\Oracle VirtualBox.lnk"
+REM  choco install virtualbox --yes REM   VirtualBox
+REM  choco install virtualbox-guest-additions-guest.install
+REM  del "C:\Users\Public\Desktop\Oracle VirtualBox.lnk"
 
 REM  choco install vmwareworkstation --yes REM   VMware Workstation
 
