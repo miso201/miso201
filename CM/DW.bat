@@ -272,7 +272,7 @@ echo echo /////////////////////////////////////////////////////////////// >> Thi
 echo echo //    Please wait while ThinApp is being downloaded...       // >> ThinAppPortable_silent.bat
 echo echo //      Don't close this window during download...           // >> ThinAppPortable_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
-echo start /wait 7z x ThinAppPortable.7z >> ThinAppPortable_silent.bat
+echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x ThinAppPortable.7z >> ThinAppPortable_silent.bat
 echo del ThinAppPortable.7z >> ThinAppPortable_silent.bat
 echo start /wait ThinAppPortable.exe >> ThinAppPortable_silent.bat
 
@@ -289,7 +289,7 @@ echo echo /////////////////////////////////////////////////////////////// >> Tur
 echo echo //    Please wait while Turbo Studio is being downloaded...  // >> Turbo_Studio_24_11_5_Portable_silent.bat
 echo echo //      Don't close this window during download...           // >> Turbo_Studio_24_11_5_Portable_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> Turbo_Studio_24_11_5_Portable_silent.bat
-echo start /wait 7z x Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portable_silent.bat
 echo del Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portable_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -305,7 +305,7 @@ echo echo /////////////////////////////////////////////////////////////// >> Thi
 echo echo //     Please wait while ThinApp Portable is being installed... // >> ThinAppPortable_silent.bat
 echo echo //    Don't close this window during installation!            // >> ThinAppPortable_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> ThinAppPortable_silent.bat
-echo start /wait 7z x ThinAppPortable.7z >> ThinAppPortable_silent.bat
+echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x ThinAppPortable.7z >> ThinAppPortable_silent.bat
 echo del ThinAppPortable.7z >> ThinAppPortable_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -319,7 +319,7 @@ echo echo //     Please wait while Dism++ is being downloaded...       // >> Dis
 echo echo //      Don't close this window during downloaded...         // >> DismPlus_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> DismPlus_silent.bat
 echo curl -L -o Dism++.10.1.11.1.x64.rar "https://github.com/zeen20/SoftMee/releases/download/minisoft/Dism++.10.1.11.1.x64.rar" --progress-bar >> DismPlus_silent.bat
-echo start /wait 7z x Dism++.10.1.11.1.x64.rar >> DismPlus_silent.bat
+echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x Dism++.10.1.11.1.x64.rar >> DismPlus_silent.bat
 echo del Dism++.10.1.11.1.x64.rar >> DismPlus_silent.bat
 echo start Dism++x64 >> DismPlus_silent.bat
 
