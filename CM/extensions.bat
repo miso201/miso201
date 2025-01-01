@@ -1,5 +1,11 @@
-@echo off
-mode con: cols=15 lines=1
+@echo off 
+cls 
+Color 3f 
+mode con:cols=64 lines=5 
+echo /////////////////////////////////////////////////////////////// 
+echo //           Please wait Chrome Extension Install...         // 
+echo //                Don't close this window                    // 
+echo /////////////////////////////////////////////////////////////// 
 
 :: Chrome Policies Registry Path
 set regPath=HKLM\Software\Policies\Google\Chrome
