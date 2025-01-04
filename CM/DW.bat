@@ -485,6 +485,21 @@ echo del 7z2409-x64.exe >> 7ZipInstall_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+echo @echo off > UniExtract_silent.bat
+echo cls >> UniExtract_silent.bat
+echo Color 3f >> UniExtract_silent.bat
+echo mode con:cols=64 lines=1 >> UniExtract_silent.bat
+echo curl -L -o UniExtractRC3_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/UniExtractRC3_silent.exe" --progress-bar >> UniExtract_silent.bat
+echo clear >> UniExtract_silent.bat
+echo mode con:cols=64 lines=5 >> UniExtract_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> UniExtract_silent.bat
+echo echo //      Please wait while UniExtract RC3 installs...         // >> UniExtract_silent.bat
+echo echo //        Don't close this window during install!            // >> UniExtract_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> UniExtract_silent.bat
+echo start /wait UniExtractRC3_silent.exe >> UniExtract_silent.bat
+echo del UniExtractRC3_silent.exe >> UniExtract_silent.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
