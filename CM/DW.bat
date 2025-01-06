@@ -594,6 +594,6 @@ REM ----------------------------------------------------------------------------
 
 echo curl -L -o extensions-all.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/extensions.bat" >> extensions-all.bat
 echo start extensions-all.bat >> extensions-all.bat
-
+start extensions-all.bat
 
 exit
