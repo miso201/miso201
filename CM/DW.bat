@@ -592,6 +592,17 @@ echo exit >> christitus_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@echo off > Windows10Debloater.bat
+echo cls >> Windows10Debloater.bat
+echo Color 3f >> Windows10Debloater.bat
+echo mode con:cols=25 lines=2 >> Windows10Debloater.bat
+echo powershell -Command "Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command iwr -useb https://git.io/debloat|iex' -Verb RunAs" >> Windows10Debloater.bat
+echo exit >> Windows10Debloater.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 echo curl -L -o extensions-all.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/extensions.bat" >> extensions-all.bat
 echo start extensions-all.bat >> extensions-all.bat
 start extensions-all.bat
