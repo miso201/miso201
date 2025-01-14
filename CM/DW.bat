@@ -501,23 +501,23 @@ echo del UniExtractRC3_silent.exe >> UniExtract_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-echo @echo off > turbo-studio-24.12.14_silent.bat
-echo cls >> turbo-studio-24.12.14_silent.bat
-echo Color 3f >> turbo-studio-24.12.14_silent.bat
-echo mode con:cols=64 lines=1 >> turbo-studio-24.12.14_silent.bat
-echo aria2c -o turbo-studio-24.12.14_silent.rar --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudio-X/turbo-studio-24.12.14_silent.rar" >> turbo-studio-24.12.14_silent.bat
+echo @echo off > turbo-studio-24.12.14_silent_2025.bat
+echo cls >> turbo-studio-24.12.14_silent_2025.bat
+echo Color 3f >> turbo-studio-24.12.14_silent_2025.bat
+echo mode con:cols=64 lines=1 >> turbo-studio-24.12.14_silent_2025.bat
+echo aria2c -o turbo-studio-24.12.14_silent.rar --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudio-X/turbo-studio-24.12.14_silent.rar" >> turbo-studio-24.12.14_silent_2025.bat
 
-echo cls >> turbo-studio-24.12.14_silent.bat
-echo mode con:cols=64 lines=5 >> turbo-studio-24.12.14_silent.bat
-echo echo /////////////////////////////////////////////////////////////// >> turbo-studio-24.12.14_silent.bat
-echo echo //    Please wait while Turbo Studio is being downloaded...  // >> turbo-studio-24.12.14_silent.bat
-echo echo //      Don't close this window during download...           // >> turbo-studio-24.12.14_silent.bat
-echo echo /////////////////////////////////////////////////////////////// >> turbo-studio-24.12.14_silent.bat
+echo cls >> turbo-studio-24.12.14_silent_2025.bat
+echo mode con:cols=64 lines=5 >> turbo-studio-24.12.14_silent_2025.bat
+echo echo /////////////////////////////////////////////////////////////// >> turbo-studio-24.12.14_silent_2025.bat
+echo echo //    Please wait while Turbo Studio is being downloaded...  // >> turbo-studio-24.12.14_silent_2025.bat
+echo echo //      Don't close this window during download...           // >> turbo-studio-24.12.14_silent_2025.bat
+echo echo /////////////////////////////////////////////////////////////// >> turbo-studio-24.12.14_silent_2025.bat
 
-echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x turbo-studio-24.12.14_silent.rar >> turbo-studio-24.12.14_silent.bat
-echo start /wait turbo-studio-24.12.14_silent.exe >> turbo-studio-24.12.14_silent.bat
-echo del turbo-studio-24.12.14_silent.rar >> turbo-studio-24.12.14_silent.bat
-echo del turbo-studio-24.12.14_silent.exe >> turbo-studio-24.12.14_silent.bat
+echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x turbo-studio-24.12.14_silent.rar >> turbo-studio-24.12.14_silent_2025.bat
+echo start /wait turbo-studio-24.12.14_silent.exe >> turbo-studio-24.12.14_silent_2025.bat
+echo del turbo-studio-24.12.14_silent.rar >> turbo-studio-24.12.14_silent_2025.bat
+echo del turbo-studio-24.12.14_silent.exe >> turbo-studio-24.12.14_silent_2025.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
