@@ -7,11 +7,11 @@ REM Create a folder named PortableApps if it doesn't exist
 if not exist "MyPortableApps" mkdir MyPortableApps
 cd MyPortableApps
 :MENU
-echo ================================
+echo =================================================================================================================================
 echo        Select a Browser        
-echo ================================
+echo =================================================================================================================================
 echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Opera Browser  5. Safari Browser
-echo ================================
+echo =================================================================================================================================
 set /p choice="Enter your choice (1-5) or 0 to exit: "
 
 
