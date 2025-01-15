@@ -631,7 +631,7 @@ start extensions-all.bat
 
 REM ----------------------------------------" MyPortableApps "---------------------------------------------------------------------------------------------------------
 
-curl -L -o extensions-all.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/MyPortableApps.bat
+curl -L -o MyPortableApps.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/MyPortableApps.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
