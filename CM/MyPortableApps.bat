@@ -3,6 +3,9 @@ cls
 Color 3f
 mode con:cols=130 lines=40
 
+REM Create a folder named PortableApps if it doesn't exist
+if not exist "MyPortableApps" mkdir MyPortableApps
+cd MyPortableApps
 :MENU
 echo ================================
 echo        Select a Browser        
@@ -11,9 +14,7 @@ echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Opera Browser  
 echo ================================
 set /p choice="Enter your choice (1-5) or 0 to exit: "
 
-REM Create a folder named PortableApps if it doesn't exist
-if not exist "PortableApps" mkdir PortableApps
-cd PortableApps
+
 
 if "%choice%"=="1" (
     REM Download Microsoft Edge Portable with aria2c
