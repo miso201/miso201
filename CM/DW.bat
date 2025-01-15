@@ -629,38 +629,9 @@ start extensions-all.bat
 
 
 
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-REM ----------------------------------------------------- PORTABLE APPS --------------------------------------------------------------------------------------------
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+REM ----------------------------------------" MyPortableApps "---------------------------------------------------------------------------------------------------------
 
-mkdir "PApps"
-cd "PApps"
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-echo @echo off > GoogleChromePortable.bat
-echo cls >> GoogleChromePortable.bat
-echo Color 3f >> GoogleChromePortable.bat
-echo mode con:cols=64 lines=1 >> GoogleChromePortable.bat
-echo mkdir PortableApps >> GoogleChromePortable.bat
-echo cd PortableApps >> GoogleChromePortable.bat
-echo aria2c -o "GoogleChromePortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/GoogleChrome/GoogleChromePortable.7z" >> GoogleChromePortable.bat
-echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x "GoogleChromePortable.7z" -o* >> GoogleChromePortable.bat
-echo del "GoogleChromePortable.7z" >> GoogleChromePortable.bat
-echo echo Extraction complete. >> GoogleChromePortable.bat
-
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-echo @echo off > MicrosoftEdgePortable.bat
-echo cls >> MicrosoftEdgePortable.bat
-echo Color 3f >> MicrosoftEdgePortable.bat
-echo mode con:cols=64 lines=1 >> MicrosoftEdgePortable.bat
-echo mkdir PortableApps >> MicrosoftEdgePortable.bat
-echo cd PortableApps >> MicrosoftEdgePortable.bat
-echo aria2c -o "MicrosoftEdgePortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/MicrosoftEdge/MicrosoftEdgePortable.7z" >> MicrosoftEdgePortable.bat
-echo start /wait "" "C:\Program Files\7-Zip\7z.exe" x "MicrosoftEdgePortable.7z" -o* >> MicrosoftEdgePortable.bat
-echo del "MicrosoftEdgePortable.7z" >> MicrosoftEdgePortable.bat
-echo echo Extraction complete. >> MicrosoftEdgePortable.bat
+curl -L -o extensions-all.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/MyPortableApps.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
