@@ -505,7 +505,7 @@ echo @echo off > turbo-studio-24.12.14_silent_2025.bat
 echo cls >> turbo-studio-24.12.14_silent_2025.bat
 echo Color 3f >> turbo-studio-24.12.14_silent_2025.bat
 echo mode con:cols=64 lines=1 >> turbo-studio-24.12.14_silent_2025.bat
-echo aria2c -o turbo-studio-24.12.14_silent.rar --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudio-X/turbo-studio-24.12.14_silent.rar" >> turbo-studio-24.12.14_silent_2025.bat
+echo aria2c -o turbo-studio-24.12.14_silent.rar --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudioApps/turboStudio-24.12.14_silent.rar" >> turbo-studio-24.12.14_silent_2025.bat
 
 echo cls >> turbo-studio-24.12.14_silent_2025.bat
 echo mode con:cols=64 lines=5 >> turbo-studio-24.12.14_silent_2025.bat
