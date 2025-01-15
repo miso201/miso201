@@ -17,7 +17,7 @@ cd PortableApps
 
 if "%choice%"=="1" (
     REM Download Microsoft Edge Portable with aria2c
-    aria2c -o "MicrosoftEdgePortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/MicrosoftEdge/MicrosoftEdgePortable.7z"
+    aria2c -o "MicrosoftEdgePortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudioApps/MicrosoftEdge/MicrosoftEdge-Portable.7z"
 
     REM Extract the downloaded file using 7-Zip
     start /wait "" "C:\Program Files\7-Zip\7z.exe" x "MicrosoftEdgePortable.7z" -o*
@@ -31,7 +31,7 @@ if "%choice%"=="1" (
     goto MENU
 ) else if "%choice%"=="2" (
     REM Download Google Chrome Portable with aria2c
-    aria2c -o "GoogleChromePortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/GoogleChrome/GoogleChromePortable.7z"
+    aria2c -o "GoogleChromePortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudioApps/GoogleChrome/GoogleChrome-Portable.7z"
 
     REM Extract the downloaded file using 7-Zip
     start /wait "" "C:\Program Files\7-Zip\7z.exe" x "GoogleChromePortable.7z" -o*
