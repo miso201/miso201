@@ -64,4 +64,4 @@ sudo apt-get install -f -y  # Resolve any missing dependencies
 
 
 
-DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRru1G5OgxqhQwl5DTN7YZCBKUsRbgsxdz-j8FFUdMdbVzpmN30dANWGtajyOrtb9BQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
+DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRrtLG4FzFxgiLNgKpx-Jeh1DRY6xJ72AJOtE_QLulK3ttUU7Zsivqi8YpjKV3vbIxw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
