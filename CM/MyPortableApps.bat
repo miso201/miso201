@@ -46,7 +46,7 @@ if "%choice%"=="1" (
     goto MENU
 ) else if "%choice%"=="3" (
     REM Download Mozilla Firefox Portable with aria2c
-    aria2c -o "FirefoxPortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/Firefox/FirefoxPortable.7z"
+    aria2c -o "FirefoxPortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudioApps/Firefox/Firefox-Portable.7z"
 
     REM Extract the downloaded file using 7-Zip
     start /wait "" "C:\Program Files\7-Zip\7z.exe" x "FirefoxPortable.7z" -o*
