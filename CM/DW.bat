@@ -639,13 +639,15 @@ REM Show hidden files, folders, and drives
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f
 REM Hide protected operating system files (like desktop.ini)
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSuperHidden /t REG_DWORD /d 0 /f
-# ShowSuperHidden = 0: Hides system files like desktop.ini even when hidden files are visible And ShowSuperHidden = 1: Shows protected system files,
-# reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSuperHidden /t REG_DWORD /d 1 /f
+REM ShowSuperHidden = 0: Hides system files like desktop.ini even when hidden files are visible And ShowSuperHidden = 1: Shows protected system files,
+REM reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSuperHidden /t REG_DWORD /d 1 /f
 REM Show file extensions for known file types
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
 REM Refresh the Explorer shell without restarting it
 echo Refreshing Explorer settings...
-ie4uinit.exe -show
+REM ie4uinit.exe -show
+taskkill /im explorer.exe /f >nul
+start explorer.exe
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
