@@ -635,6 +635,17 @@ curl -L -o MyPortableApps.bat "https://raw.githubusercontent.com/miso201/miso201
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+echo @echo off > WiseDiskCleanerPortable.bat
+echo cls >> WiseDiskCleanerPortable.bat
+echo Color 3f >> WiseDiskCleanerPortable.bat
+echo mode con:cols=64 lines=1 >> WiseDiskCleanerPortable.bat
+echo aria2c -o WiseDiskCleanerPortable.exe --max-connection-per-server=16 --split=16 --min-split-size=1M "https://github.com/zeen20/SoftMee/releases/download/minisoft/WiseDiskCleanerPortable.exe" >> WiseDiskCleanerPortable.bat
+echo start WiseDiskCleanerPortable.exe >> WiseDiskCleanerPortable.bat
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 REM Show hidden files, folders, and drives
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f
 REM Hide protected operating system files (like desktop.ini)
