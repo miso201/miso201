@@ -2,6 +2,16 @@ DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRruINJpjH7d
 
 
 
+#!/bin/bash
+# ................... Enable passwordless sudo for the current user .......................
+USER=$(whoami)
+echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER > /dev/null
+sudo chmod 0440 /etc/sudoers.d/$USER
+if sudo -l | grep -q "(ALL) NOPASSWD:ALL"; then
+    echo "Passwordless sudo enabled for $USER."
+else
+    echo "Failed to enable passwordless sudo. Please check the configuration."
+fi
 
 
 
