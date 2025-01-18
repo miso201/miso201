@@ -1,3 +1,13 @@
+DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRruINJpjH7deFacat2WmRAwjaE4o33ZxLxbVfZ6xLBsdJv3u3J9JVDEpRhC7AmC6cQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
+
+
+
+
+
+
+
+
+
 sudo apt-get update
 sudo apt-get update && sudo apt-get install -y curl wget unzip sudo ufw && sudo rm -rf /var/lib/apt/lists/*
 
@@ -63,4 +73,3 @@ sudo apt-get install -f -y  # Resolve any missing dependencies
 
 
 
-DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRruhh8ynhHIwew2ikDKTzKC7UD9E-6rD7iSExKccZJg2w6S6Fu9wSytQJJSsBeNFHQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
