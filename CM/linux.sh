@@ -1,5 +1,6 @@
-DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRruINJpjH7deFacat2WmRAwjaE4o33ZxLxbVfZ6xLBsdJv3u3J9JVDEpRhC7AmC6cQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
+DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRrv1MaAJx4U5_MOF2E30ZrplNYA2rX2KfHKoLna82HfvLE-GdqzM0gQ432TTfFTJ9Q" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
 
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -O chrome-remote-desktop_current_amd64.deb
 
 
 #!/bin/bash
