@@ -82,4 +82,18 @@ sudo apt-get install -f -y  # Resolve any missing dependencies
 
 
 
+#.........................................................................................................................................
 
+# Backup current sources.list
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+echo -e "deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse\n\
+deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse\n\
+deb http://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse\n\
+deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse\n\
+deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo apt update || sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
+sudo apt install -y curl
+sudo apt autoremove -y && sudo apt clean
+
+
+http://archive.ubuntu.com/ubuntu/pool/main/p/policykit-1/policykit-1_124-2ubuntu1_amd64.deb
