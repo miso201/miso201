@@ -1,7 +1,8 @@
 DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRrv1MaAJx4U5_MOF2E30ZrplNYA2rX2KfHKoLna82HfvLE-GdqzM0gQ432TTfFTJ9Q" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
 
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -O chrome-remote-desktop_current_amd64.deb
-
+sudo systemctl enable chrome-remote-desktop@$(whoami)
+sudo systemctl start chrome-remote-desktop@$(whoami)
 
 #!/bin/bash
 # ................... Enable passwordless sudo for the current user .......................
