@@ -38,7 +38,7 @@ sudo apt-get install -y qbittorrent
 # Install PeaZip
 echo "Installing PeaZip..."
 wget https://github.com/peazip/PeaZip/releases/download/10.0.0/peazip_10.0.0.LINUX.GTK2-1_amd64.deb
-sudo dpkg -i peazip_10.0.0.LINUX.GTK2-1_amd64.deb
+sudo dpkg -i peazip_10.0.0.LINUX.GTK2-1_amd64.deb && rm peazip_10.0.0.LINUX.GTK2-1_amd64.deb
 sudo apt-get install -f -y  # Resolve any missing dependencies
 
 
