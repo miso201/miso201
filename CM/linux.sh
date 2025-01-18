@@ -94,5 +94,6 @@ sudo apt update || sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
 sudo apt install -y curl
 sudo apt autoremove -y && sudo apt clean
 
+echo "deb http://deb.debian.org/debian bullseye-backports main contrib  non-free" | sudo tee -a /etc/apt/sources.list.d/backports.list
 
 http://archive.ubuntu.com/ubuntu/pool/main/p/policykit-1/policykit-1_124-2ubuntu1_amd64.deb
