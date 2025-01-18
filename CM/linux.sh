@@ -1,8 +1,6 @@
 DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AanRRrv1MaAJx4U5_MOF2E30ZrplNYA2rX2KfHKoLna82HfvLE-GdqzM0gQ432TTfFTJ9Q" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
 
-wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -O chrome-remote-desktop_current_amd64.deb
-sudo systemctl enable chrome-remote-desktop@$(whoami)
-sudo systemctl start chrome-remote-desktop@$(whoami)
+
 
 #!/bin/bash
 # ................... Enable passwordless sudo for the current user .......................
@@ -98,4 +96,12 @@ sudo apt autoremove -y && sudo apt clean
 
 echo "deb http://deb.debian.org/debian bullseye-backports main contrib  non-free" | sudo tee -a /etc/apt/sources.list.d/backports.list
 
-http://archive.ubuntu.com/ubuntu/pool/main/p/policykit-1/policykit-1_124-2ubuntu1_amd64.deb
+
+sudo apt update
+sudo apt install -y gdebi
+wget http://archive.ubuntu.com/ubuntu/pool/main/p/policykit-1/policykit-1_124-2ubuntu1_amd64.deb -O policykit-1_124-2ubuntu1_amd64.deb
+sudo gdebi -n policykit-1_124-2ubuntu1_amd64.deb
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -O chrome-remote-desktop_current_amd64.deb
+sudo gdebi -n chrome-remote-desktop_current_amd64.deb
+sudo systemctl enable chrome-remote-desktop@$(whoami)
+sudo systemctl start chrome-remote-desktop@$(whoami)
