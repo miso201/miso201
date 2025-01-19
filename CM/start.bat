@@ -21,6 +21,10 @@ UniGetUI.Installer.exe /SP /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NoAutoStart
 curl -L -o DW.bat "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/DW.bat"
 start /wait DW.bat
 
+curl -L -o VhdResizerSetup_silent.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VhdResizerSetup_silent.exe"
+start /wait VhdResizerSetup_silent.exe
+del VhdResizerSetup_silent.exe
+
 :: Download the IDMan installer from the provided URL
 curl -L -o idman.exe "https://mirror2.internetdownloadmanager.com/idman642build25.exe?v=lt&filename=idman642build25.exe"
 :: Run the installer silently and skip dialog boxes
