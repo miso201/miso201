@@ -560,7 +560,9 @@ REM ----------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-curl -L -o qemu-installer.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/qemu-installer.bat"
+curl -L -o QEMU-INSTALLER.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/qemu-installer.bat"
+curl -L -o IMG-TO.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/IMG-TO.bat"
+
 
 
 cd /d "C:\MyApps"
