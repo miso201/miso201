@@ -289,9 +289,9 @@ echo echo /////////////////////////////////////////////////////////////// >> Tur
 echo echo //    Please wait while Turbo Studio is being downloaded...  // >> Turbo_Studio_24_11_5_Portable_silent.bat
 echo echo //      Don't close this window during download...           // >> Turbo_Studio_24_11_5_Portable_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> Turbo_Studio_24_11_5_Portable_silent.bat
-echo cmd /c "mode con:cols=64 lines=5 & "C:\Program Files\7-Zip\7z.exe" x -y Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo cmd /c "mode con:cols=64 lines=1 & "C:\Program Files\7-Zip\7z.exe" x -y Turbo.Studio.24.11.5.Portable.KaranPC.7z" >> Turbo_Studio_24_11_5_Portable_silent.bat
 echo del Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portable_silent.bat
-start "" "Turbo.Studio.24.11.5.Portable.KaranPC\TurboStudioPortable.exe" 
+echo start "" "Turbo.Studio.24.11.5.Portable.KaranPC\TurboStudioPortable.exe" >> Turbo_Studio_24_11_5_Portable_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
