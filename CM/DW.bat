@@ -538,20 +538,20 @@ echo del DiskGenius.exe >> DiskGenius_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-cls 
-Color 3f 
-mode con:cols=64 lines=1 
-curl -L -o ventoy-1.0.99-windows.zip "https://github.com/ventoy/Ventoy/releases/download/v1.0.99/ventoy-1.0.99-windows.zip" --progress-bar 
-clear 
-mode con:cols=64 lines=5 
-echo /////////////////////////////////////////////////////////////// 
-echo //     Please wait while Ventoy is being installed...        // 
-echo //    Don't close this window during installation!           // 
-echo /////////////////////////////////////////////////////////////// 
-cmd /c "mode con:cols=64 lines=1 & "C:\Program Files\7-Zip\7z.exe" x -y ventoy-1.0.99-windows.zip" 
-del ventoy-1.0.99-windows.zip 
-start "" "ventoy-1.0.99\Ventoy2Disk.exe" 
-
+echo @echo off > Turbo_Studio_24_11_5_Portable_silent.bat
+echo cls >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo Color 3f >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo mode con:cols=64 lines=1 >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo curl -L -o Turbo.Studio.24.11.5.Portable.KaranPC.7z "https://github.com/zeen20/SoftMee/releases/download/minisoft/Turbo.Studio.24.11.5.Portable.KaranPC.7z" --progress-bar >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo clear >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo mode con:cols=64 lines=5 >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo //    Please wait while Turbo Studio is being downloaded...  // >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo //      Don't close this window during download...           // >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo cmd /c "mode con:cols=64 lines=1 & "C:\Program Files\7-Zip\7z.exe" x -y Turbo.Studio.24.11.5.Portable.KaranPC.7z" >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo del Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portable_silent.bat
+echo start "" "Turbo.Studio.24.11.5.Portable.KaranPC\TurboStudioPortable.exe" >> Turbo_Studio_24_11_5_Portable_silent.bat 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
