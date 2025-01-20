@@ -526,7 +526,7 @@ echo @echo off > DiskGenius_silent.bat
 echo cls >> DiskGenius_silent.bat
 echo Color 3f >> DiskGenius_silent.bat
 echo mode con:cols=64 lines=1 >> DiskGenius_silent.bat
-echo curl -L -o DiskGenius.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DGEngSetup5611580_silent.exe" --progress-bar >> DiskGenius_silent.bat
+echo curl -L -o DiskGenius.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/DiskGeniusSetup5611580_silent.exe" --progress-bar >> DiskGenius_silent.bat
 echo clear >> DiskGenius_silent.bat
 echo mode con:cols=64 lines=5 >> DiskGenius_silent.bat
 echo echo /////////////////////////////////////////////////////////////// >> DiskGenius_silent.bat
