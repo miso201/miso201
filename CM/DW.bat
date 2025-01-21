@@ -555,6 +555,25 @@ echo start /wait centbrowser_installer.exe --cb-auto-update --do-not-launch-chro
 echo del centbrowser_installer.exe >> Centbrowser.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@echo off > Ventoy_silent.bat
+echo cls >> Ventoy_silent.bat
+echo Color 3f >> Ventoy_silent.bat
+echo mode con:cols=64 lines=1 >> Ventoy_silent.bat
+echo curl -L -o ventoy-1.0.99-windows.zip "https://github.com/ventoy/Ventoy/releases/download/v1.0.99/ventoy-1.0.99-windows.zip" --progress-bar >> Ventoy_silent.bat
+echo curl -L -o Ventoy.rar "https://github.com/zeen20/SoftMee/releases/download/minisoft/Ventoy.rar" --progress-bar >> Ventoy_silent.bat
+echo clear >> Ventoy_silent.bat
+echo mode con:cols=64 lines=5 >> Ventoy_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Ventoy_silent.bat
+echo echo //     Please wait while Ventoy is being installed...        // >> Ventoy_silent.bat
+echo echo //     Don't close this window during installation!          // >> Ventoy_silent.bat
+echo echo /////////////////////////////////////////////////////////////// >> Ventoy_silent.bat
+echo cmd /c "mode con:cols=64 lines=1 & "C:\Program Files\7-Zip\7z.exe" x -y ventoy-1.0.99-windows.zip" >> Ventoy_silent.bat
+echo cmd /c "mode con:cols=64 lines=1 & "C:\Program Files\7-Zip\7z.exe" x -y Ventoy.rar -o"ventoy-1.0.99"" >> Ventoy_silent.bat
+echo del ventoy-1.0.99-windows.zip >> Ventoy_silent.bat
+echo del Ventoy.rar >> Ventoy_silent.bat
+echo start "" "ventoy-1.0.99\Ventoy2Disk.exe" >> Ventoy_silent.bat
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
