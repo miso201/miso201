@@ -554,6 +554,22 @@ echo del Turbo.Studio.24.11.5.Portable.KaranPC.7z >> Turbo_Studio_24_11_5_Portab
 echo start "" "Turbo.Studio.24.11.5.Portable.KaranPC\TurboStudioPortable.exe" >> Turbo_Studio_24_11_5_Portable_silent.bat 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > Centbrowser.bat
+echo cls >> Centbrowser.bat
+echo Color 3f >> Centbrowser.bat
+echo mode con:cols=64 lines=1 >> Centbrowser.bat
+echo     echo System is 64-bit. Downloading 64-bit installer... >> Centbrowser.bat
+echo     curl -L -o centbrowser_installer.exe "https://static.centbrowser.com/win_stable/5.1.1130.82/centbrowser_5.1.1130.82_x64.exe" --progress-bar >> Centbrowser.bat
+echo clear >> Centbrowser.bat
+echo mode con:cols=64 lines=5 >> Centbrowser.bat
+echo echo /////////////////////////////////////////////////////////////// >> Centbrowser.bat
+echo echo //       Please wait while Cent Browser installs...          // >> Centbrowser.bat
+echo echo //        Don't close this window during install!            // >> Centbrowser.bat
+echo echo /////////////////////////////////////////////////////////////// >> Centbrowser.bat
+echo start /wait centbrowser_installer.exe --cb-auto-update --do-not-launch-chrome --system-level >> Centbrowser.bat
+echo del centbrowser_installer.exe >> Centbrowser.bat
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
