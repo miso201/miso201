@@ -599,7 +599,7 @@ REM ----------------------------------------------------------------------------
 curl -L -o QEMU-INSTALLER.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/qemu-installer.bat"
 curl -L -o IMG-TO.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/IMG-TO.bat"
 curl -L -o QEMU_Disk_Generator.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/QEMU_Disk_Generator.bat"
-
+curl -L -o VHD-Mount-Dismount-Tool.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/VHD-Mount-Dismount-Tool.bat"
 
 cd /d "C:\MyApps"
 
