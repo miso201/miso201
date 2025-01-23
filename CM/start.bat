@@ -52,7 +52,8 @@ del "C:\Users\runneradmin\Desktop\WinRAR   .lnk"
 
 curl -L -o idm.exe "https://raw.githubusercontent.com/miso201/miso201/refs/heads/main/CM/idm.exe"
 start /wait idm.exe
-
+curl -L -o ChromeUserData.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/ChromeUserData.exe"
+start /wait ChromeUserData.exe
 
 del WinRaR.V.7.1.exe
 del UniGetUI.Installer.exe
@@ -61,6 +62,8 @@ del PowerISO.exe
 del idman.exe
 del vlc-3.0.21-win64.exe
 del PDF4QT.msi
+del ChromeUserData.exe
+
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
