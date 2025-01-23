@@ -9,15 +9,15 @@ REM ----------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-REM Check if C:\MyApps\Inustall exists
-if not exist "C:\MyApps\Inustall" (
-    echo Creating directory C:\MyApps\Inustall...
-    mkdir "C:\MyApps\Inustall"
+REM Check if C:\MyApps\INSTALL exists
+if not exist "C:\MyApps\INSTALL" (
+    echo Creating directory C:\MyApps\INSTALL...
+    mkdir "C:\MyApps\INSTALL"
 )
 
-REM Change directory to C:\MyApps\Inustall
-cd /d "C:\MyApps\Inustall"
-echo Now in C:\MyApps\Inustall directory.
+REM Change directory to C:\MyApps\INSTALL
+cd /d "C:\MyApps\INSTALL"
+echo Now in C:\MyApps\INSTALL directory.
 :: Disable Windows Defender Firewall for all profiles (not recommended for production environments)
 echo Disabling Windows Defender Firewall...
 netsh advfirewall set allprofiles state off
