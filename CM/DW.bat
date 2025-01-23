@@ -603,7 +603,7 @@ curl -L -o IMG-TO.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM
 curl -L -o QEMU_Disk_Generator.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/QEMU_Disk_Generator.bat"
 curl -L -o VHD-Mount-Dismount-Tool.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/VHD-Mount-Dismount-Tool.bat"
 curl -L -o DriveKeeperManagerTool.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/DriveKeeperManagerTool.bat"
-
+curl -L -o Dark-Theme.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/Dark-Theme.bat"
 
 
 REM ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
