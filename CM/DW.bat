@@ -604,6 +604,10 @@ curl -L -o QEMU_Disk_Generator.bat "https://github.com/miso201/miso201/raw/refs/
 curl -L -o VHD-Mount-Dismount-Tool.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/VHD-Mount-Dismount-Tool.bat"
 curl -L -o DriveKeeperManagerTool.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/DriveKeeperManagerTool.bat"
 curl -L -o Dark-Theme.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/Dark-Theme.bat"
+curl -L -o ChangeWindowsToFrench.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/ChangeWindowsToFrench.bat"
+
+
+
 
 
 REM ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
