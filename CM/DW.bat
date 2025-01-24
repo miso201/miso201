@@ -751,7 +751,7 @@ start explorer.exe
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-curl -L -o extensions-all.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/VHD_manager_v1.5.exe"
+curl -L -o VHD_manager_v1.5.exe "https://github.com/zeen20/SoftMee/releases/download/minisoft/VHD_manager_v1.5.exe"
 start /wait VHD_manager_v1.5.exe
 del VHD_manager_v1.5.exe
 
