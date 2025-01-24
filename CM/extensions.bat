@@ -37,7 +37,7 @@ echo Starting Chrome with all extensions installed...
 start chrome
 
 :: Wait for Chrome to initialize (adjust time if needed)
-timeout /t 15 >nul
+timeout /t 20 >nul
 
 :: Close Chrome after installation
 echo Closing Chrome...
