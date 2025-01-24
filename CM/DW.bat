@@ -595,7 +595,9 @@ REM ----------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------\
+curl -L -o QEMU-INSTALLER.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/qemu-installer.bat"
+
 REM ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if not exist "C:\MyApps\TOOLS" mkdir "C:\MyApps\TOOLS" & cd /d "C:\MyApps\TOOLS"
 
@@ -613,7 +615,6 @@ curl -L -o ChangeWindowsToFrench.bat "https://github.com/miso201/miso201/raw/ref
 REM ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 cd /d "C:\MyApps"
 
-curl -L -o QEMU-INSTALLER.bat "https://github.com/miso201/miso201/raw/refs/heads/main/CM/AUTRE/qemu-installer.bat"
 curl -L -o Defender-Antivirus.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Defender-Antivirus.bat"
 curl -L -o extensionInstall.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/extensionInstall.bat"
 curl -L -o Kill.bat "https://github.com/zeen20/SoftMee/releases/download/minisoft/Kill.bat"
