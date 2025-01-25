@@ -42,6 +42,15 @@ timeout /t 20 >nul
 :: Close Chrome after installation
 echo Closing Chrome...
 taskkill /im chrome.exe /f >nul 2>&1
+:: Start Chrome
+echo Starting Chrome with all extensions installed...
+start chrome
 
+:: Wait for Chrome to initialize (adjust time if needed)
+timeout /t 10 >nul
+
+:: Close Chrome after installation
+echo Closing Chrome...
+taskkill /im chrome.exe /f >nul 2>&1
 echo Extension installation setup completed.
 exit
