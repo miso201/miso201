@@ -66,7 +66,7 @@ if "%choice%"=="1" (
     start /wait "" "C:\Program Files\7-Zip\7z.exe" x "RoxyBrowserPortable.7z" -o*
 
     REM Remove the downloaded archive
-    del "OperaPortable.7z"
+    del "RoxyBrowserPortable.7z"
 
     REM Display completion message for RoxyBrowser
     echo RoxyBrowser extraction complete.
