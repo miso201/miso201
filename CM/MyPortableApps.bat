@@ -10,7 +10,7 @@ cd MyPortableApps
 echo =================================================================================================================================
 echo        Select a Browser        
 echo =================================================================================================================================
-echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Opera Browser  5. Safari Browser
+echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Roxy Browser  5. Safari Browser
 echo =================================================================================================================================
 set /p choice="Enter your choice (1-5) or 0 to exit: "
 
@@ -59,17 +59,17 @@ if "%choice%"=="1" (
     cls
     goto MENU
 ) else if "%choice%"=="4" (
-    REM Download Opera Portable with aria2c
-    aria2c -o "OperaPortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/Opera/OperaPortable.7z"
+    REM Download RoxyBrowser Portable with aria2c
+    aria2c -o "RoxyBrowserPortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudioApps/RoxyBrowser/RoxyBrowser-Portable.7z"
 
     REM Extract the downloaded file using 7-Zip
-    start /wait "" "C:\Program Files\7-Zip\7z.exe" x "OperaPortable.7z" -o*
+    start /wait "" "C:\Program Files\7-Zip\7z.exe" x "RoxyBrowserPortable.7z" -o*
 
     REM Remove the downloaded archive
     del "OperaPortable.7z"
 
-    REM Display completion message for Opera
-    echo Opera extraction complete.
+    REM Display completion message for RoxyBrowser
+    echo RoxyBrowser extraction complete.
     cls
     goto MENU
 ) else if "%choice%"=="5" (
