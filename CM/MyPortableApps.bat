@@ -10,7 +10,7 @@ cd MyPortableApps
 echo =================================================================================================================================
 echo        Select a Browser        
 echo =================================================================================================================================
-echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Roxy Browser  5. Safari Browser
+echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Roxy Browser  5. Social Browser
 echo =================================================================================================================================
 set /p choice="Enter your choice (1-5) or 0 to exit: "
 
