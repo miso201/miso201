@@ -73,17 +73,17 @@ if "%choice%"=="1" (
     cls
     goto MENU
 ) else if "%choice%"=="5" (
-    REM Download Safari Portable with aria2c
-    aria2c -o "SafariPortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/turbostudio-x_20250115/TurboStudio-X/TurboStudioApps/Safari/SafariPortable.7z"
+    REM Download Social Browser Portable with aria2c
+    aria2c -o "SocialBrowserPortable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://archive.org/download/TurboStudioApps/SocialBrowser/SocialBrowser-Portable.7z"
 
     REM Extract the downloaded file using 7-Zip
-    start /wait "" "C:\Program Files\7-Zip\7z.exe" x "SafariPortable.7z" -o*
+    start /wait "" "C:\Program Files\7-Zip\7z.exe" x "SocialBrowserPortable.7z" -o*
 
     REM Remove the downloaded archive
-    del "SafariPortable.7z"
+    del "SocialBrowserPortable.7z"
 
-    REM Display completion message for Safari
-    echo Safari extraction complete.
+    REM Display completion message for Social Browser
+    echo Social Browser extraction complete.
     cls
     goto MENU
 ) else if "%choice%"=="0" (
