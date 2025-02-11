@@ -699,6 +699,12 @@ echo exit >> christitus_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+@echo off > Winhance.bat
+echo cls >> Winhance.bat
+echo Color 3f >> Winhance.bat
+echo mode con:cols=25 lines=2 >> Winhance.bat
+echo powershell -Command "Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command irm "https://github.com/memstechtips/Winhance/raw/main/Winhance.ps1" | iex' -Verb RunAs" >> Winhance.bat
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 @echo off > Windows10Debloater.bat
