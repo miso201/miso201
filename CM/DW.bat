@@ -543,9 +543,9 @@ echo @echo off > Centbrowser.bat
 echo cls >> Centbrowser.bat
 echo Color 3f >> Centbrowser.bat
 echo mode con:cols=64 lines=1 >> Centbrowser.bat
-echo     echo System is 64-bit. Downloading 64-bit installer... >> Centbrowser.bat
-echo     curl -L -o centbrowser_installer.exe "https://static.centbrowser.com/win_stable/5.1.1130.82/centbrowser_5.1.1130.82_x64.exe" --progress-bar >> Centbrowser.bat
-echo clear >> Centbrowser.bat
+echo echo System is 64-bit. Downloading 64-bit installer... >> Centbrowser.bat
+echo curl -L -o centbrowser_installer.exe "https://static.centbrowser.com/win_stable/5.1.1130.82/centbrowser_5.1.1130.82_x64.exe" --progress-bar >> Centbrowser.bat
+echo cls >> Centbrowser.bat
 echo mode con:cols=64 lines=5 >> Centbrowser.bat
 echo echo /////////////////////////////////////////////////////////////// >> Centbrowser.bat
 echo echo //       Please wait while Cent Browser installs...          // >> Centbrowser.bat
@@ -575,6 +575,23 @@ echo del Ventoy.rar >> Ventoy_silent.bat
 echo start "" "ventoy-1.0.99\Ventoy2Disk.exe" >> Ventoy_silent.bat
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo @echo off > winscript.bat
+echo cls >> winscript.bat
+echo Color 3f >> winscript.bat
+echo mode con:cols=64 lines=1 >> winscript.bat
+echo echo System is 64-bit. Downloading 64-bit installer... >> winscript.bat
+echo curl -L -o winscript.exe "https://github.com/flick9000/winscript/releases/download/v1.1.5/winscript.exe" --progress-bar >> winscript.bat
+echo cls >> winscript.bat
+echo mode con:cols=64 lines=5 >> winscript.bat
+echo echo /////////////////////////////////////////////////////////////// >> winscript.bat
+echo echo //        Please wait while winscript installs...            // >> winscript.bat
+echo echo //        Don't close this window during install!            // >> winscript.bat
+echo echo /////////////////////////////////////////////////////////////// >> winscript.bat
+echo runas /user:Administrator "winscript.exe" >> winscript.bat
+echo del winscript.exe >> winscript.bat
+
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
