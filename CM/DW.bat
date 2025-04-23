@@ -593,6 +593,22 @@ echo del winscript.exe >> winscript.bat
 
 
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@echo off > nirsoft_package.bat
+echo cls >> nirsoft_package.bat
+echo Color 3f >> nirsoft_package.bat
+echo mode con:cols=64 lines=1 >> nirsoft_package.bat
+echo curl -L -o nirsoft_package.7z "https://github.com/zeen20/SoftMee/releases/download/minisoft/nirsoft_package_enc_1.30.16.7z" --progress-bar >> nirsoft_package.bat
+echo clear >> nirsoft_package.bat
+echo mode con:cols=64 lines=5 >> nirsoft_package.bat
+echo echo /////////////////////////////////////////////////////////////// >> nirsoft_package.bat
+echo echo //     Please wait while Nirsoft is being installed...       // >> nirsoft_package.bat
+echo echo //     Don't close this window during installation!          // >> nirsoft_package.bat
+echo echo /////////////////////////////////////////////////////////////// >> nirsoft_package.bat
+echo cmd /c "mode con:cols=64 lines=1 & "C:\Program Files\7-Zip\7z.exe" x -y nirsoft_package.7z -o"nirsoft_package"" >> nirsoft_package.bat
+echo del nirsoft_package.7z >> nirsoft_package.bat
+echo start "" "nirsoft_package\NirLauncher.exe" >> nirsoft_package.bat
+
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 REM ----------------------------------------------------------------------------------------------------------------------------------------------------------------
