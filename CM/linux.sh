@@ -1,4 +1,14 @@
-DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AUJR-x42sItz3i5M8IXrTN9ANNkEyOEiYuwTnNwoatmkU8Y4qgYmTG5SdbI21WkiLxsE7A" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
+
+sudo apt update
+sudo apt install -y gdebi
+wget http://archive.ubuntu.com/ubuntu/pool/main/p/policykit-1/policykit-1_124-2ubuntu1_amd64.deb -O policykit-1_124-2ubuntu1_amd64.deb
+sudo gdebi -n policykit-1_124-2ubuntu1_amd64.deb
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -O chrome-remote-desktop_current_amd64.deb
+sudo gdebi -n chrome-remote-desktop_current_amd64.deb
+sudo systemctl enable chrome-remote-desktop@$(whoami)
+sudo systemctl start chrome-remote-desktop@$(whoami)
+
+DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AUJR-x6WMRYMSUA9kzgE_F0QU2h1tRJq1wm85DLn_n1KhFfuzUMH5Oi8XTzLTc2SkrgyMw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --pin=123456
 
 
 
