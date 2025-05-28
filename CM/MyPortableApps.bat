@@ -10,9 +10,9 @@ cd MyPortableApps
 echo =================================================================================================================================
 echo        Select a Browser        
 echo =================================================================================================================================
-echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Roxy Browser  5. Social Browser
+echo 1. Microsoft Edge  2. Google Chrome  3. Mozilla Firefox  4. Roxy Browser  5. Social Browser  6. Winhance
 echo =================================================================================================================================
-set /p choice="Enter your choice (1-5) or 0 to exit: "
+set /p choice="Enter your choice (1-6) or 0 to exit: "
 
 
 
@@ -84,6 +84,20 @@ if "%choice%"=="1" (
 
     REM Display completion message for Social Browser
     echo Social Browser extraction complete.
+    cls
+    goto MENU
+) else if "%choice%"=="6" (
+    REM Download Winhance Portable with aria2c
+    aria2c -o "Winhance-Portable.7z" --max-connection-per-server=16 --split=16 --min-split-size=1M "https://ia904606.us.archive.org/35/items/TurboStudioApps/Winhance/Winhance-Portable.7z"
+
+    REM Extract the downloaded file using 7-Zip
+    start /wait "" "C:\Program Files\7-Zip\7z.exe" x "Winhance-Portable.7z" -o*
+
+    REM Remove the downloaded archive
+    del "Winhance-Portable.7z"
+
+    REM Display completion message for Winhance-Portable
+    echo Winhance extraction complete.
     cls
     goto MENU
 ) else if "%choice%"=="0" (
